@@ -10,6 +10,7 @@ using HomeForHomeless.Models;
 
 namespace HomeForHomeless.Controllers
 {
+
     public class VolunteerCentersController : Controller
     {
         private HFH_dbEntities db = new HFH_dbEntities();
