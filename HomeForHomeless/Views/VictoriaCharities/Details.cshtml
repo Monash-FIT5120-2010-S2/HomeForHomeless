@@ -1,0 +1,107 @@
+﻿@model HomeForHomeless.Models.VictoriaCharity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VictoriaCharity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.charity_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charity_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Registration_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Registration_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_line_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_line_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_line_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_line_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.town_city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.town_city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.charity_size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charity_size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.main_activity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.main_activity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.main_beneficiaries)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.main_beneficiaries)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.charity_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

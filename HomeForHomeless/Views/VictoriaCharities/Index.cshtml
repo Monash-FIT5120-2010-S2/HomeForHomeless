@@ -1,0 +1,94 @@
+﻿@model IEnumerable<HomeForHomeless.Models.VictoriaCharity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.charity_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Registration_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_line_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_line_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.town_city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.charity_size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.main_activity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.main_beneficiaries)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.charity_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_line_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_line_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.town_city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.charity_size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.main_activity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.main_beneficiaries)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.charity_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.charity_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.charity_Id })
+        </td>
+    </tr>
+}
+
+</table>
