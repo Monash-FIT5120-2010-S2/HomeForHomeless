@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeForHomeless.Models;
+using PagedList;
+using HomeForHomeless.ViewModel;
 
 namespace HomeForHomeless.Controllers
 {
@@ -15,9 +17,40 @@ namespace HomeForHomeless.Controllers
         private HFH_dbEntities db = new HFH_dbEntities();
 
         // GET: VictoriaCharities
-        public ActionResult Index()
+        public ActionResult Index(int? page, string searchString, string currentFilter)
         {
-            return View(db.VictoriaCharities.ToList());
+            var results = from x in db.VictoriaCharities
+                          select x;
+            int pagesize = 9, pageindex = 1;
+            CharityList temp = new CharityList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                results = results.Where(s => s.charity_name.Contains(searchString) || s.Registration_Status.Contains(searchString) || s.address_line_1.Contains(searchString) || s.address_line_1.Contains(searchString) || s.town_city.Contains(searchString) || s.state.Contains(searchString) || s.country.Contains(searchString) || s.postcode.ToString().Contains(searchString));
+
+            }
+            else
+            {
+                results = results.Where(x => x.state == "VIC");
+            }
+
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = results.ToList();
+            temp.Charities = list.ToPagedList(pageindex, pagesize);
+            return View(temp);
+
         }
 
         // GET: VictoriaCharities/Details/5

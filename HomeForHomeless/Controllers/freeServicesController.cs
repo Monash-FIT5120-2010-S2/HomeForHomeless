@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeForHomeless.Models;
+using PagedList;
+using HomeForHomeless.ViewModel;
+
 
 namespace HomeForHomeless.Controllers
 {
@@ -15,9 +18,40 @@ namespace HomeForHomeless.Controllers
         private HFH_dbEntities db = new HFH_dbEntities();
 
         // GET: freeServices
-        public ActionResult Index()
+        public ActionResult Index(int? page, string searchString, string currentFilter)
         {
-            return View(db.freeServices.ToList());
+            var results = from x in db.freeServices
+                          select x;
+            int pagesize = 9, pageindex = 1;
+            FreeServiceList temp = new FreeServiceList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            // Showing data based on the search query string and the star rating selected from the dropdown.
+
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                results = results.Where(s => s.Name.Contains(searchString) || s.Phone.Contains(searchString) || s.Address.Contains(searchString) || s.Category.Contains(searchString) || s.Tram_routes.Contains(searchString) || s.Suburb.Contains(searchString) || s.Website.Contains(searchString));
+
+            }
+            else
+            {
+                results = results.Where(x => x.Suburb == "Melbourne");
+            }
+
+            pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var list = results.ToList();
+            temp.freeServices = list.ToPagedList(pageindex, pagesize);
+            return View(temp);
+
         }
 
         // GET: freeServices/Details/5
