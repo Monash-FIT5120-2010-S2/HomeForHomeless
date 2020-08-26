@@ -33,8 +33,11 @@
                     <div class="appliance-card">
 
                         <p>
-                            <button onclick="location.href='@Url.Action("Details", "televisions",new { id = @item.Name})'" type="button" class="appliance-card-but w-button" style="height:100px">
+                            <button onclick="location.href='@Url.Action("Details", "freeServices",new { id = @item.service_Id})'" type="button" class="appliance-card-but w-button" style="height:100px">
                                 @item.Name
+                            </button>
+                            <button onclick="location.href='@Url.Action("FindService", "freeServices",new { id = @item.service_Id})'" type="button" class="appliance-card-but w-button" style="height:100px">
+                                FindMe
                             </button>
                         </p>
                     </div>

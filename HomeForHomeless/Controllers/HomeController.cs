@@ -32,13 +32,9 @@ namespace HomeForHomeless.Controllers
             return View();
         }
 
-        public ActionResult Charity()
+        public ActionResult Visualisation()
         {
-            return View();
-        }
-
-        public ActionResult FreeService()
-        {
+            ViewBag.Message = "Homeless people by suburbs in Victoria";
             return View();
         }
     }

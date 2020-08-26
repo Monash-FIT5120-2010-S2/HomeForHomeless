@@ -69,6 +69,20 @@ namespace HomeForHomeless.Controllers
             return View(freeService);
         }
 
+        public ActionResult FindService(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            freeService freeService = db.freeServices.Find(id);
+            if (freeService == null)
+            {
+                return HttpNotFound();
+            }
+            return View(freeService);
+        }
+
         // GET: freeServices/Create
         public ActionResult Create()
         {
