@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using HomeForHomeless.PasswordProtect;
 
 namespace HomeForHomeless
 {
@@ -18,6 +19,7 @@ namespace HomeForHomeless
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalFilters.Filters.Add(new BasicAuthenticationAttribute("admin", "fit5120"));
         }
     }
 }
