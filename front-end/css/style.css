@@ -85,7 +85,15 @@ body {
 
 
 /*============= FOOTER =============*/
+footer {
+  background-color: #383838;
+  padding: 1rem 2rem 3rem;
+}
 
+footer img {
+  height: 3.5rem;
+  margin: 1.5rem auto;
+}
 
 
 /*============= SOCKET =============*/
