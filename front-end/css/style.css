@@ -97,7 +97,10 @@ footer img {
 
 
 /*============= SOCKET =============*/
-
+.socket {
+  background-color: #222222;
+  border-top: .1rem solid #4981b3;
+}
 
 
 /*============= MEDIA QUERIES =============*/
