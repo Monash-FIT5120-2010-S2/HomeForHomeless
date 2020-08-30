@@ -1,0 +1,229 @@
+﻿﻿body {
+    font-family: Arial;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+}
+
+.name {
+    text-align: center;
+    color: #9cbd4f;
+    font-family: Times;
+    font-size: 300%;
+    padding-bottom: 10px;
+}
+
+.navbar-inverse {
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        float: left;
+        padding: 30px;
+        color: #9cbd4f;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            background-color: #9cbd4f;
+            color: white;
+        }
+
+.shop-local-wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 300px;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.shop-local-left {
+    position: absolute;
+    left: 0%;
+    top: 6%;
+    right: auto;
+    bottom: 0%;
+    width: 35%;
+    height: 0px;
+    min-height: 260px;
+    border-radius: 5px;
+    background-image: url('../Images/hand.jpg');
+    background-position: 69% 80%;
+    background-size: 100%;
+}
+
+.shop-local-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    padding: 45px;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    border-radius: 5px;
+    background-color: #517c63;
+    color: #f9f9f9;
+}
+
+.shop-local-content-wrapper {
+    width: 80%;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+@media screen and (max-width: 991px) {
+
+    .shop-local-left {
+        top: 8%;
+        background-size: 160%;
+    }
+    .shop-local-content-wrapper {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+    @media screen and (max-width: 767px) {
+
+        .container.shop-local-container {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .shop-local-wrapper {
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .shop-local-left {
+            position: static;
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        .shop-local-right {
+            width: 100%;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            border-radius: 0px;
+        }
+    }
+
+    @media screen and (max-width: 479px) {
+        .shop-local-section {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    }

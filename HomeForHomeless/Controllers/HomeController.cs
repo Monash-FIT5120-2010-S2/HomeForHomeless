@@ -37,5 +37,10 @@ namespace HomeForHomeless.Controllers
             ViewBag.Message = "Homeless people by suburbs in Victoria";
             return View();
         }
+
+        public ActionResult Quiz()
+        {
+            return View();
+        }
     }
 }

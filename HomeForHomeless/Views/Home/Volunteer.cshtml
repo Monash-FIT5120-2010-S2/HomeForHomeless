@@ -4,7 +4,65 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Content/selection.css" rel="stylesheet" />
+
 <h2>Volunteer</h2>
+<main id="main">
+    <section id="selection">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>where u want</h3>
+                <p> Do u want to find a volunteer or Charity.</p>
+            </header>
+
+            <div class="row selection-cols">
+
+                <div class="col-md-4 wow fadeInUp">
+                    <div class="selection-col">
+                        <div class="img">
+                            <img src="img/sample.png" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">Charity</a></h2>
+                        <p>
+                            Charity is a charity.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="selection-col">
+                        <div class="img">
+                            <img src="img/sample.png" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">volunteer center</a></h2>
+                        <p>
+                            volunteer center is a volunteer center.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="selection-col">
+                        <div class="img">
+                            <img src="img/sample.png" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">Free service</a></h2>
+                        <p>
+                            Free service is a free service.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
 <div>
     <div class="cards-image-mask">
         <!--<a href='@Url.Action("Index", "VolunteerCenters")'>-->
