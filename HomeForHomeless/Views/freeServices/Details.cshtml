@@ -5,84 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/Content/detailstyle.css" rel="stylesheet" />
+<section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h3><span>Free Service Center Details</span></h3>
+        </div>
 
-<h2>Details</h2>
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                <img src="~/Images/logo.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <ul>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5><strong>Service Center Name</strong></h5>
+                            <p>@Html.DisplayFor(model => model.Name)
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5><strong>Service Website</strong></h5>
+                            <p>@Html.DisplayFor(model => model.Website)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5><strong>Service Tram routes</strong></h5>
+                            <p>@Html.DisplayFor(model => model.Tram_routes)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5><strong>Service Category</strong></h5>
+                            <p>@Html.DisplayFor(model => model.Category)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-images"></i>
+                        <div>
+                            <h5><strong>Service Center Address</strong></h5>
+                            <p>@Html.DisplayFor(model => model.Address)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- End details Section -->
 
-<div>
-    <h4>freeService</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd class="Address">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Suburb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Suburb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tram_routes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tram_routes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </dt>
-
-        <dd class="Longitude">
-            @Html.DisplayFor(model => model.Longitude)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </dt>
-
-        <dd class="Latitude">
-            @Html.DisplayFor(model => model.Latitude)
-        </dd>
-
-    </dl>
-</div>

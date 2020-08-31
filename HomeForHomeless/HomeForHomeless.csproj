@@ -198,6 +198,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\detailstyle.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\lib\ionicons\css\ionicons.min.css" />
     <Content Include="Content\lib\lightbox\css\lightbox.min.css" />
@@ -252,12 +253,13 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Content\homepage.css" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -342,9 +344,20 @@
     <Content Include="select\selection\.idea\modules.xml" />
     <Content Include="select\selection\.idea\workspace.xml" />
     <Content Include="select\selection\apple-touch-icon.png" />
+    <Content Include="select\selection\css\owl.carousel.min.css" />
     <Content Include="select\selection\css\selection.css" />
+    <Content Include="select\selection\css\style.css" />
+    <Content Include="select\selection\Image\Martin Luther.jpg" />
+    <Content Include="select\selection\Image\quote-sign-left.png" />
+    <Content Include="select\selection\Image\quote-sign-right.png" />
     <Content Include="select\selection\img\favicon.png" />
     <Content Include="select\selection\img\sample.png" />
+    <Content Include="select\selection\js\counterup.min.js" />
+    <Content Include="select\selection\js\isotope.pkgd.min.js" />
+    <Content Include="select\selection\js\jquery.min.js" />
+    <Content Include="select\selection\js\jquery.waypoints.min.js" />
+    <Content Include="select\selection\js\main.js" />
+    <Content Include="select\selection\js\owl.carousel.min.js" />
     <Content Include="select\selection\lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="select\selection\lib\ionicons\css\ionicons.min.css" />
     <Content Include="select\selection\lib\lightbox\css\lightbox.min.css" />
@@ -399,8 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
