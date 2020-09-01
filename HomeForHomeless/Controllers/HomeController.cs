@@ -13,9 +13,9 @@ namespace HomeForHomeless.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult VolunteerOrgan()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Volunteer Organisation";
 
             return View();
         }

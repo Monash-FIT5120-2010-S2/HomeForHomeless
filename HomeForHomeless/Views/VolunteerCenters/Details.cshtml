@@ -5,87 +5,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>VolunteerCenter</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Suburb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Suburb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Postcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Postcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Business_Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Business_Category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LGA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LGA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Region)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Region)
-        </dd>
-
-    </dl>
+<div class="content cc-deco-block-wrap">
+    <div class="deco-block">
+        <div class="wrap">
+            <div class="page-headline-wrap cc-overlayed-headline">
+                <h1 class="heading">Volunteer Center Details</h1>
+                <p class="big-paragraph">Dedicated to helping you find the perfect volunteer opportunity in your area. </p>
+                <hr>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.VolunteerCenter_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="content cc-overlayed-content">
+    <div class="wrap-overlayed">
+        <div class="w-container">
+            <div class="w-row">
+                <div class="w-col w-col-6">
+                    <div class="div-block-2"><img src="~/images/charity2.jpg" loading="lazy" srcset="~/images/charity2.jpg 500w, ~/images/charity2.jpg 600w" sizes="100vw" alt="" class="image-3"></div>
+                </div>
+                <div class="w-col w-col-6">
+                    <div class="office-info">
+                        <h4>Basic Information</h4>
+                        <p class="paragraph">
+                            Center Name: @Html.DisplayFor(model => model.Name)
+                        </p>
+                        <p class="paragraph">
+                            Country: @Html.DisplayFor(model => model.Country)
+                        </p>
+                        <p class="paragraph">
+                            Address: @Html.DisplayFor(model => model.Address)
+                        </p>
+                        <p class="paragraph">
+                            Suburb: @Html.DisplayFor(model => model.Suburb)
+                        </p>
+                        <p class="paragraph">
+                            Postcode: @Html.DisplayFor(model => model.Postcode)
+                        </p>
+                        <p class="paragraph">
+                            Local Government Area: @Html.DisplayFor(model => model.LGA)
+                        </p>
+                        <p class="paragraph">
+                            Region: @Html.DisplayFor(model => model.Region)
+                        </p>
+                        <h4>Other Information</h4>
+                        <p class="paragraph">
+                            Category: @Html.DisplayFor(model => model.Business_Category)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

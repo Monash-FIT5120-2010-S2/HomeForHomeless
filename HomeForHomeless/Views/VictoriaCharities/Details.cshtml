@@ -1,107 +1,67 @@
 ﻿@model HomeForHomeless.Models.VictoriaCharity
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "VictoriaCharity";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>VictoriaCharity</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.charity_name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.charity_name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Registration_Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Registration_Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.address_line_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.address_line_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.address_line_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.address_line_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.town_city)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.town_city)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.state)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.state)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.postcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.postcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.charity_size)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.charity_size)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.main_activity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.main_activity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.main_beneficiaries)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.main_beneficiaries)
-        </dd>
-
-    </dl>
+<div class="content cc-deco-block-wrap">
+    <div class="deco-block">
+        <div class="wrap">
+            <div class="page-headline-wrap cc-overlayed-headline">
+                <h1 class="heading">Volunteer Charities Details</h1>
+                <p class="big-paragraph">Dedicated to helping you find the perfect volunteer opportunity in your area. </p>
+                <hr>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.charity_Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="content cc-overlayed-content">
+    <div class="wrap-overlayed">
+        <div class="w-container">
+            <div class="w-row">
+                <div class="w-col w-col-6">
+                    <div class="div-block-2"><img src="~/images/charity2.jpg" loading="lazy" srcset="~/images/charity2.jpg 500w, ~/images/charity2.jpg 600w" sizes="100vw" alt="" class="image-3"></div>
+                </div>
+                <div class="w-col w-col-6">
+                    <div class="office-info">
+                        <h4>Basic Information</h4>
+                        <p class="paragraph">
+                            Charity Name: @Html.DisplayFor(model => model.charity_name)
+                        </p>
+                        <p class="paragraph">
+                            Country: @Html.DisplayFor(model => model.country)
+                        </p>
+                        <p class="paragraph">
+                            State: @Html.DisplayFor(model => model.state)
+                        </p>
+
+                        <p class="paragraph">
+                            Town City: @Html.DisplayFor(model => model.town_city)
+                        </p>
+                        <p class="paragraph">
+                            Address: @Html.DisplayFor(model => model.address_line_1), @Html.DisplayFor(model => model.address_line_2)
+                        </p>
+                        <p class="paragraph">
+                            Postcode: @Html.DisplayFor(model => model.postcode)
+                        </p>
+
+                        <h4>Other Information</h4>
+                        <p class="paragraph">
+                            Size: @Html.DisplayFor(model => model.charity_size)
+                        </p>
+                        <p class="paragraph">
+                            Registration Status: @Html.DisplayFor(model => model.Registration_Status)
+                        </p>
+                        <p class="paragraph">
+                            Main Beneficiaries: @Html.DisplayFor(model => model.main_beneficiaries)
+                        </p>
+                        <p class="paragraph">
+                            Main Activity: @Html.DisplayFor(model => model.main_activity)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

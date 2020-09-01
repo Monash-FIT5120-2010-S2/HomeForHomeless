@@ -6,11 +6,61 @@
 
 <body>
     <!--- Search Results Section-->
-    <div class="col-12 text-center mt-5">
-        <h1 class="text-dark pt4">Available Charities</h1>
-        <div class="border-top border-primary w-25 mx-auto my03"></div>
-        <p class="lead">Charity near you</p>
+    <div class="content">
+        <div class="wrap">
+            <div class="page-headline-wrap cc-category-headline">
+                <h1 class="heading-7">Charity</h1>
+                <p class="big-paragraph">A WAY TO HELP YOU</p>
+                <hr>
+            </div>
+            <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider">
+                <div class="w-slider-mask">
+                    <div class="w-slide">
+                        <div class="w-dyn-list">
+                            <div role="list" class="w-dyn-items">
+                                <div role="listitem" class="w-dyn-item">
+                                    <div class="slide-wrap">
+                                        <div class="slider-image-wrap">
+                                            <div class="slide1-product-slider"></div>
+                                        </div>
+                                        <div class="slider-text-wrap">
+                                            <div class="slide-content">
+                                                <h2>Charity brings to life again those who are spiritually dead.</h2>
+                                                <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Thomas Aquinas</p>
+                                            </div>
+                                            <a href="https://en.wikipedia.org/wiki/Thomas_Aquinas" target="_blank" class="dark-button w-inline-block">
+                                                <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-slide">
+                        <div class="slide-wrap">
+                            <div class="slider-image-wrap">
+                                <div class="slide-image cc-slider-image-2"></div>
+                            </div>
+                            <div class="slider-text-wrap">
+                                <div class="slide-content">
+                                    <h2><em>Every man must decide whether he will walk in the light of creative altruism or in the darkness of destructive selfishnes.</em></h2>
+                                    <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
+                                </div>
+                                <a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
+                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-arrow w-slider-arrow-left"><img src="~/images/Arrow_1Arrow.png" width="12" alt=""></div>
+                <div class="right-arrow w-slider-arrow-right"><img src="~/images/Arrow-R_1Arrow-R.png" width="12" alt=""></div>
+                <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
+            </div>
+        </div>
     </div>
+
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
             <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Charities" id="search" required="" aria-label="Search">
@@ -20,24 +70,25 @@
 
     <!--- Three column Section -->
     <div class="container">
-            @if (Model != null)
-             {
-                <div class="row">
+        @if (Model != null)
+        {
+            <div class="row">
                 @foreach (var item in Model.Charities)
                 {
                     <div class="col-md-4 my-4" style="text-align:center;">
-                        <img src="~/Images/favicon.png" alt="" class="w-100">
+
+                        <img src="~/Images/charity1.jpg" alt="" class="w-100">
                         <div class="h4 my-4">
                             @item.charity_name
                         </div>
                         <p>
-                            @item.address_line_1, @item.address_line_2
+                            @item.address_line_1 @item.address_line_2
                         </p>
                         <a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>
                     </div>
                 }
-                    </div>
-            }
+            </div>
+        }
     </div>
 
     <br>

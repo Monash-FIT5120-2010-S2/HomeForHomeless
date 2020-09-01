@@ -1,63 +1,97 @@
 ﻿@model HomeForHomeless.Models.freeService
-
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Free Service";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Content/detailstyle.css" rel="stylesheet" />
-<section id="about" class="about section-bg">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h3><span>Free Service Center Details</span></h3>
-        </div>
+<style>
+    #map {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
 
-        <div class="row">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                <img src="~/Images/logo.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                <ul>
-                    <li>
-                        <i class="bx bx-store-alt"></i>
-                        <div>
-                            <h5><strong>Service Center Name</strong></h5>
-                            <p>@Html.DisplayFor(model => model.Name)
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="bx bx-store-alt"></i>
-                        <div>
-                            <h5><strong>Service Website</strong></h5>
-                            <p>@Html.DisplayFor(model => model.Website)</p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="bx bx-store-alt"></i>
-                        <div>
-                            <h5><strong>Service Tram routes</strong></h5>
-                            <p>@Html.DisplayFor(model => model.Tram_routes)</p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="bx bx-store-alt"></i>
-                        <div>
-                            <h5><strong>Service Category</strong></h5>
-                            <p>@Html.DisplayFor(model => model.Category)</p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="bx bx-images"></i>
-                        <div>
-                            <h5><strong>Service Center Address</strong></h5>
-                            <p>@Html.DisplayFor(model => model.Address)</p>
-                        </div>
-                    </li>
-                </ul>
+    #instructions {
+        position: relative;
+        margin: 20px;
+        width: 25%;
+        top: 0;
+        bottom: 20%;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        overflow-y: scroll;
+        font-family: sans-serif;
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+
+    .duration {
+        font-size: 2em;
+    }
+</style>
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+<div class="content cc-deco-block-wrap">
+    <div class="deco-block">
+        <div class="wrap">
+            <div class="page-headline-wrap cc-overlayed-headline">
+                <h1 class="heading">Free Service Details</h1>
+                <p class="big-paragraph">Finding a free service to help. </p>
+                <hr>
             </div>
         </div>
     </div>
-</section>
-    <!-- End details Section -->
+</div>
+<div class="content cc-overlayed-content">
+    <div class="wrap-overlayed">
+        <div class="w-container">
+            <div class="w-row">
+                <div class="w-col w-col-6">
+                    <div class="div-block-2"><img src="~/images/charity2.jpg" loading="lazy" srcset="~/images/charity2.jpg 500w, ~/images/charity2.jpg 600w" sizes="100vw" alt="" class="image-3"></div>
+                </div>
+                <div class="w-col w-col-6">
+                    <div class="office-info">
+                        <h4>Basic Information</h4>
+                        <p class="paragraph">
+                            Charity Name: @Html.DisplayFor(model => model.Name)
+                        </p>
+
+                        <p class="paragraph">
+                            Address: @Html.DisplayFor(model => model.Address)
+                        </p>
+
+                        <p class="paragraph">
+                            Phone Number: @Html.DisplayFor(model => model.Phone)
+                        </p>
+
+                        <p class="paragraph">
+                            Suburb: @Html.DisplayFor(model => model.Suburb)
+                        </p>
+
+                        <h4>Other Information</h4>
+                        <p class="paragraph">
+                            Category: @Html.DisplayFor(model => model.Category)
+                        </p>
+                        <p class="paragraph">
+                            <a href="https://@Model.Website" target="_blank">@Model.Website </a>
+                        </p>
+                        <p class="paragraph">
+                            Tram Routes Recommendation: @Html.DisplayFor(model => model.Tram_routes)
+                        </p>
+                        <a data-w-id="f177c74b-5335-7342-73f2-c52049e34dc9" href="#services_map" class="w-button">Show it on the map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="map_container w-container" id="services_map" style="margin:5%; text-align:center;">
+    <div id='map' style="overflow: visible;"></div>
+    <div id="instructions"></div>
+</div>
+<script src="~/Scripts/mapbox.js"></script>
 
