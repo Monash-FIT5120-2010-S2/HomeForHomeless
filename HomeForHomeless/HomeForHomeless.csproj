@@ -301,6 +301,8 @@
     <Content Include="images\About-Image-1-p-500.jpeg" />
     <Content Include="images\About-Image-1-p-800.jpeg" />
     <Content Include="images\About-Image-1.jpg" />
+    <Content Include="images\Amy.jpg" />
+    <Content Include="images\AmyLeighMercreejpg.jpg" />
     <Content Include="images\Arrow-R_1Arrow-R.png" />
     <Content Include="images\Arrow_1Arrow.png" />
     <Content Include="images\Avatar-38-p-130x130q80.jpeg" />
@@ -335,6 +337,7 @@
     <Content Include="images\Image-2-p-800.jpeg" />
     <Content Include="images\Image-2.jpg" />
     <Content Include="images\Jewel-Icon2x_1Jewel Icon%402x.png" />
+    <Content Include="images\Kofi.jpg" />
     <Content Include="images\Lightbulb-Icon2x_1Lightbulb Icon%402x.png" />
     <Content Include="images\London-Office-p-1080.jpeg" />
     <Content Include="images\London-Office-p-130x130q80.jpeg" />
