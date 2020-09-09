@@ -3,73 +3,59 @@
     ViewBag.Title = "Quiz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Comming soon!</h2>
-<div class="content">
-    <div class="wrap">
-        <div class="page-headline-wrap cc-category-headline">
-            <h1 class="heading-7">Charity</h1>
-            <p class="big-paragraph">A WAY TO HELP YOU</p>
-            <hr>
+<link href="~/Content/quiz.css" rel="stylesheet" />
+<!--<div style="display:none" class="popup" id="popupwindow">
+    <div data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f164" style="display:block;opacity:1" class="div-block-3">-->
+        @*<div class="div-block-4"><img src="images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f166" alt="" class="image-4"></div>*@
+        <!--<h2 class="heading-9">Do you want to attempt the quiz?</h2>
+        <div class="office-info">
+            <p class="paragraph">Describe it .</p>
         </div>
-        <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider">
-            <div class="w-slider-mask">
-                <div class="w-slide">
-                    <div class="w-dyn-list">
-                        <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="w-dyn-item">
-                                <div class="slide-wrap">
-                                    <div class="slider-image-wrap">
-                                        <div class="slide1-product-slider"></div>
-                                    </div>
-                                    <div class="slider-text-wrap">
-                                        <div class="slide-content">
-                                            <h2>Charity brings to life again those who are spiritually dead.</h2>
-                                            <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Thomas Aquinas</p>
-                                        </div>
-                                        @*<a href="https://en.wikipedia.org/wiki/Thomas_Aquinas" target="_blank" class="dark-button w-inline-block">
-                                                <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                            </a>*@
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-slide">
-                    <div class="slide-wrap">
-                        <div class="slider-image-wrap">
-                            <div class="slide-image cc-slider-image-2"></div>
-                        </div>
-                        <div class="slider-text-wrap">
-                            <div class="slide-content">
-                                <h2><em>Every man must decide whether he will walk in the light of creative altruism or in the darkness of destructive selfishnes.</em></h2>
-                                <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
-                            </div>
-                            @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                </a>*@
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="left-arrow w-slider-arrow-left"><img src="~/images/Arrow_1Arrow.png" width="12" alt=""></div>
-            <div class="right-arrow w-slider-arrow-right"><img src="~/images/Arrow-R_1Arrow-R.png" width="12" alt=""></div>
-            <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
+        <div class="div-block-5"><a data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f17a" href="#" class="button-3 w-button">Try It Now</a><a data-w-id="1dde7f6e-3911-43ac-f811-aadd1f0a8759" href="#" class="button-4 w-button">Do It Later</a></div>
+    </div>
+</div>-->
+
+<div class="content cc-deco-block-wrap">
+    <div class="deco-block styleguide-deco-block">
+        <div class="page-headline-wrap cc-overlayed-headline cc-white-headline">
+            <h1>Licencing</h1>
+            <p class="big-paragraph cc-cover-paragraph">All assets in this template can be used for personal and commercial purpose. Please check the licence links for more info.</p>
         </div>
     </div>
 </div>
-<div class="content cc-overlayed-content">
-    <script type="text/javascript">
-        (function (d, s, id, u) {
-            if (d.getElementById(id)) return;
-            var js, sjs = d.getElementsByTagName(s)[0],
-                t = Math.floor(new Date().getTime() / 1000000);
-            js = d.createElement(s); js.id = id; js.async = 1; js.src = u + '?' + t;
-            sjs.parentNode.insertBefore(js, sjs);
-        }(document, 'script', 'os-widget-jssdk', 'https://www.opinionstage.com/assets/loader.js'));
-    </script><div class="os_widget" data-of="amber29" data-path="/amber29/how-well-do-you-know-us-elections" id="os-widget-734192"></div>
+
+<div class="content quiz">
+    <div class="wrap cc-styleguide-wrap">
+        <div class="quziselection">
+            <img src="images/volunteerQuiz.png" width="100" srcset="~/images/volunteerQuiz-p-500.png 500w, ~/images/volunteerQuiz-p-800.png 800w, ~/images/volunteerQuiz.png 967w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+            <div class="quizrole">
+                <h3 class="quizheading">How to be a volunteer</h3>
+                <div class="quizlinks">
+                    <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerLearn","Home")" class="quizlink" id="Volunteer_Quiz">Learn</a>
+                    <div class="divider">|</div>
+                    <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerQuiz","Home")" class="quizlink" id="Volunteer_Quiz">Test</a>
+                </div>
+            </div>
+        </div>
+        <div class="quziselection">
+            <img src="images/volunteerQuiz1.jpg" width="100" srcset="~/images/volunteerQuiz1-p-500.jpeg 500w, ~/images/volunteerQuiz1-p-800.jpeg 800w, ~/images/volunteerQuiz1.jpg 1020w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+            <div class="quizrole">
+                <h3 class="quizheading">How to be a volunteer</h3>
+                <div class="quizlinks">
+                    <a href="#" target="_blank" class="quizlink">Learn</a>
+                    <div class="divider">|</div><a data-w-id="290885d3-8c87-55e5-7477-8b2251c62bc3" href="#" class="quizlink">Test</a>
+                </div>
+            </div>
+        </div>
+        <div class="quziselection">
+            <img src="images/homelessQuiz.jpg" width="100" srcset="~/images/homelessQuiz-p-500.jpeg 500w, ~/images/homelessQuiz.jpg 940w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+            <div class="quizrole">
+                <h3 class="quizheading">How to be a volunteer</h3>
+                <div class="quizlinks">
+                    <a href="#" target="_blank" class="quizlink">Learn</a>
+                    <div class="divider">|</div><a data-w-id="b517a78e-1cfb-136d-43cc-70a747206f23" href="#" class="quizlink">Test</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-
-

@@ -2,12 +2,13 @@
 @model  HomeForHomeless.ViewModel.FreeServiceList
 
 @{
-    ViewBag.Title = "FreeServices"; }
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    ViewBag.Title = "FreeServices";
+    Layout = "~/Views/Shared/_Layout.cshtml";}
 
 @*<h2>FreeServices</h2>*@
-
+<link href="~/Content/detail_pop_up.css" rel="stylesheet" />
 <body>
-
     <div class="content">
         <div class="wrap">
             <div class="page-headline-wrap cc-category-headline">
@@ -23,7 +24,7 @@
                                 <div role="listitem" class="w-dyn-item">
                                     <div class="slide-wrap">
                                         <div class="slider-image-wrap">
-                                            
+
                                             <div class="slide1-product-slider" style="        background-image: url(../images/Amy.jpg);"></div>
                                         </div>
                                         <div class="slider-text-wrap">
@@ -32,8 +33,8 @@
                                                 <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Amy Leigh Mercree</p>
                                             </div>
                                             @*<a href="https://amyleighmercree.com/" target="_blank" class="dark-button w-inline-block">
-                                                <div>Link to <strong><em>Personal Website</em></strong></div>
-                                            </a>*@
+                                                    <div>Link to <strong><em>Personal Website</em></strong></div>
+                                                </a>*@
                                         </div>
                                     </div>
                                 </div>
@@ -51,8 +52,8 @@
                                     <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
                                 </div>
                                 @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                </a>*@
+                                        <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                    </a>*@
                             </div>
                         </div>
                     </div>
@@ -94,11 +95,31 @@
                         <p>
                             @item.Address
                         </p>
-                        <a href="@Url.Action("Details", "freeServices",new { id = @item.service_Id})" class="btn btn-outline-dark btn-md">See More</a>
+                        <input type="button" onclick="freeServicePopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                        @*<a href="@Url.Action("Details", "freeServices",new { id = @item.service_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                        @*<a href='javascript:;' onclick="freeServicePopUp()" class="btn btn-outline-dark btn-md">See More</a>*@
                     </div>
                 }
             </div>
         }
+    </div>
+
+    <div style="opacity:0" class="popup" id="fspopup">
+        <div data-w-id="04556d3a-b909-e374-d452-f5e9fc9bf975" style="display:block;opacity:1" class="div-block-3">
+            <div class="div-block-4">
+            <img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="75537ccf-64c6-c9e6-6693-1d44302236d9" style="cursor:pointer;" alt="" class="image-4" onclick="closepopup()">
+            </div>
+            <h1 class="heading-9" id="name">Free services Center</h1>
+            <div class="office-info">
+                @*<p class="paragraph" id="name">Name:</p>*@
+                <p class="paragraph" id="address">Address:</p>
+                <p class="paragraph" id="suburb">Suburb:</p>
+                <p class="paragraph" id="phoneno">Phone Number</p>
+                <p class="paragraph" id="website"><strong>Website: </strong><a></a></p>
+                <p class="paragraph" id="tram">Tram Routes</p>
+                <p class="paragraph" id="services">Main Services:</p>
+            </div><a data-w-id="86e0d03c-58b5-bb88-42de-35fd8c7efaf0" target="_blank" id="map" href="#" class="button w-button">Find the location</a>
+        </div>
     </div>
 
     <br>
@@ -111,3 +132,33 @@
         of @Model.freeServices.PageCount   @Html.PagedListPager(Model.freeServices, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
     </div>
 </body>
+
+<script>
+    //document.getElementById("").addEventListener("click", showPopUp);
+    function freeServicePopUp(jsonData) {
+        document.getElementById("fspopup").style.opacity = 1;
+        document.getElementById("fspopup").style.display = "block";
+        document.getElementById("fspopup").style.top = 0;
+        document.getElementById("fspopup").style.left = 0;
+        document.getElementById("name").innerHTML = jsonData.Name;
+        document.getElementById("address").innerHTML = "<strong>Address: </strong>" + jsonData.Address;
+        document.getElementById("suburb").innerHTML = "<strong>Suburb: </strong>" + jsonData.Suburb;
+        document.getElementById("phoneno").innerHTML = "<strong>Phone: </strong>" + jsonData.Phone;
+        if (document.getElementById("website").hasChildNodes)
+        { document.getElementById("website").removeChild(document.getElementById("website").lastChild) }
+        var a = document.createElement('a');
+        var linkText = document.createTextNode(jsonData.Website);
+        a.appendChild(linkText);
+        a.title = jsonData.Website;
+        a.href = "http://" + jsonData.Website;
+        document.getElementById("website").appendChild(a);
+        document.getElementById("tram").innerHTML = "<strong>Tram Routes: </strong>" + jsonData.Tram_routes;
+        document.getElementById("services").innerHTML = "<strong>Main Services: </strong>" + jsonData.Category;
+        document.getElementById("map").href = "/freeServices/Details/" + jsonData.service_Id;
+    }
+
+    function closepopup() {
+        document.getElementById("fspopup").style.opacity = 0;
+        document.getElementById("fspopup").style.display = "none";
+    }
+</script>

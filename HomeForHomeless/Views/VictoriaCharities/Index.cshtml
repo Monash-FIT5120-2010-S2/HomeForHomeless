@@ -2,7 +2,9 @@
 @model  HomeForHomeless.ViewModel.CharityList
 
 @{
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     ViewBag.Title = "VictoriaCharity"; }
+<link href="~/Content/detail_pop_up.css" rel="stylesheet" />
 
 <body>
     <!--- Search Results Section-->
@@ -29,8 +31,8 @@
                                                 <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Thomas Aquinas</p>
                                             </div>
                                             @*<a href="https://en.wikipedia.org/wiki/Thomas_Aquinas" target="_blank" class="dark-button w-inline-block">
-                                                <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                            </a>*@
+                                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                                </a>*@
                                         </div>
                                     </div>
                                 </div>
@@ -48,8 +50,8 @@
                                     <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
                                 </div>
                                 @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                </a>*@
+                                        <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                    </a>*@
                             </div>
                         </div>
                     </div>
@@ -84,11 +86,31 @@
                         <p>
                             @item.address_line_1 @item.address_line_2
                         </p>
-                        <a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>
+                        <input type="button" onclick="charityPopup(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                        @*<a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
                     </div>
                 }
             </div>
         }
+    </div>
+
+    <div style="opacity:0" class="popup" id="cpopup">
+        <div data-w-id="04556d3a-b909-e374-d452-f5e9fc9bf975" style="display:block;opacity:1" class="div-block-3">
+            <div class="div-block-4">
+                <img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="75537ccf-64c6-c9e6-6693-1d44302236d9" alt="" class="image-4" onclick="closepopup()" style="cursor:pointer;">
+            </div>
+            <h1 class="heading-9" id="name">Victoria Charity</h1>
+            <div class="office-info">
+                <p class="paragraph" id="address">Address:</p>
+                <p class="paragraph" id="postcode">Postcode:</p>
+                <p class="paragraph" id="Registration_Status">Registration Status: </p>
+                <p class="paragraph" id="main_beneficiaries">Main Beneficiaries:</p>
+                <p class="paragraph" id="main_activity">Main Activity:</p>
+            </div>
+            <input type="button" onclick="closepopup()" value="OK" class="button w-button" />
+
+            @*<a data-w-id="86e0d03c-58b5-bb88-42de-35fd8c7efaf0" target="_blank" id="map" href="#" class="button w-button">Find the location</a>*@
+        </div>
     </div>
 
     <br>
@@ -101,3 +123,30 @@
         of @Model.Charities.PageCount   @Html.PagedListPager(Model.Charities, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
     </div>
 </body>
+
+
+<script>
+    //document.getElementById("").addEventListener("click", showPopUp);
+    function charityPopup(jsonData) {
+        document.getElementById("cpopup").style.opacity = 1;
+        document.getElementById("cpopup").style.display = "block";
+        document.getElementById("cpopup").style.top = 0;
+        document.getElementById("cpopup").style.left = 0;
+        document.getElementById("name").innerHTML = jsonData.charity_name;
+        if (jsonData.address_line_2 != null) {
+            document.getElementById("address").innerHTML = "Address: " + jsonData.address_line_1 + ", " + jsonData.address_line_2 + " " + jsonData.town_city;
+        }
+        else {
+            document.getElementById("address").innerHTML = "Address: " + jsonData.address_line_1 + ", " + jsonData.town_city;
+        }
+        document.getElementById("postcode").innerHTML = "Postcode: " + jsonData.postcode;
+        document.getElementById("Registration_Status").innerHTML = "Registration Status: " + jsonData.Registration_Status;
+        document.getElementById("main_beneficiaries").innerHTML = "Main Beneficiaries: " + jsonData.main_beneficiaries;
+        document.getElementById("main_activity").innerHTML = "Main Activity: " + jsonData.main_activity;
+    }
+
+    function closepopup() {
+        document.getElementById("cpopup").style.opacity = 0;
+        document.getElementById("cpopup").style.display = "none";
+    }
+</script>

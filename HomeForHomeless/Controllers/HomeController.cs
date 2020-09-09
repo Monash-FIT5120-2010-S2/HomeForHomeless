@@ -42,5 +42,13 @@ namespace HomeForHomeless.Controllers
         {
             return View();
         }
+        public ActionResult VolunteerQuiz()
+        {
+            return View();
+        }
+        public ActionResult VolunteerLearn()
+        {
+            return View();
+        }
     }
 }

@@ -2328,6 +2328,7 @@ figcaption {
 }
 
 .paragraph {
+  margin: auto;
   color: rgba(29, 31, 46, 0.7);
   text-align: center;
 }
@@ -2503,6 +2504,7 @@ figcaption {
   margin-right: 0px;
   margin-left: 0px;
   padding-top: 0%;
+  border: 1px solid #fff;
 }
 
 .content.cc-overlayed-content {
@@ -2517,7 +2519,7 @@ figcaption {
   color: #447379;
 }
 
-.content.cc-styleguide-content {
+.content.quiz {
   bottom: 100px;
   margin-bottom: -100px;
 }
@@ -2535,7 +2537,7 @@ figcaption {
 .wrap {
   position: relative;
   display: block;
-  width: 80%;
+  width: 940px;
   margin-top: 0px;
   margin-right: auto;
   margin-left: auto;
@@ -2713,7 +2715,7 @@ figcaption {
 
 .content-wrap {
   display: block;
-  width: 90%;
+  width: 70%;
   margin-right: auto;
   margin-bottom: 2%;
   margin-left: auto;
@@ -3066,7 +3068,7 @@ figcaption {
 .pic-description.cc-product-category {
   display: inline-block;
   margin-bottom: 5px;
-  color: #1d1f2e;
+  color: #719490;
 }
 
 .product-price-category {
@@ -3710,6 +3712,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1440px;
   min-height: 530px;
   min-width: 880px;
   margin-right: auto;
@@ -3736,7 +3739,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 940px;
   margin-right: 0px;
   margin-left: 0px;
   -webkit-box-align: center;
@@ -3894,9 +3897,7 @@ figcaption {
 }
 
 .office-info {
-  margin-top: 10%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 20px auto auto;
   padding-right: 0px;
   padding-left: 0px;
   opacity: 1;
@@ -3939,7 +3940,7 @@ figcaption {
 
 .deco-block.styleguide-deco-block {
   background-color: #060628;
-  background-image: url('../images/Header-Pic.jpg');
+  background-image: url('../images/Image-2.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -3981,7 +3982,7 @@ figcaption {
   position: relative;
   z-index: 1;
   display: block;
-  width: 80%;
+  width: 940px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -4483,7 +4484,7 @@ figcaption {
   background-size: cover;
 }
 
-.licence-item {
+.quziselection {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4495,12 +4496,16 @@ figcaption {
   align-items: center;
 }
 
-.licence-image {
-  width: 170px;
-  background-color: #1d1f2e;
+.quizimage {
+  width: 450px;
+  height: 300px;
+  background-color: transparent;
+  background-image: url('../images/homelessQuiz.jpg');
+  background-position: 0px 0px;
+  background-size: 450px 300px;
 }
 
-.licence-item-info {
+.quizrole {
   padding-left: 32px;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -4552,7 +4557,7 @@ figcaption {
   text-align: center;
 }
 
-.licence-links {
+.quizlinks {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -4563,6 +4568,7 @@ figcaption {
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
+  color: #719490;
 }
 
 .utility-page-form {
@@ -4626,11 +4632,10 @@ figcaption {
 }
 
 .row_columns {
-    position: static;
-    bottom: auto;
-    border: 1px none #000;
-    opacity: 1;
-    margin-bottom: 2%;
+  position: static;
+  bottom: auto;
+  border: 1px none #000;
+  opacity: 1;
 }
 
 .role_column_btn {
@@ -4723,6 +4728,126 @@ figcaption {
 
 .paragraph-2 {
   color: #fff;
+}
+
+.popup {
+  position: fixed;
+  z-index: 4;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  margin-right: 10%;
+  background-color: rgba(0, 0, 0, 0.36);
+}
+
+.div-block-3 {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  padding-top: 0px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.heading-8 {
+  margin-top: -58px;
+}
+
+.heading-9 {
+    margin-top: 8%;
+    color: #719490;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button {
+  position: relative;
+  bottom: auto;
+  display: block;
+  width: 40%;
+  margin: 10px auto auto 30%;
+  text-align:center;
+/*  padding: 10px 0% 10px 10%;
+*/  border-radius: 13px;
+  background-color: #719490;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.div-block-4 {
+  position: absolute;
+  left: auto;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  margin: auto 3% auto auto;
+}
+
+.image-4 {
+  background-color: #719490;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.button-2 {
+  border-radius: 10px;
+  background-color: #719490;
+}
+
+.quizlink {
+  display: inline-block;
+  color: #719490;
+}
+
+.link-2 {
+  color: #719490;
+}
+
+.quizheading {
+  color: #a25f4b;
+  font-weight: 700;
+}
+
+.image-5 {
+  width: 450px;
+  height: 300px;
+}
+
+.button-3 {
+  position: fixed;
+  width: 150px;
+  height: 50px;
+  margin-right: -10%;
+  margin-left: 10%;
+  padding-right: 0%;
+  padding-left: 0%;
+  border-radius: 20px;
+  background-color: #719490;
+  text-align: center;
+}
+
+.button-4 {
+  width: 150px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: 60%;
+  padding-right: 2.5%;
+  padding-bottom: 9px;
+  padding-left: 7.5%;
+  border-radius: 20px;
+  background-color: #719490;
+}
+
+.div-block-5 {
+  margin-top: 20%;
+  padding-right: 0px;
 }
 
 @media screen and (max-width: 991px) {
@@ -5543,8 +5668,21 @@ figcaption {
     min-height: none;
     background-position: 50% 50%;
   }
+  .quizimage {
+    background-image: url('../images/homelessQuiz.jpg');
+    color: transparent;
+  }
   .role_column {
     height: 350px;
+  }
+  .popup {
+    display: none;
+  }
+  .button {
+    margin-left: 30%;
+    padding-right: 0%;
+    padding-left: 0%;
+    text-align: center;
   }
 }
 
@@ -5600,6 +5738,15 @@ figcaption {
   }
   .text-field.cc-textarea {
     margin-bottom: 20px;
+  }
+  .content.quiz {
+    width: 100.000034033276%;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 0%;
+    padding-left: 0px;
+    color: transparent;
   }
   .wrap {
     padding-right: 4%;
@@ -5779,6 +5926,11 @@ figcaption {
   .contact-details-wrap {
     margin-bottom: -30px;
   }
+  .office-info {
+    width: auto;
+    min-width: 22%;
+    font-size: 80%;
+  }
   .deco-block {
     padding-right: 4%;
     padding-left: 4%;
@@ -5856,6 +6008,26 @@ figcaption {
     -ms-flex-align: stretch;
     align-items: stretch;
   }
+  .quziselection {
+    width: 99.611355736168%;
+  }
+  .quizimage {
+    width: 300px;
+    height: 200px;
+  }
+  .popup {
+    display: none;
+  }
+  .div-block-3 {
+    width: 80%;
+    margin-left: auto;
+    padding: 0%;
+  }
+  .button {
+    width: 30%;
+    margin-left: 35%;
+    padding-left: 0%;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -5918,6 +6090,9 @@ figcaption {
   .contact-details-wrap {
     margin-bottom: -30px;
   }
+  .office-info {
+    margin-top: -10%;
+  }
   .deco-block {
     padding-right: 0%;
     padding-left: 0%;
@@ -5940,12 +6115,62 @@ figcaption {
   .blog-home-headline-wrap {
     margin-bottom: 30px;
   }
-  .licence-item {
+  .quziselection {
+    padding-right: 0px;
+    padding-left: 0px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .quizimage {
+    width: 240px;
+    height: 160px;
+  }
+  .quizlinks {
+    margin-left: -50px;
+    text-align: center;
+  }
+  .popup {
+    display: block;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+  }
+  .div-block-3 {
+    height: 60%;
+  }
+  .heading-9 {
+    font-size: 100%;
+  }
+  .button {
+    display: block;
+    width: 60%;
+    margin-top: 7.5%;
+    margin-bottom: auto;
+    margin-left: 20%;
+    padding-right: 0%;
+    padding-bottom: 5%;
+    padding-left: 0%;
+  }
+  .quizheading {
+    margin-left: -25px;
+    padding-left: 0px;
+    text-align: center;
+  }
+  .button-3 {
+    width: 100px;
+    margin-left: 5%;
+  }
+  .button-4 {
+    width: 100px;
+    margin-right: auto;
+    margin-left: 55%;
+    padding-right: 0%;
+    padding-left: 5%;
   }
 }
 

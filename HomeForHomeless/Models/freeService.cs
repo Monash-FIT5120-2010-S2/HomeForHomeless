@@ -11,7 +11,8 @@ namespace HomeForHomeless.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class freeService
     {
         public int service_Id { get; set; }
@@ -22,7 +23,10 @@ namespace HomeForHomeless.Models
         public string Website { get; set; }
         public string Tram_routes { get; set; }
         public string Category { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public Nullable<decimal> Longitude { get; set; }
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public Nullable<decimal> Latitude { get; set; }
     }
 }

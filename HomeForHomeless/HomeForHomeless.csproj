@@ -199,15 +199,20 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\detailstyle.css" />
+    <Content Include="Content\detail_pop_up.css" />
     <Content Include="Content\global.css" />
     <Content Include="Content\h4h.css" />
+    <Content Include="Content\learnMore.css" />
+    <Content Include="Content\LearnMoreNormalize.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\lib\ionicons\css\ionicons.min.css" />
     <Content Include="Content\lib\lightbox\css\lightbox.min.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\quiz.css" />
     <Content Include="Content\selection.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\VolunteerLearnMore.css" />
     <Content Include="displayPage\DisplayVolunteer.html" />
     <Content Include="displayPage\css\home4homless-7cd040.webflow.css" />
     <Content Include="displayPage\css\normalize.css" />
@@ -310,6 +315,7 @@
     <Content Include="images\brooke-lark-230509-unsplash-p-130x130q80.jpeg" />
     <Content Include="images\brooke-lark-230509-unsplash-p-500.jpeg" />
     <Content Include="images\brooke-lark-230509-unsplash.jpg" />
+    <Content Include="images\Cart-Close-Icon_1Cart-Close-Icon.png" />
     <Content Include="images\charity1-p-1080.jpeg" />
     <Content Include="images\charity1-p-500.jpeg" />
     <Content Include="images\charity1.jpg" />
@@ -330,6 +336,8 @@
     <Content Include="images\Header-Pic-p-800.jpeg" />
     <Content Include="images\Header-Pic.jpg" />
     <Content Include="images\Header.jpg" />
+    <Content Include="images\homelessQuiz-p-500.jpeg" />
+    <Content Include="images\homelessQuiz.jpg" />
     <Content Include="images\icons8-file-filled.svg" />
     <Content Include="images\icons8-lock-filled.svg" />
     <Content Include="images\Image-2-p-1080.jpeg" />
@@ -366,9 +374,21 @@
     <Content Include="images\Section-Image-p-800.jpeg" />
     <Content Include="images\Section-Image.jpg" />
     <Content Include="images\Thomas-Aquinas.jpg" />
+    <Content Include="images\volunteerQuiz-p-500.png" />
+    <Content Include="images\volunteerQuiz-p-800.png" />
+    <Content Include="images\volunteerQuiz.png" />
+    <Content Include="images\volunteerQuiz1-p-500.jpeg" />
+    <Content Include="images\volunteerQuiz1-p-800.jpeg" />
+    <Content Include="images\volunteerQuiz1.jpg" />
     <Content Include="images\VolunteerSelectPage-p-1080.jpeg" />
     <Content Include="images\VolunteerSelectPage-p-500.jpeg" />
     <Content Include="images\VolunteerSelectPage.jpg" />
+    <Content Include="images\volunteerStudy-p-1080.jpeg" />
+    <Content Include="images\volunteerStudy.jpg" />
+    <Content Include="images\VolunteerStudy4-p-1080.jpeg" />
+    <Content Include="images\VolunteerStudy4-p-800.jpeg" />
+    <Content Include="images\VolunteerStudy4.jpg" />
+    <Content Include="images\VolunteerStudy5.gif" />
     <Content Include="images\webclip.jpg" />
     <Content Include="Models\HFH_dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -558,6 +578,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="select\selection\.idea\selection.iml" />
     <Content Include="Views\Home\Quiz.cshtml" />
+    <Content Include="Views\Home\VolunteerQuiz.cshtml" />
+    <Content Include="Views\Home\VolunteerLearn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -2,9 +2,12 @@
 @model  HomeForHomeless.ViewModel.VCList
 
 @{
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     ViewBag.Title = "VolunteerCenter";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/detail_pop_up.css" rel="stylesheet" />
+
 
 <body>
     <div class="content">
@@ -14,25 +17,25 @@
                 <p class="big-paragraph">A WAY TO HELP YOU</p>
                 <hr>
             </div>
-            <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider" >
+            <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider">
                 <div class="w-slider-mask">
                     <div class="w-slide">
                         <div class="w-dyn-list">
                             <div role="list" class="w-dyn-items">
                                 <div role="listitem" class="w-dyn-item">
                                     <div class="slide-wrap">
-                                        <div class="slider-image-wrap">                                         
+                                        <div class="slider-image-wrap">
                                             <div class="slide1-product-slider" style="        background-image: url(../images/Kofi.jpg);"></div>
                                         </div>
-                                        
+
                                         <div class="slider-text-wrap">
                                             <div class="slide-content">
                                                 <h2>If our hopes of building a better and safer world are to become more than wishful thinking, we will need the engagement of volunteers more than ever.</h2>
                                                 <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Kofi Annan</p>
                                             </div>
                                             @*<a href="https://g.co/kgs/MSiSPD" target="_blank" class="dark-button w-inline-block">
-                                                <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                            </a>*@
+                                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                                </a>*@
                                         </div>
                                     </div>
                                 </div>
@@ -50,8 +53,8 @@
                                     <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
                                 </div>
                                 @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                </a>*@
+                                        <div>Link to <strong><em>Wikipedia</em></strong></div>
+                                    </a>*@
                             </div>
                         </div>
                     </div>
@@ -86,13 +89,31 @@
                         <p>
                             @item.Address
                         </p>
-                        <a href="@Url.Action("Details", "VolunteerCenters",new { id = @item.VolunteerCenter_Id})" class="btn btn-outline-dark btn-md">See More</a>
+                        @*<a href="@Url.Action("Details", "VolunteerCenters",new { id = @item.VolunteerCenter_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                        <input type="button" onclick="vcPopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+
                     </div>
                 }
             </div>
         }
     </div>
 
+    <div style="opacity:0" class="popup" id="vcPopUp">
+        <div data-w-id="04556d3a-b909-e374-d452-f5e9fc9bf975" style="display:block;opacity:1" class="div-block-3">
+            <div class="div-block-4">
+                <img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="75537ccf-64c6-c9e6-6693-1d44302236d9" alt="" class="image-4" onclick="closepopup()" style="cursor:pointer;">
+            </div>
+            <h1 class="heading-9" id="name">Victoria Charity</h1>
+            <div class="office-info">
+                <p class="paragraph" id="address">Address:</p>
+                <p class="paragraph" id="postcode">Postcode:</p>
+                <p class="paragraph" id="LGA">LGA: </p>
+                <p class="paragraph" id="Region">Region: </p>
+                <p class="paragraph" id="Business_Category">Business Category: </p>
+            </div>
+            <input type="button" onclick="closepopup()" value="OK" class="button w-button" />
+        </div>
+    </div>
 
     <br>
     <br>
@@ -104,3 +125,24 @@
         of @Model.VCs.PageCount   @Html.PagedListPager(Model.VCs, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
     </div>
 </body>
+
+<script>
+    //document.getElementById("").addEventListener("click", showPopUp);
+    function vcPopUp(jsonData) {
+        document.getElementById("vcPopUp").style.opacity = 1;
+        document.getElementById("vcPopUp").style.display = "block";
+        document.getElementById("vcPopUp").style.top = 0;
+        document.getElementById("vcPopUp").style.left = 0;
+        document.getElementById("name").innerHTML = jsonData.Name;
+        document.getElementById("address").innerHTML = "<strong>Address: </strong>" + jsonData.Address + ", " + jsonData.Suburb;
+        document.getElementById("postcode").innerHTML = "<strong>Postcode: </strong>" + jsonData.Postcode;
+        document.getElementById("LGA").innerHTML = "<strong>Local Government Area: </strong>" + jsonData.LGA;
+        document.getElementById("Region").innerHTML = "<strong>Region: </strong>" + jsonData.Region;
+        document.getElementById("Business_Category").innerHTML = "<strong>Business Category: </strong>" + jsonData.Business_Category;
+    }
+
+    function closepopup() {
+        document.getElementById("vcPopUp").style.opacity = 0;
+        document.getElementById("vcPopUp").style.display = "none";
+    }
+</script>

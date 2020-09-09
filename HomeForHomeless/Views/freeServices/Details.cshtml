@@ -10,10 +10,11 @@
         top: 0;
         bottom: 0;
         width: 100%;
+        height:100%;
     }
 
     #instructions {
-        position: relative;
+        position: absolute;
         margin: 20px;
         width: 25%;
         top: 0;
@@ -45,53 +46,40 @@
         </div>
     </div>
 </div>
-<div class="content cc-overlayed-content">
-    <div class="wrap-overlayed">
-        <div class="w-container">
-            <div class="w-row">
-                <div class="w-col w-col-6">
-                    <div class="div-block-2"><img src="~/images/charity2.jpg" loading="lazy" srcset="~/images/charity2.jpg 500w, ~/images/charity2.jpg 600w" sizes="100vw" alt="" class="image-3"></div>
-                </div>
-                <div class="w-col w-col-6">
-                    <div class="office-info">
-                        <h4>Basic Information</h4>
-                        <p class="paragraph">
-                            Charity Name: @Html.DisplayFor(model => model.Name)
-                        </p>
+<div>
+    <dl class="dl-horizontal coordinates" style="display:none;">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
 
-                        <p class="paragraph">
-                            Address: @Html.DisplayFor(model => model.Address)
-                        </p>
+        <dd class="Address">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
 
-                        <p class="paragraph">
-                            Phone Number: @Html.DisplayFor(model => model.Phone)
-                        </p>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
 
-                        <p class="paragraph">
-                            Suburb: @Html.DisplayFor(model => model.Suburb)
-                        </p>
+        <dd class="Longitude">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
 
-                        <h4>Other Information</h4>
-                        <p class="paragraph">
-                            Category: @Html.DisplayFor(model => model.Category)
-                        </p>
-                        <p class="paragraph">
-                            <a href="https://@Model.Website" target="_blank">@Model.Website </a>
-                        </p>
-                        <p class="paragraph">
-                            Tram Routes Recommendation: @Html.DisplayFor(model => model.Tram_routes)
-                        </p>
-                        @*<a data-w-id="f177c74b-5335-7342-73f2-c52049e34dc9" href="#services_map" class="w-button">Show it on the map</a>*@
-                    </div>
-                </div>
-            </div>
-        </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd class="Latitude">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+    </dl>
+</div>
+<div class="wrap" style="margin-top:-100px; margin-bottom:3%;" >
+    <div class="map_container w-container" id="services_map" style="text-align:center;">
+        <div id='map' style="overflow: visible;"></div>
+        <div id="instructions"></div>
     </div>
 </div>
 
-@*<div class="map_container w-container" id="services_map" style="margin:5%; text-align:center;">
-    <div id='map' style="overflow: visible;"></div>
-    <div id="instructions"></div>
-</div>
-<script src="~/Scripts/mapbox.js"></script>*@
+<script src="~/Scripts/mapbox.js"></script>
 
