@@ -17,38 +17,100 @@ namespace HomeForHomeless.Controllers
         private HFH_dbEntities db = new HFH_dbEntities();
 
         // GET: VictoriaCharities
-        public ActionResult Index(int? page, string searchString, string currentFilter)
+        public ActionResult Index(int? page, string searchString, string currentFilter, string Category, string currentCategory)
         {
+            decimal category;
+            if (!String.IsNullOrEmpty(Category))
+            {
+                category = decimal.Parse(Category);
+            }
+            else
+            if (!String.IsNullOrEmpty(currentCategory))
+            {
+                category = decimal.Parse(currentCategory);
+            }
+            else
+            {
+                category = -1;
+            }
             var results = from x in db.VictoriaCharities
                           select x;
             int pagesize = 9, pageindex = 1;
             CharityList temp = new CharityList();
-            if (searchString != null)
+            if (searchString != null || Category != null)
             {
                 page = 1;
             }
             else
             {
+                Category = currentCategory;
                 searchString = currentFilter;
             }
 
             // Showing data based on the search query string and the star rating selected from the dropdown.
 
             ViewData["CurrentFilter"] = searchString;
+            ViewData["currentCategory"] = Category;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString) && category != -1)
             {
-                results = results.Where(s => s.charity_name.Contains(searchString) || s.Registration_Status.Contains(searchString) || s.address_line_1.Contains(searchString) || s.address_line_1.Contains(searchString) || s.town_city.Contains(searchString) || s.state.Contains(searchString) || s.country.Contains(searchString) || s.postcode.ToString().Contains(searchString));
-
+                switch (category)
+                {
+                    case 1:
+                        results = results.Where(s => (s.charity_name.Contains(searchString) || s.town_city.Contains(searchString))
+                && s.charity_size.Equals("Large")
+                );
+                        break;
+                    case 2:
+                        results = results.Where(s => (s.charity_name.Contains(searchString) || s.town_city.Contains(searchString))
+                    && s.charity_size.Equals("Medium")
+                );
+                        break;
+                    case 3:
+                        results = results.Where(s => (s.charity_name.Contains(searchString) || s.town_city.Contains(searchString))
+                    && s.charity_size.Equals("Small")
+                );
+                        break;
+                }
+            }
+            else
+                        if (!String.IsNullOrEmpty(searchString) && category == -1)
+            {
+                results = results.Where(s => s.charity_name.Contains(searchString) || s.town_city.Contains(searchString));
+            }
+            else
+                        if (String.IsNullOrEmpty(searchString) && category != -1)
+            {
+                switch (category)
+                {
+                    case 1:
+                        results = results.Where(s => s.charity_size.Equals("Large"));
+                        break;
+                    case 2:
+                        results = results.Where(s => s.charity_size.Equals("Medium"));
+                        break;
+                    case 3:
+                        results = results.Where(s => s.charity_size.Equals("Small"));
+                        break;
+                }
             }
             else
             {
-                results = results.Where(x => x.state == "VIC");
+                results = from x in db.VictoriaCharities
+                          select x;
             }
 
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.Charities = list.ToPagedList(pageindex, pagesize);
+
+            List<SelectListItem> Category_list = new List<SelectListItem>();
+            Category_list.Add(new SelectListItem() { Text = "All Charity Sizes", Value = "-1" });
+            Category_list.Add(new SelectListItem() { Text = "Large", Value = "1" });
+            Category_list.Add(new SelectListItem() { Text = "Medium", Value = "2" });
+            Category_list.Add(new SelectListItem() { Text = "Small", Value = "3" });
+            this.ViewBag.Category = new SelectList(Category_list, "Value", "Text", currentCategory);
+
             return View(temp);
 
         }

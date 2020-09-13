@@ -1,61 +1,155 @@
 ﻿
 @{
     ViewBag.Title = "Quiz";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    /* Layout = "~/Views/Shared/_Layout.cshtml"*/
+    ;
 }
-<link href="~/Content/quiz.css" rel="stylesheet" />
-<!--<div style="display:none" class="popup" id="popupwindow">
-    <div data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f164" style="display:block;opacity:1" class="div-block-3">-->
-        @*<div class="div-block-4"><img src="images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f166" alt="" class="image-4"></div>*@
-        <!--<h2 class="heading-9">Do you want to attempt the quiz?</h2>
-        <div class="office-info">
-            <p class="paragraph">Describe it .</p>
-        </div>
-        <div class="div-block-5"><a data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f17a" href="#" class="button-3 w-button">Try It Now</a><a data-w-id="1dde7f6e-3911-43ac-f811-aadd1f0a8759" href="#" class="button-4 w-button">Do It Later</a></div>
+<link href="~/Content/newquiznormalize.css" rel="stylesheet" />
+<link href="~/Content/newquiz.css" rel="stylesheet" />
+<link href="~/Content/newquizstyle.css" rel="stylesheet" />
+<div class="section" style="margin-top:0px;">
+    <div class="page-headline-wrap cc-category-headline">
+        <h1 class="heading-7">Quiz</h1>
+        <p class="big-paragraph">This is SOME QUIZS FOR YOU.</p>
+        <hr>
     </div>
-</div>-->
-
-<div class="content cc-deco-block-wrap">
-    <div class="deco-block styleguide-deco-block">
-        <div class="page-headline-wrap cc-overlayed-headline cc-white-headline">
-            <h1>Licencing</h1>
-            <p class="big-paragraph cc-cover-paragraph">All assets in this template can be used for personal and commercial purpose. Please check the licence links for more info.</p>
-        </div>
-    </div>
-</div>
-
-<div class="content quiz">
-    <div class="wrap cc-styleguide-wrap">
-        <div class="quziselection">
-            <img src="images/volunteerQuiz.png" width="100" srcset="~/images/volunteerQuiz-p-500.png 500w, ~/images/volunteerQuiz-p-800.png 800w, ~/images/volunteerQuiz.png 967w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
-            <div class="quizrole">
-                <h3 class="quizheading">How to be a volunteer</h3>
-                <div class="quizlinks">
-                    <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerLearn","Home")" class="quizlink" id="Volunteer_Quiz">Learn</a>
-                    <div class="divider">|</div>
-                    <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerQuiz","Home")" class="quizlink" id="Volunteer_Quiz">Test</a>
-                </div>
+    <div class="w-container">
+        <div data-duration-in="300" data-duration-out="100" class="tabs-wrapper w-tabs">
+            <div class="tab-menu w-tab-menu">
+                <a data-w-tab="Tab 1" class="button tab w-inline-block w-tab-link">
+                    <div>situation in Vic</div>
+</a>
+                <a data-w-tab="Tab 2" class="button tab w-inline-block w-tab-link">
+                    <div>VolunteerTraining</div>
+                  
+                </a>
+                <a data-w-tab="Tab 3" class="button tab-copy w-inline-block w-tab-link w--current">
+                    <div>HOMELESS</div>
+                </a>
             </div>
-        </div>
-        <div class="quziselection">
-            <img src="images/volunteerQuiz1.jpg" width="100" srcset="~/images/volunteerQuiz1-p-500.jpeg 500w, ~/images/volunteerQuiz1-p-800.jpeg 800w, ~/images/volunteerQuiz1.jpg 1020w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
-            <div class="quizrole">
-                <h3 class="quizheading">How to be a volunteer</h3>
-                <div class="quizlinks">
-                    <a href="#" target="_blank" class="quizlink">Learn</a>
-                    <div class="divider">|</div><a data-w-id="290885d3-8c87-55e5-7477-8b2251c62bc3" href="#" class="quizlink">Test</a>
+            <div class="w-tab-content">
+                <div data-w-tab="Tab 1" class="w-tab-pane  w--tab-active">
+                    <div>
+                        <div class="os_widget fullwidth-image" data-of="amber29" data-path="/amber29/how-much-do-you-know-about-the-homeless-situation-in-victoria" id="os-widget-735513"></div>
+                        @*<img src="~/images/loveChangeWorld.jpg" srcset="~/images/loveChangeWorld.jpg 500w, ~/images/loveChangeWorld.jpg 800w" sizes="(max-width: 767px) 96vw, (max-width: 991px) 727.9947509765625px, 940px" alt="" class="fullwidth-image">*@
+                        @*<p>Why Being A Volunteer </p>*@
+                        <h2 class="heading"><a href="@Url.Action("VolunteerLearn","Home")" class="link">Some Hint Here</a></h2>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="quziselection">
-            <img src="images/homelessQuiz.jpg" width="100" srcset="~/images/homelessQuiz-p-500.jpeg 500w, ~/images/homelessQuiz.jpg 940w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
-            <div class="quizrole">
-                <h3 class="quizheading">How to be a volunteer</h3>
-                <div class="quizlinks">
-                    <a href="#" target="_blank" class="quizlink">Learn</a>
-                    <div class="divider">|</div><a data-w-id="b517a78e-1cfb-136d-43cc-70a747206f23" href="#" class="quizlink">Test</a>
+                <div data-w-tab="Tab 2" class="w-tab-pane">
+                    <div>
+                        <div class="os_widget" data-of="amber29" data-path="/amber29/volunteering-faq" id="os-widget-737602"></div>
+                        @*<img src="~/images/volunteerQuiz1.jpg" loading="lazy" srcset="~/images/volunteerQuiz1.jpg 500w, ~/images/volunteerQuiz1.jpg 800w, ~/images/volunteerQuiz1.jpg 1020w" sizes="(max-width: 767px) 96vw, (max-width: 991px) 727.9947509765625px, 940px" alt="">*@
+                      
+                    </div>
+                    <h2 class="heading"><a href="@Url.Action("VolunteerTraining","Home")" class="link">Some Hint Here</a></h2>
+                </div>
+                <div data-w-tab="Tab 3" class="w-tab-pane">
+                    <div>
+                        <div class="os_widget" data-of="amber29" data-path="/amber29/homeless-individual-quiz" id="os-widget-738541"></div>
+                        @*<img src="~/images/volunteerStudy.jpg" loading="lazy" srcset="~/images/volunteerStudy.jpg 1080w, ~/images/volunteerStudy.jpg 1600w" sizes="(max-width: 767px) 96vw, (max-width: 991px) 727.9947509765625px, 940px" alt="">*@
+                        @*<p>explain</p>*@
+                        <h2 class="heading"><a href="@Url.Action("HomelessTraining","Home")" class="link">Some Hint Here</a></h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@Scripts.Render("~/bundles/jquery")
+<script src="~/Scripts/newquiz.js"></script>
+
+<script type="text/javascript">
+    (function (d, s, id, u) {
+        if (d.getElementById(id)) return;
+        var js, sjs = d.getElementsByTagName(s)[0],
+            t = Math.floor(new Date().getTime() / 1000000);
+        js = d.createElement(s); js.id = id; js.async = 1; js.src = u + '?' + t;
+        sjs.parentNode.insertBefore(js, sjs);
+    }(document, 'script', 'os-widget-jssdk', 'https://www.opinionstage.com/assets/loader.js'));
+</script>
+
+<script type="text/javascript">
+    (function (d, s, id, u) {
+        if (d.getElementById(id)) return;
+        var js, sjs = d.getElementsByTagName(s)[0],
+            t = Math.floor(new Date().getTime() / 1000000);
+        js = d.createElement(s); js.id = id; js.async = 1; js.src = u + '?' + t;
+        sjs.parentNode.insertBefore(js, sjs);
+    }(document, 'script', 'os-widget-jssdk', 'https://www.opinionstage.com/assets/loader.js'));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<link href="~/Content/quiz.css" rel="stylesheet" />
+    <div style="display:none" class="popup" id="popupwindow">
+        <div data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f164" style="display:block;opacity:1" class="div-block-3">
+            <div class="div-block-4"><img src="images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f166" alt="" class="image-4"></div>
+            <h2 class="heading-9">Do you want to attempt the quiz?</h2>
+            <div class="office-info">
+                <p class="paragraph">Describe it .</p>
+            </div>
+            <div class="div-block-5"><a data-w-id="b3bc3e2f-2681-ed71-fca9-67576060f17a" href="#" class="button-3 w-button">Try It Now</a><a data-w-id="1dde7f6e-3911-43ac-f811-aadd1f0a8759" href="#" class="button-4 w-button">Do It Later</a></div>
+        </div>
+    </div>
+
+    <div class="content cc-deco-block-wrap">
+        <div class="deco-block styleguide-deco-block">
+            <div class="page-headline-wrap cc-overlayed-headline cc-white-headline">
+                <h1>Licencing</h1>
+                <p class="big-paragraph cc-cover-paragraph">All assets in this template can be used for personal and commercial purpose. Please check the licence links for more info.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content quiz">
+        <div class="wrap cc-styleguide-wrap">
+            <div class="quziselection">
+                <img src="images/volunteerQuiz.png" width="100" srcset="~/images/volunteerQuiz-p-500.png 500w, ~/images/volunteerQuiz-p-800.png 800w, ~/images/volunteerQuiz.png 967w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+                <div class="quizrole">
+                    <h3 class="quizheading">How to be a volunteer</h3>
+                    <div class="quizlinks">
+                        <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerLearn","Home")" class="quizlink" id="Volunteer_Quiz">Learn</a>
+                        <div class="divider">|</div>
+                        <a data-w-id="403efced-297c-41ba-5229-bdb572dd36b0" href="@Url.Action("VolunteerQuiz","Home")" class="quizlink" id="Volunteer_Quiz">Test</a>
+                    </div>
+                </div>
+            </div>
+            <div class="quziselection">
+                <img src="images/volunteerQuiz1.jpg" width="100" srcset="~/images/volunteerQuiz1-p-500.jpeg 500w, ~/images/volunteerQuiz1-p-800.jpeg 800w, ~/images/volunteerQuiz1.jpg 1020w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+                <div class="quizrole">
+                    <h3 class="quizheading">How to be a volunteer</h3>
+                    <div class="quizlinks">
+                        <a href="#" target="_blank" class="quizlink">Learn</a>
+                        <div class="divider">|</div><a data-w-id="290885d3-8c87-55e5-7477-8b2251c62bc3" href="#" class="quizlink">Test</a>
+                    </div>
+                </div>
+            </div>
+            <div class="quziselection">
+                <img src="images/homelessQuiz.jpg" width="100" srcset="~/images/homelessQuiz-p-500.jpeg 500w, ~/images/homelessQuiz.jpg 940w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 299.9884338378906px, 449.9884338378906px" alt="" class="quizimage">
+                <div class="quizrole">
+                    <h3 class="quizheading">How to be a volunteer</h3>
+                    <div class="quizlinks">
+                        <a href="#" target="_blank" class="quizlink">Learn</a>
+                        <div class="divider">|</div><a data-w-id="b517a78e-1cfb-136d-43cc-70a747206f23" href="#" class="quizlink">Test</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@

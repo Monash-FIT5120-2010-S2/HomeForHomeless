@@ -8,6 +8,12 @@
 }
 <link href="~/Content/detail_pop_up.css" rel="stylesheet" />
 
+<style>
+    .volunteer-centers-dropdown {
+        border: 1px solid black;
+        margin-right: 1%;
+    }
+</style>
 
 <body>
     <div class="content">
@@ -68,8 +74,9 @@
 
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Input Postcode/Name" id="search" required="" aria-label="Search">
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">FIND NOW</button>
+            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Input Postcode/Name" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-centers-dropdown btn aqua-gradient btn-rounded btn-sm my-0" })
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border: 1px solid;">FIND NOW</button>
         </form>
     </div>
     @* iterative code to display all the appliance in database in grids of cards.  *@
@@ -80,19 +87,51 @@
             <div class="row">
                 @foreach (var item in Model.VCs)
                 {
-                    <div class="col-md-4 my-4" style="text-align:center;">
+                <div class="col-md-4 my-4" style="text-align:center;">
 
-                        <img src="~/Images/organCenter.jpg" alt="" class="w-100">
-                        <div class="h4 my-4">
-                            @item.Name
-                        </div>
-                        <p>
-                            @item.Address
-                        </p>
-                        @*<a href="@Url.Action("Details", "VolunteerCenters",new { id = @item.VolunteerCenter_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
-                        <input type="button" onclick="vcPopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                    @{
+                        switch (item.VolunteerCenter_Id % 9)
+                        {
+                            case 1:
+                                <img src="~/Images/v1.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 2:
+                                <img src="~/Images/v2.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 3:
+                                <img src="~/Images/v3.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 4:
+                                <img src="~/Images/v4.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 5:
+                                <img src="~/Images/v5.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 6:
+                                <img src="~/Images/v6.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 7:
+                                <img src="~/Images/v7.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 8:
+                                <img src="~/Images/v8.png" alt="VolunteerCenter" class="w-100">
+                                break;
+                            case 0:
+                                <img src="~/Images/v9.png" alt="VolunteerCenter" class="w-100">
+                                break;
 
+                        }
+                    }                        
+                    <div class="h4 my-4">
+                        @item.Name
                     </div>
+                    <p>
+                        @item.Address
+                    </p>
+                    @*<a href="@Url.Action("Details", "VolunteerCenters",new { id = @item.VolunteerCenter_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                    <input type="button" onclick="vcPopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+
+                </div>
                 }
             </div>
         }
@@ -122,7 +161,7 @@
 
     <div class="pagecount" style="margin:auto; text-align:center">
         Page @(Model.VCs.PageCount < Model.VCs.PageNumber ? 0 : Model.VCs.PageNumber)
-        of @Model.VCs.PageCount   @Html.PagedListPager(Model.VCs, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
+        of @Model.VCs.PageCount   @Html.PagedListPager(Model.VCs, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentCategory = ViewBag.currentCategory }))
     </div>
 </body>
 

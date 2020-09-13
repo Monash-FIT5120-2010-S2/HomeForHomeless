@@ -6,6 +6,13 @@
     ViewBag.Title = "VictoriaCharity"; }
 <link href="~/Content/detail_pop_up.css" rel="stylesheet" />
 
+<style>
+    .volunteer-charity-dropdown {
+        border: 1px solid black;
+        margin-right: 1%;
+    }
+</style>
+
 <body>
     <!--- Search Results Section-->
     <div class="content">
@@ -65,8 +72,9 @@
 
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder=" Input Charity Name/Postcode" id="search" required="" aria-label="Search">
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">FIND NOW</button>
+            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder=" Input Charity Name/Postcode" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-charity-dropdown btn aqua-gradient btn-rounded btn-sm my-0" })
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border: 1px solid;">FIND NOW</button>
         </form>
     </div>
 
@@ -77,18 +85,49 @@
             <div class="row">
                 @foreach (var item in Model.Charities)
                 {
-                    <div class="col-md-4 my-4" style="text-align:center;">
+                <div class="col-md-4 my-4" style="text-align:center;">
+                        @{
+                            switch (item.charity_Id % 9)
+                            {
+                                case 1:
+                                    <img src="~/Images/charity1.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 2:
+                                    <img src="~/Images/charity2.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 3:
+                                    <img src="~/Images/charity3.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 4:
+                                    <img src="~/Images/charity4.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 5:
+                                    <img src="~/Images/charity5.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 6:
+                                    <img src="~/Images/charity6.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 7:
+                                    <img src="~/Images/charity7.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 8:
+                                    <img src="~/Images/charity8.png" alt="VictoriaCharity" class="w-100">
+                                    break;
+                                case 0:
+                                    <img src="~/Images/charity9.png" alt="VictoriaCharity" class="w-100">
+                                    break;
 
-                        <img src="~/Images/charity1.jpg" alt="" class="w-100">
-                        <div class="h4 my-4">
-                            @item.charity_name
-                        </div>
-                        <p>
-                            @item.address_line_1 @item.address_line_2
-                        </p>
-                        <input type="button" onclick="charityPopup(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
-                        @*<a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                            }
+                        }
+                    <div class="h4 my-4">
+                        @item.charity_name
                     </div>
+                    <p>
+                        @item.address_line_1 @item.address_line_2
+                    </p>
+                    <input type="button" onclick="charityPopup(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                    @*<a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                </div>
                 }
             </div>
         }
@@ -106,6 +145,7 @@
                 <p class="paragraph" id="Registration_Status">Registration Status: </p>
                 <p class="paragraph" id="main_beneficiaries">Main Beneficiaries:</p>
                 <p class="paragraph" id="main_activity">Main Activity:</p>
+                <p class="paragraph" id="charity_size">Charity Size:</p>
             </div>
             <input type="button" onclick="closepopup()" value="OK" class="button w-button" />
 
@@ -120,7 +160,7 @@
 
     <div class="pagecount" style="margin:auto; text-align:center">
         Page @(Model.Charities.PageCount < Model.Charities.PageNumber ? 0 : Model.Charities.PageNumber)
-        of @Model.Charities.PageCount   @Html.PagedListPager(Model.Charities, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
+        of @Model.Charities.PageCount   @Html.PagedListPager(Model.Charities, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentCategory = ViewBag.currentCategory }))
     </div>
 </body>
 
@@ -143,6 +183,7 @@
         document.getElementById("Registration_Status").innerHTML = "Registration Status: " + jsonData.Registration_Status;
         document.getElementById("main_beneficiaries").innerHTML = "Main Beneficiaries: " + jsonData.main_beneficiaries;
         document.getElementById("main_activity").innerHTML = "Main Activity: " + jsonData.main_activity;
+        document.getElementById("charity_size").innerHTML = "Charity Size: " + jsonData.charity_size;       
     }
 
     function closepopup() {

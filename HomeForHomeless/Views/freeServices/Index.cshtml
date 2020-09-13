@@ -8,6 +8,12 @@
 
 @*<h2>FreeServices</h2>*@
 <link href="~/Content/detail_pop_up.css" rel="stylesheet" />
+<style>
+    .free-service-dropdown {
+        border: 1px solid black;
+        margin-right: 1%;
+    }
+</style>
 <body>
     <div class="content">
         <div class="wrap">
@@ -72,8 +78,9 @@
     </div>
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Services Name/Suburb" id="search" required="" aria-label="Search">
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border:solid">FIND NOW</button>
+            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Services Name/Suburb" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "free-service-dropdown btn aqua-gradient btn-rounded btn-sm my-0"})
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border:1px solid">FIND NOW</button>
         </form>
     </div>
 
@@ -86,19 +93,87 @@
             <div class="row">
                 @foreach (var item in Model.freeServices)
                 {
-                    <div class="col-md-4 my-4" style="text-align:center;">
-                        <img src="~/images/food2.jpg" alt="" class="w-100">
-
-                        <div class="h4 my-4">
-                            @item.Name
-                        </div>
-                        <p>
-                            @item.Address
-                        </p>
-                        <input type="button" onclick="freeServicePopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
-                        @*<a href="@Url.Action("Details", "freeServices",new { id = @item.service_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
-                        @*<a href='javascript:;' onclick="freeServicePopUp()" class="btn btn-outline-dark btn-md">See More</a>*@
+                <div class="col-md-4 my-4" style="text-align:center;">
+                    @{ if (item.Category.Equals("Accommodation") || item.Category.Equals("Clothes and Blankets") || item.Category.Equals("Food")
+                          || item.Category.Equals("Showers / Laundry") || item.Category.Equals("Tenancy Assistance"))
+                        {
+                            switch (item.service_Id % 4)
+                            {
+                                case 1:
+                                    <img src="~/Images/fs-food1.png" alt="BasicNecessities" class="w-100">
+                                    break;
+                                case 2:
+                                    <img src="~/Images/fs-food2.png" alt="BasicNecessities" class="w-100">
+                                    break;
+                                case 3:
+                                    <img src="~/Images/fs-food3.png" alt="BasicNecessities" class="w-100">
+                                    break;
+                                case 0:
+                                    <img src="~/Images/fs-food4.png" alt="BasicNecessities" class="w-100">
+                                    break;
+                            }
+                        }
+                        else
+                                 if (item.Category.Equals("Counselling and Psychiatric Services") || item.Category.Equals("Drug and Alcohol") || item.Category.Equals("Health Services / Pharmacy")
+                         || item.Category.Equals("Hospitals / Emergency") || item.Category.Equals("Needle Exchange"))
+                        {
+                            switch (item.service_Id % 9)
+                            {
+                                case 1:
+                                    <img src="~/Images/fs-health1.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 2:
+                                    <img src="~/Images/fs-health2.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 3:
+                                    <img src="~/Images/fs-health3.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 4:
+                                    <img src="~/Images/fs-health4.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 5:
+                                    <img src="~/Images/fs-health5.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 6:
+                                    <img src="~/Images/fs-health6.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 7:
+                                    <img src="~/Images/fs-health7.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 8:
+                                    <img src="~/Images/fs-health8.png" alt="HealthServices" class="w-100">
+                                    break;
+                                case 0:
+                                    <img src="~/Images/fs-health9.png" alt="HealthServices" class="w-100">
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            switch (item.service_Id % 3)
+                            {
+                                case 1:
+                                    <img src="~/Images/fs-employ1.png" alt="EmployAssistance" class="w-100">
+                                    break;
+                                case 0:
+                                    <img src="~/Images/fs-employ2.png" alt="EmployAssistance" class="w-100">
+                                    break;
+                                case 2:
+                                    <img src="~/Images/charity1.jpg" alt="OtherServices" class="w-100">
+                                    break;
+                            }
+                        }
+                    }
+                    <div class="h4 my-4">
+                        @item.Name
                     </div>
+                    <p>
+                        @item.Address
+                    </p>
+                    <input type="button" onclick="freeServicePopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                    @*<a href="@Url.Action("Details", "freeServices",new { id = @item.service_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
+                    @*<a href='javascript:;' onclick="freeServicePopUp()" class="btn btn-outline-dark btn-md">See More</a>*@
+                </div>
                 }
             </div>
         }
@@ -129,7 +204,7 @@
 
     <div class="pagecount" style="margin:auto; text-align:center">
         Page @(Model.freeServices.PageCount < Model.freeServices.PageNumber ? 0 : Model.freeServices.PageNumber)
-        of @Model.freeServices.PageCount   @Html.PagedListPager(Model.freeServices, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter }))
+        of @Model.freeServices.PageCount   @Html.PagedListPager(Model.freeServices, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentCategory = ViewBag.currentCategory}))
     </div>
 </body>
 

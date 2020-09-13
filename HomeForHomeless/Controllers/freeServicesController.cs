@@ -18,38 +18,114 @@ namespace HomeForHomeless.Controllers
         private HFH_dbEntities db = new HFH_dbEntities();
 
         // GET: freeServices
-        public ActionResult Index(int? page, string searchString, string currentFilter)
+        public ActionResult Index(int? page, string searchString, string currentFilter, string Category, string currentCategory)
         {
+            decimal category;
+            if (!String.IsNullOrEmpty(Category))
+            {
+                category = decimal.Parse(Category);
+            }
+            else
+            if (!String.IsNullOrEmpty(currentCategory))
+            {
+                category = decimal.Parse(currentCategory);
+            }
+            else
+            {
+                category = -1;
+            }
             var results = from x in db.freeServices
                           select x;
             int pagesize = 9, pageindex = 1;
             FreeServiceList temp = new FreeServiceList();
-            if (searchString != null)
+            if (searchString != null || Category != null)
             {
                 page = 1;
             }
             else
             {
+                Category = currentCategory;
                 searchString = currentFilter;
             }
 
             // Showing data based on the search query string and the star rating selected from the dropdown.
 
             ViewData["CurrentFilter"] = searchString;
+            ViewData["currentCategory"] = Category;
 
-            if (!String.IsNullOrEmpty(searchString))
+
+            if (!String.IsNullOrEmpty(searchString) && category != -1)
             {
-                results = results.Where(s => s.Name.Contains(searchString) || s.Phone.Contains(searchString) || s.Address.Contains(searchString) || s.Category.Contains(searchString) || s.Tram_routes.Contains(searchString) || s.Suburb.Contains(searchString) || s.Website.Contains(searchString));
-
+                switch(category)
+                {
+                    case 1: results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && (s.Category.Equals("Accommodation")||s.Category.Equals("Clothes and Blankets") || s.Category.Equals("Food")
+                    || s.Category.Equals("Showers / Laundry") || s.Category.Equals("Tenancy Assistance"))
+                    );
+                        break;
+                    case 2:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && s.Category.Equals("Employment Assistance") 
+                );
+                        break;
+                    case 3:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                   && (s.Category.Equals("Counselling and Psychiatric Services") || s.Category.Equals("Drug and Alcohol") || s.Category.Equals("Health Services / Pharmacy")
+                    || s.Category.Equals("Hospitals / Emergency") || s.Category.Equals("Needle Exchange"))
+                );
+                        break;
+                    case 4:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                && (s.Category.Equals("Helpful phone number") || s.Category.Equals("Legal / Financial Advice") || s.Category.Equals("Travel Assistance"))
+                );
+                        break;
+                }
+            }
+            else
+            if (!String.IsNullOrEmpty(searchString) && category == -1)
+            {
+                results = results.Where(s => s.Name.Contains(searchString) || s.Suburb.Contains(searchString));
+            }
+            else
+            if (String.IsNullOrEmpty(searchString) && category != -1)
+            {
+                switch (category)
+                {
+                    case 1:
+                        results = results.Where(s => s.Category.Equals("Accommodation") || s.Category.Equals("Clothes and Blankets") || s.Category.Equals("Food")
+                    || s.Category.Equals("Showers / Laundry") || s.Category.Equals("Tenancy Assistance"));
+                        break;
+                    case 2:
+                        results = results.Where(s => s.Category.Equals("Employment Assistance"));
+                        break;
+                    case 3:
+                        results = results.Where(s => s.Category.Equals("Counselling and Psychiatric Services") || s.Category.Equals("Drug and Alcohol") || s.Category.Equals("Health Services / Pharmacy")
+                    || s.Category.Equals("Hospitals / Emergency") || s.Category.Equals("Needle Exchange"));
+                        break;
+                    case 4:
+                        results = results.Where(s => s.Category.Equals("Helpful phone number") || s.Category.Equals("Legal / Financial Advice") || s.Category.Equals("Travel Assistance"));
+                        break;
+                }
             }
             else
             {
-                results = results.Where(x => x.Suburb == "Melbourne");
+                results = from x in db.freeServices
+                          select x;
             }
 
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.freeServices = list.ToPagedList(pageindex, pagesize);
+
+            //adding the values in dropdown list
+            List<SelectListItem> Category_list = new List<SelectListItem>();
+            Category_list.Add(new SelectListItem() { Text = "All Categories", Value = "-1" });
+            Category_list.Add(new SelectListItem() { Text = "Basic Necessities", Value = "1" });
+            Category_list.Add(new SelectListItem() { Text = "Employment Assistance", Value = "2" });
+            Category_list.Add(new SelectListItem() { Text = "Health Services", Value = "3" });
+            Category_list.Add(new SelectListItem() { Text = "Other Services", Value = "4" });
+            this.ViewBag.Category = new SelectList(Category_list, "Value", "Text", currentCategory);
+
             return View(temp);
 
         }

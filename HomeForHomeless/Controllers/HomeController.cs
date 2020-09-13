@@ -38,6 +38,35 @@ namespace HomeForHomeless.Controllers
             return View();
         }
 
+        public ActionResult VisualisationDetailsNumberByYear()
+        {
+            return View();
+        }
+        public ActionResult VisualisationGender()
+        {
+            return View();
+        }
+
+        public ActionResult VisualisationDetailsSuburb()
+        {
+            return View();
+        }
+
+        public ActionResult VisualisationDetailsState()
+        {
+            return View();
+        }
+
+        public ActionResult VisualisationDetailsAgeGroup()
+        {
+            return View();
+        }
+
+        public ActionResult VisualisationDetailsOperationGroups()
+        {
+            return View();
+        }
+
         public ActionResult Quiz()
         {
             return View();
@@ -47,6 +76,25 @@ namespace HomeForHomeless.Controllers
             return View();
         }
         public ActionResult VolunteerLearn()
+        {
+            return View();
+        }
+        public ActionResult VolunteerTrainingQuiz()
+        {
+            return View();
+        }
+
+        public ActionResult VolunteerTraining()
+        {
+            return View();
+        }
+        public ActionResult HomelessQuiz()
+        {
+            return View();
+        }
+
+        public ActionResult HomelessTraining()
+
         {
             return View();
         }

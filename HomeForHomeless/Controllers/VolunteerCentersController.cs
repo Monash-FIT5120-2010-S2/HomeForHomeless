@@ -18,39 +18,118 @@ namespace HomeForHomeless.Controllers
         private HFH_dbEntities db = new HFH_dbEntities();
 
         // GET: VolunteerCenters
-        public ActionResult Index(int? page, string searchString, string currentFilter)
+        public ActionResult Index(int? page, string searchString, string currentFilter, string Category, string currentCategory)
         {
+            decimal category;
+            if (!String.IsNullOrEmpty(Category))
+            {
+                category = decimal.Parse(Category);
+            }
+            else
+            if (!String.IsNullOrEmpty(currentCategory))
+            {
+                category = decimal.Parse(currentCategory);
+            }
+            else
+            {
+                category = -1;
+            }
             var results = from x in db.VolunteerCenters
                           select x;
             int pagesize = 9, pageindex = 1;
             VCList temp = new VCList();
-            if (searchString != null)
+            if (searchString != null || Category != null)
             {
-
                 page = 1;
             }
             else
             {
+                Category = currentCategory;
                 searchString = currentFilter;
             }
 
             // Showing data based on the search query string and the star rating selected from the dropdown.
 
             ViewData["CurrentFilter"] = searchString;
+            ViewData["currentCategory"] = Category;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString) && category != -1)
             {
-                results = results.Where(s => s.Name.Contains(searchString) || s.Address.Contains(searchString) || s.Suburb.Contains(searchString) || s.State.Contains(searchString) || s.Business_Category.Contains(searchString) || s.LGA.Contains(searchString) || s.Region.Contains(searchString) || s.Business_Category.Contains(searchString) || s.Postcode.ToString().Contains(searchString));
+                switch (category)
+                {
+                    case 1:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                && s.Business_Category.Contains("Disability")
+                );
+                        break;
+                    case 2:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && s.Business_Category.Contains("Recreation Group")
+                );
+                        break;
+                    case 3:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && s.Business_Category.Contains("State body")
+                );
+                        break;
+                    case 4:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && s.Business_Category.Contains("Volunteering")
+                );
+                        break;
+                    case 5:
+                        results = results.Where(s => (s.Name.Contains(searchString) || s.Suburb.Contains(searchString))
+                    && s.Business_Category.Contains("Walking Club/Group")
+                );
+                        break;
 
+                }
+            }
+            else
+            if (!String.IsNullOrEmpty(searchString) && category == -1)
+            {
+                results = results.Where(s => s.Name.Contains(searchString) || s.Suburb.Contains(searchString));
+            }
+            else
+            if (String.IsNullOrEmpty(searchString) && category != -1)
+            {
+                switch (category)
+                {
+                    case 1:
+                        results = results.Where(s => s.Business_Category.Contains("Disability"));
+                        break;
+                    case 2:
+                        results = results.Where(s => s.Business_Category.Contains("Recreation Group"));
+                        break;
+                    case 3:
+                        results = results.Where(s => s.Business_Category.Contains("State body"));
+                        break;
+                    case 4:
+                        results = results.Where(s => s.Business_Category.Contains("Volunteering"));
+                        break;
+                    case 5:
+                        results = results.Where(s => s.Business_Category.Contains("Walking Club/Group"));
+                        break;
+                }
             }
             else
             {
-                results = results.Where(x => x.State == "VIC");
+                results = from x in db.VolunteerCenters
+                          select x;
             }
 
             pageindex = page.HasValue ? Convert.ToInt32(page) : 1;
             var list = results.ToList();
             temp.VCs = list.ToPagedList(pageindex, pagesize);
+
+            List<SelectListItem> Category_list = new List<SelectListItem>();
+            Category_list.Add(new SelectListItem() { Text = "All Categories", Value = "-1" });
+            Category_list.Add(new SelectListItem() { Text = "Disability", Value = "1" });
+            Category_list.Add(new SelectListItem() { Text = "Recreation Group", Value = "2" });
+            Category_list.Add(new SelectListItem() { Text = "State body", Value = "3" });
+            Category_list.Add(new SelectListItem() { Text = "Volunteering", Value = "4" });
+            Category_list.Add(new SelectListItem() { Text = "Walking Club/Group", Value = "5" });
+            this.ViewBag.Category = new SelectList(Category_list, "Value", "Text", currentCategory);
             return View(temp);
         }
 
