@@ -387,7 +387,6 @@
     <Content Include="images\loveChangeWorld-p-500.jpeg" />
     <Content Include="images\loveChangeWorld.jpg" />
     <Content Include="images\Martin-Luther-King.jpg" />
-    <Content Include="images\Menu-Icon_1Menu-Icon.png" />
     <Content Include="images\organCenter-p-500.jpeg" />
     <Content Include="images\organCenter.jpg" />
     <Content Include="images\pexels-dave-morgan-2540671.jpg" />
@@ -433,7 +432,6 @@
     <Content Include="images\VolunteerStudy4-p-800.jpeg" />
     <Content Include="images\VolunteerStudy4.jpg" />
     <Content Include="images\VolunteerStudy5.gif" />
-    <Content Include="images\webclip.jpg" />
     <Content Include="Models\HFH_dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HFH_dbModel.Context.cs</LastGenOutput>
@@ -635,6 +633,7 @@
     <Content Include="Views\Home\VisualisationDetailsAgeGroup.cshtml" />
     <Content Include="Views\Home\VisualisationDetailsOperationGroups.cshtml" />
     <Content Include="Views\Home\VisualisationGender.cshtml" />
+    <Content Include="Views\Home\covid19.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

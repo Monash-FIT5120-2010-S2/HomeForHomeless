@@ -1,8 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "VisualisationDetailsOperationGroups";
+    ViewBag.Title = "covid19";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@{
+    ViewBag.Title = "VisualisationGender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <link href="~/Content/visualisation_normalize.css" rel="stylesheet" />
 <link href="~/Content/viusalisation.css" rel="stylesheet" />
@@ -12,17 +18,16 @@
         <div class="w-container">
             <div class="visualization">
                 <h2 class="heading-2">
-                   Homeless Accommodation
+                    Homeless Gender
                 </h2>
-                <div class="section-subheading center off-white">
-                    Where do the homeless stay?
-                </div>
+                <div class="section-subheading center off-white">Statistics of gender in Homelessindividuals</div>
             </div>
             <div class="columns-4 w-row">
                 <div class="w-col w-col-8">
                     <div class="div-block-9">
-                        <div class='tableauPlaceholder' id='viz1600013234597' style='position: relative'><noscript><a href=''><img alt=' ' src='https://public.tableau.com/static/images/Ho/Homelessoperationgroups2016/1_1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Homelessoperationgroups2016/1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Ho/Homelessoperationgroups2016/1_1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>
-                        <script type='text/javascript'>var divElement = document.getElementById('viz1600013234597'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                        <div class='tableauPlaceholder' id='viz1600413668780' style='position: relative'><noscript><a href='https:&#47;&#47;www.dhhs.vic.gov.au&#47;victorian-coronavirus-covid-19-data'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Transmissions&#47;dashpage&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Transmissions&#47;dashpage' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Tr&#47;Transmissions&#47;dashpage&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>
+                        <script type='text/javascript'>var divElement = document.getElementById('viz1600413668780'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1120px'; vizElement.style.height = '177px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1120px'; vizElement.style.height = '177px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '167px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+
                     </div>
                 </div>
                 <div class="column-11 w-col w-col-4">
@@ -61,12 +66,9 @@
             <div class="analysis transparent">
                 <h4 class="heading-3">Description:</h4>
                 <p class="text" style="font-size: 18px;">
-                    The term homelessness does not only apply to people who sleep on the streets but to anyone who does not have suitable accommodation that meets the bare minimum of requirements. The graph on the right indicates the amount of people living in supported accommodations, severely crowded dwellings, boarding houses, temporary households and finally improvised dwellings such as on the streets.
+                    While over 70% of homeless individuals sleep on the streets are male, 53% of homeless individuals living in homelessness services are female. Since most homeless individuals who are homeless are male, there is a common misconception that most homeless people are men. The fact is homelessness affects all people from different backgrounds including gender and age.
                 </p>
-                <h4 class="heading-3">  </h4>
             </div>
         </div>
     </div>
 </body>
-
-

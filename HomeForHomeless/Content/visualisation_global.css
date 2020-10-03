@@ -67,19 +67,20 @@ h5 {
 }
 
 h6 {
-  margin-top: 0px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
 }
 
 p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 25px;
-  font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
 }
 
 .button {
@@ -443,25 +444,27 @@ p {
 }
 
 .text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 20px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  box-shadow: 1px 1px 3px 0 transparent;
-  font-family: Karla, sans-serif;
-  color: #192024;
-  font-weight: 400;
-  text-align: justify;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    /*  margin-bottom: 20px;*/
+    margin-bottom: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    box-shadow: 1px 1px 3px 0 transparent;
+    font-family: Karla, sans-serif;
+    color: #192024;
+    font-weight: 400;
+    text-align: justify;
+    padding-bottom: 20px
 }
 
 .form {
@@ -668,8 +671,9 @@ p {
 }
 
 .text-block-4 {
-  padding-bottom: 10px;
-  text-align: left;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-top: 5px;
 }
 
 .text-block-5 {

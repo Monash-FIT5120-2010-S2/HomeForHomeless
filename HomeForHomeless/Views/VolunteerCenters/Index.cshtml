@@ -74,8 +74,8 @@
 
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Input Postcode/Name" id="search" aria-label="Search">
-            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-centers-dropdown btn aqua-gradient btn-rounded btn-sm my-0" })
+            <input type="search" class="btn aqua-gradient btn-rounded btn-sm my-0" style="border:1px solid black; margin-right: 1%; text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Suburb/Name" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-centers-dropdown btn aqua-gradient btn-rounded btn-sm my-0", style = "font-size:inherit;" })
             <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border: 1px solid;">FIND NOW</button>
         </form>
     </div>
@@ -145,7 +145,7 @@
             <h1 class="heading-9" id="name">Victoria Charity</h1>
             <div class="office-info">
                 <p class="paragraph" id="address">Address:</p>
-                <p class="paragraph" id="postcode">Postcode:</p>
+                <p class="paragraph" id="suburb">Suburb:</p>
                 <p class="paragraph" id="LGA">LGA: </p>
                 <p class="paragraph" id="Region">Region: </p>
                 <p class="paragraph" id="Business_Category">Business Category: </p>
@@ -174,7 +174,7 @@
         document.getElementById("vcPopUp").style.left = 0;
         document.getElementById("name").innerHTML = jsonData.Name;
         document.getElementById("address").innerHTML = "<strong>Address: </strong>" + jsonData.Address + ", " + jsonData.Suburb;
-        document.getElementById("postcode").innerHTML = "<strong>Postcode: </strong>" + jsonData.Postcode;
+        document.getElementById("suburb").innerHTML = "<strong>Suburb: </strong>" + jsonData.Suburb;
         document.getElementById("LGA").innerHTML = "<strong>Local Government Area: </strong>" + jsonData.LGA;
         document.getElementById("Region").innerHTML = "<strong>Region: </strong>" + jsonData.Region;
         document.getElementById("Business_Category").innerHTML = "<strong>Business Category: </strong>" + jsonData.Business_Category;

@@ -98,5 +98,10 @@ namespace HomeForHomeless.Controllers
         {
             return View();
         }
+        public ActionResult covid19()
+
+        {
+            return View();
+        }
     }
 }

@@ -78,8 +78,8 @@
     </div>
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Services Name/Suburb" id="search" aria-label="Search">
-            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "free-service-dropdown btn aqua-gradient btn-rounded btn-sm my-0"})
+            <input type="search" class="btn aqua-gradient btn-rounded btn-sm my-0" style="border:1px solid black; margin-right: 1%; text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Suburb/Name" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "free-service-dropdown btn aqua-gradient btn-rounded btn-sm my-0", style = "font-size:inherit;" })
             <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border:1px solid">FIND NOW</button>
         </form>
     </div>

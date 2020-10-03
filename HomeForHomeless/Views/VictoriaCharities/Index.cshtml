@@ -72,8 +72,8 @@
 
     <div class="col-12 text-center mt-5">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="form-control mr-sm-2" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder=" Input Charity Name/Postcode" id="search" aria-label="Search">
-            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-charity-dropdown btn aqua-gradient btn-rounded btn-sm my-0" })
+            <input type="search" class="btn aqua-gradient btn-rounded btn-sm my-0" style="border:1px solid black; margin-right: 1%; text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Name/Suburb" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-charity-dropdown btn aqua-gradient btn-rounded btn-sm my-0", style = "font-size:inherit" })
             <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border: 1px solid;">FIND NOW</button>
         </form>
     </div>
@@ -141,7 +141,7 @@
             <h1 class="heading-9" id="name">Victoria Charity</h1>
             <div class="office-info">
                 <p class="paragraph" id="address">Address:</p>
-                <p class="paragraph" id="postcode">Postcode:</p>
+                <p class="paragraph" id="suburb">Suburb:</p>
                 <p class="paragraph" id="Registration_Status">Registration Status: </p>
                 <p class="paragraph" id="main_beneficiaries">Main Beneficiaries:</p>
                 <p class="paragraph" id="main_activity">Main Activity:</p>
@@ -179,7 +179,7 @@
         else {
             document.getElementById("address").innerHTML = "Address: " + jsonData.address_line_1 + ", " + jsonData.town_city;
         }
-        document.getElementById("postcode").innerHTML = "Postcode: " + jsonData.postcode;
+        document.getElementById("suburb").innerHTML = "Suburb: " + jsonData.town_city;
         document.getElementById("Registration_Status").innerHTML = "Registration Status: " + jsonData.Registration_Status;
         document.getElementById("main_beneficiaries").innerHTML = "Main Beneficiaries: " + jsonData.main_beneficiaries;
         document.getElementById("main_activity").innerHTML = "Main Activity: " + jsonData.main_activity;
