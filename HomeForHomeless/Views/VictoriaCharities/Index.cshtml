@@ -3,156 +3,143 @@
 
 @{
     var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-    ViewBag.Title = "VictoriaCharity"; }
-<link href="~/Content/detail_pop_up.css" rel="stylesheet" />
+    ViewBag.Title = "VictoriaCharity"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";}
+@*<link href="~/Content/detail_pop_up.css" rel="stylesheet" />*@
 
 <style>
-    .volunteer-charity-dropdown {
-        border: 1px solid black;
+    .free-service-dropdown {
+        border: 1px solid rgba(113, 148, 144, 0.5);
         margin-right: 1%;
+    }
+
+    .property-image-wrap {
+        height: 50%;
+    }
+
+    .free-service-dropdown {
+        min-height: 52px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 50px;
+        background-color: #f6f6f6;
+    }
+
+    .filter-wrap {
+        margin-bottom: 48px;
+        padding: 42px;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 8px 80px 55px -50px rgba(0, 0, 0, 0.13);
+    }
+
+    .itemcontent {
+        width: auto;
     }
 </style>
 
 <body>
     <!--- Search Results Section-->
-    <div class="content">
-        <div class="wrap">
-            <div class="page-headline-wrap cc-category-headline">
-                <h1 class="heading-7">Charity</h1>
-                <p class="big-paragraph">A WAY TO HELP YOU</p>
-                <hr>
-            </div>
-            <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider">
-                <div class="w-slider-mask">
-                    <div class="w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="slide-wrap">
-                                        <div class="slider-image-wrap">
-                                            <div class="slide1-product-slider"></div>
-                                        </div>
-                                        <div class="slider-text-wrap">
-                                            <div class="slide-content">
-                                                <h2>Charity brings to life again those who are spiritually dead.</h2>
-                                                <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Thomas Aquinas</p>
-                                            </div>
-                                            @*<a href="https://en.wikipedia.org/wiki/Thomas_Aquinas" target="_blank" class="dark-button w-inline-block">
-                                                    <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                                </a>*@
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide">
-                        <div class="slide-wrap">
-                            <div class="slider-image-wrap">
-                                <div class="slide-image cc-slider-image-2"></div>
-                            </div>
-                            <div class="slider-text-wrap">
-                                <div class="slide-content">
-                                    <h2><em>Every man must decide whether he will walk in the light of creative altruism or in the darkness of destructive selfishnes.</em></h2>
-                                    <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
-                                </div>
-                                @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                        <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                    </a>*@
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-arrow w-slider-arrow-left"><img src="~/images/Arrow_1Arrow.png" width="12" alt=""></div>
-                <div class="right-arrow w-slider-arrow-right"><img src="~/images/Arrow-R_1Arrow-R.png" width="12" alt=""></div>
-                <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-            </div>
-        </div>
+    <div  data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="col-12 text-center" id="firstelement" style="display:none;">
+        <h1 data-w-id="d25fccb8-3525-aa4f-247c-4304203d6ac1" class="covid19sectiontitle-2" style="text-align:center">Charities ‍<span class="brand-span">in Victoria</span></h1>
+        <div class="border-top border-primary w-25 mx-auto my03"></div>
+        <p class="lead">
+            Find the nearest charitable organisation.
+        </p>
     </div>
-
-    <div class="col-12 text-center mt-5">
+    <div class="col-12 text-center mt-3 filter-wrap">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="btn aqua-gradient btn-rounded btn-sm my-0" style="border:1px solid black; margin-right: 1%; text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Name/Suburb" id="search" aria-label="Search">
-            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "volunteer-charity-dropdown btn aqua-gradient btn-rounded btn-sm my-0", style = "font-size:inherit" })
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border: 1px solid;">FIND NOW</button>
+            <input type="search" class="mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" style="text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Suburb/Name" id="search" aria-label="Search">
+            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" })
+            <button class="mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" type="submit">FIND NOW</button>
         </form>
     </div>
 
     <!--- Three column Section -->
-    <div class="container">
+    <div class="container-2 mt-5">
         @if (Model != null)
         {
-            <div class="row">
-                @foreach (var item in Model.Charities)
-                {
-                <div class="col-md-4 my-4" style="text-align:center;">
-                        @{
-                            switch (item.charity_Id % 9)
-                            {
-                                case 1:
-                                    <img src="~/Images/charity1.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 2:
-                                    <img src="~/Images/charity2.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 3:
-                                    <img src="~/Images/charity3.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 4:
-                                    <img src="~/Images/charity4.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 5:
-                                    <img src="~/Images/charity5.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 6:
-                                    <img src="~/Images/charity6.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 7:
-                                    <img src="~/Images/charity7.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 8:
-                                    <img src="~/Images/charity8.png" alt="VictoriaCharity" class="w-100">
-                                    break;
-                                case 0:
-                                    <img src="~/Images/charity9.png" alt="VictoriaCharity" class="w-100">
-                                    break;
+        <div class="w-layout-grid grid-9" style="text-align: center;">
+            @foreach (var item in Model.Charities)
+            {
+            <div class="item-card">
+                @{
+                    switch (item.charity_Id % 9)
+                    {
+                        case 1:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity1.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div>
+                            break;
+                        case 2:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity2.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 3:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity3.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 4:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity4.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 5:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity5.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 6:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity6.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 7:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity7.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 8:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity8.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
+                        case 0:
+                            <div class="property-image-wrap">
+                                <img src="~/Images/charity9.png" loading="lazy" alt="VictoriaCharity" class="itemimage">
+                            </div> break;
 
-                            }
-                        }
-                    <div class="h4 my-4">
-                        @item.charity_name
-                    </div>
-                    <p>
-                        @item.address_line_1 @item.address_line_2
-                    </p>
-                    <input type="button" onclick="charityPopup(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
-                    @*<a href="@Url.Action("Details", "VictoriaCharities",new { id = @item.charity_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
-                </div>
+                    }
                 }
+                <div class="property-content" style="height:120px;">
+                    <h5>@item.charity_name</h5>
+                    <div>@item.address_line_1 @item.address_line_2</div>
+                </div>
+                <input type="button" onclick="charityPopup(@serializer.Serialize(item))" value="Learn More" class="itembutton w-button" style="margin-left:auto;" />
             </div>
+            }
+        </div>
         }
     </div>
-
     <div style="opacity:0" class="popup" id="cpopup">
         <div data-w-id="04556d3a-b909-e374-d452-f5e9fc9bf975" style="display:block;opacity:1" class="div-block-3">
             <div class="div-block-4">
-                <img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="75537ccf-64c6-c9e6-6693-1d44302236d9" alt="" class="image-4" onclick="closepopup()" style="cursor:pointer;">
+                <div class="closebutton"><img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="001e3862-a1b8-0709-b79d-2d95544be38f" alt="" class="image-4" style="cursor:pointer;" onclick="closepopup()"></div>
             </div>
-            <h1 class="heading-9" id="name">Victoria Charity</h1>
-            <div class="office-info">
-                <p class="paragraph" id="address">Address:</p>
-                <p class="paragraph" id="suburb">Suburb:</p>
-                <p class="paragraph" id="Registration_Status">Registration Status: </p>
-                <p class="paragraph" id="main_beneficiaries">Main Beneficiaries:</p>
-                <p class="paragraph" id="main_activity">Main Activity:</p>
-                <p class="paragraph" id="charity_size">Charity Size:</p>
+            <h3 class="heading-9">charity</h3>
+            <div class="iteminformation mt-5">
+                <div class="office-info" style="margin: -20px auto auto">
+                    <div class="itemdetails">
+                        <p class="paragraph itemcontent" id="name">Name:</p>
+                        <p class="paragraph itemcontent" id="address">Address:</p>
+                        <p class="paragraph itemcontent" id="suburb">Suburb:</p>
+                        <p class="paragraph itemcontent" id="Registration_Status">Registration Status: </p>
+                        <p class="paragraph itemcontent" id="main_beneficiaries">Main Beneficiaries:</p>
+                        <p class="paragraph itemcontent" id="main_activity">Main Activity:</p>
+                        <p class="paragraph itemcontent" id="charity_size">Charity Size:</p>
+                    </div>
+                    <input type="button" onclick="closepopup()" value="OK" class="button-8 w-button" style=" padding-top: 10px; padding-right: 10%; padding-bottom: 10px; padding-left: 10%;" />
+                </div>
             </div>
-            <input type="button" onclick="closepopup()" value="OK" class="button w-button" />
-
-            @*<a data-w-id="86e0d03c-58b5-bb88-42de-35fd8c7efaf0" target="_blank" id="map" href="#" class="button w-button">Find the location</a>*@
         </div>
     </div>
-
     <br>
     <br>
 
@@ -172,22 +159,30 @@
         document.getElementById("cpopup").style.display = "block";
         document.getElementById("cpopup").style.top = 0;
         document.getElementById("cpopup").style.left = 0;
-        document.getElementById("name").innerHTML = jsonData.charity_name;
+        document.getElementById("name").innerHTML = "<strong>Name:&nbsp;</strong> " + jsonData.charity_name;
         if (jsonData.address_line_2 != null) {
-            document.getElementById("address").innerHTML = "Address: " + jsonData.address_line_1 + ", " + jsonData.address_line_2 + " " + jsonData.town_city;
+            document.getElementById("address").innerHTML = "<strong>Address:&nbsp;</strong> " + jsonData.address_line_1 + ", " + jsonData.address_line_2 + " " + jsonData.town_city;
         }
         else {
-            document.getElementById("address").innerHTML = "Address: " + jsonData.address_line_1 + ", " + jsonData.town_city;
+            document.getElementById("address").innerHTML = "<strong>Address:&nbsp;</strong>" + jsonData.address_line_1 + ", " + jsonData.town_city;
         }
-        document.getElementById("suburb").innerHTML = "Suburb: " + jsonData.town_city;
-        document.getElementById("Registration_Status").innerHTML = "Registration Status: " + jsonData.Registration_Status;
-        document.getElementById("main_beneficiaries").innerHTML = "Main Beneficiaries: " + jsonData.main_beneficiaries;
-        document.getElementById("main_activity").innerHTML = "Main Activity: " + jsonData.main_activity;
-        document.getElementById("charity_size").innerHTML = "Charity Size: " + jsonData.charity_size;       
+        document.getElementById("suburb").innerHTML = "<strong>Suburb:&nbsp;</strong>" + jsonData.town_city;
+        document.getElementById("Registration_Status").innerHTML = "<strong>Registration Status:&nbsp;</strong>" + jsonData.Registration_Status;
+        document.getElementById("main_beneficiaries").innerHTML = "<strong>Main Beneficiaries:&nbsp;</strong>" + jsonData.main_beneficiaries;
+        document.getElementById("main_activity").innerHTML = "<strong>Main Activity:&nbsp;</strong>" + jsonData.main_activity;
+        document.getElementById("charity_size").innerHTML = "<strong>Charity Size:&nbsp;</strong>" + jsonData.charity_size;
     }
 
     function closepopup() {
         document.getElementById("cpopup").style.opacity = 0;
         document.getElementById("cpopup").style.display = "none";
+    }
+</script>
+<script>
+    var navi = document.getElementById("navigation-bar");
+    window.onload = function myFunction() {
+        document.getElementById("firstelement").style.marginTop = navi.offsetHeight + 10 + "px";
+        document.getElementById("firstelement").style.display = "block";
+
     }
 </script>

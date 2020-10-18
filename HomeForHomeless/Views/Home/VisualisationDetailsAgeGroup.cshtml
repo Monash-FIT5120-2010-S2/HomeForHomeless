@@ -4,66 +4,144 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    window.onload = function ChangeNavigationColor() {
+        // Get all the matching elements into a JavaScript Array
+        var elements = Array.prototype.slice.call(document.querySelectorAll(".navigation-text"));
+        // Loop over each element....
+        elements.forEach(function (el) {
+            el.style.color = "hsl(39deg 18% 81%)";  // Adjust the element's style
+        });
+        var navi = document.getElementById("navigation-bar");
+        navi.style.background = "rgba(105,105,105,0.8)";
+        document.getElementById("navi-logo-img").src = '/images/yellowLogo.png';
+    }
+</script>
 
-<link href="~/Content/visualisation_normalize.css" rel="stylesheet" />
-<link href="~/Content/viusalisation.css" rel="stylesheet" />
-<link href="~/Content/visualisation_global.css" rel="stylesheet" />
-<body class="body">
-    <div class="section accent">
-        <div class="w-container">
-            <div class="visualization">
-                <h2 class="heading-2">
-                    Homeless in Age Group
-                </h2>
-                <div class="section-subheading center off-white">
+<div class="homelessinvicheadersection">
+    <div class="slider-content">
+        <div class="slide-content-wrap">
+            <div class="container-2">
+                <h1 data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdfe" class="headersectiontitle">Homeless<br>‍<span class="brand-span">in Age Group</span></h1>
+                <p data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="headersectionparagraph">
                     Age distribution of Homeless in VIC and how they have changed.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-wrapper">
+        <div data-delay="8000" data-animation="cross" data-autoplay="1" data-easing="ease-out" data-disable-swipe="1" data-duration="800" class="slider w-slider">
+            <div class="w-slider-mask">
+                <div class="slide w-slide">
+                    <div class="homelessinvicheaderimage1"></div>
+                </div>
+                <div class="slide w-slide">
+                    <div class="homelessinvicheaderimage2"></div>
                 </div>
             </div>
-            <div class="columns-4 w-row">
-                <div class="w-col w-col-8">
-                    <div class="div-block-9">
-                        <div class='tableauPlaceholder' id='viz1600010223034' style='position: relative'><noscript><a href=''><img alt=' ' src='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='2020-09-10/Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>
-                        <script type='text/javascript'>var divElement = document.getElementById('viz1600010223034'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
-                        @*<div class='tableauPlaceholder' id='viz1599802675392' style='position: relative;'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2020-09-10&#47;Dashboard5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='2020-09-10&#47;Dashboard5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2020-09-10&#47;Dashboard5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-Hans' /><param name='filter' value='publish=yes' /></object></div>-->*@
+            <div class="left-arrow-2 w-slider-arrow-left">
+                <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="right-arrow-2 w-slider-arrow-right">
+                <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav-2 w-slider-nav w-round"></div>
+        </div>
+    </div>
+</div>
+<div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835a" class="homepagesection">
+    <div class="homepagesectioncontainer">
+        <div data-w-id="617817fe-5c17-6353-2db5-c03b4666e5fa" class="title-wrap-centre">
+            <h1 class="homelessinvictitle">Data<span class="brand-span"> Analysis</span></h1>
+            <p class="homelessinvicdes">Homelessness is a serious matter and is truly preventable.</p>
+        </div>
+        <div class="datavircol w-row">
+            <div data-w-id="ca559486-b5da-d501-4535-fcf8047eeab9" class="datavir w-col w-col-7">
+                <div class="div-block-9">
+                    <div class='tableauPlaceholder' id='viz1600010223034' style='position: relative'><noscript><a href=''><img alt=' ' src='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='2020-09-10/Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>
+                    <script type='text/javascript'>var divElement = document.getElementById('viz1600010223034'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                </div>
+            </div>
+            <div data-w-id="ca559486-b5da-d501-4535-fcf8047eeabc" class="datavircontent w-col w-col-5">
+                <div class="datavirinformation">
+                    <div class="datavirinformationtitle">
+                        <h1 class="dataanalysissubtitle">Related <span class="brand-span">Information</span></h1>
+                    </div>
+                    <div class="datasourceinformation">
+                        <div class="datasourcedetails-2 first"><a href="https://www.abs.gov.au/statistics/people/housing/census-population-and-housing-estimating-homelessness/latest-release" class="feature-2 first-child w-inline-block" target="_blank">@*<img src="https://uploads-ssl.webflow.com/5f735407bd9538fe16dfb71e/5f73540712a2d6bc6d7a18a2_Group%2032.svg" alt="">*@<div class="feature-text">Source</div><div class="informationdetails">Source Estimation, 2016</div></a></div>
+                        <div class="datasourcedetails-2"><div href="#" class="feature-2 w-inline-block"><img src="https://uploads-ssl.webflow.com/5f60b911b6bb14d505c2da50/5f73542e2bf5886d4aeeda83_Group%2032.svg" alt=""><div class="feature-text">Region</div><div class="informationdetails">Vic, Australia</div></div></div>
+                        <div class="datasourcedetails-2"><div href="#" class="feature-2 w-inline-block"><img src="https://uploads-ssl.webflow.com/5f60b911b6bb14d505c2da50/5f73542e2bf5886d4aeeda83_Group%2032.svg" alt=""><div class="feature-text">Time period</div><div class="informationdetails">2006 - 2016</div></div></div>
+                        <div class="datasourcedetails-2"><div href="#" class="feature-2 w-inline-block"><img src="https://uploads-ssl.webflow.com/5f60b911b6bb14d505c2da50/5f73542e2bf5886d4aeeda83_Group%2032.svg" alt=""><div class="feature-text">Release Date</div><div class="informationdetails">August, 2020</div></div></div>
+                        <div class="datasourcedetails-2"><div href="#" class="feature-2 w-inline-block"><img src="https://uploads-ssl.webflow.com/5f60b911b6bb14d505c2da50/5f73542e2bf5886d4aeeda83_Group%2032.svg" alt=""><div class="feature-text">Copy Right</div><div class="informationdetails">Yes</div></div></div>
                     </div>
                 </div>
-                <div class="column-11 w-col w-col-4">
-                    <div class="div-block-11">
-                        <div class="analysis transparent">Relate Information<br>‍</div>
-                        <div><br>‍</div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="329e98ea-786c-b346-0348-66812cf2283c" class="homepagesectioncontainer">
+        <div class="analysis transparent">
+            <h4 class="heading-11">Description:</h4>
+            <p class="homelessinvicdescribep">The figure above shows the population of homeless individuals across 9 different age groups and how these numbers have changed from 2006 until 2016. One of the most significant changes is the increase of homelessness in age 25-34 from 2011 – 2016, an increase of 31.6 percent.</p>
+        </div>
+    </div>
+</div>
+
+@*<body class="body">
+        <div class="section accent">
+            <div class="w-container">
+                <div class="visualization">
+                    <h2 class="heading-2">
+                        Homeless in Age Group
+                    </h2>
+                    <div class="section-subheading center off-white">
+                        Age distribution of Homeless in VIC and how they have changed.
                     </div>
-                    <div class="sourceinformation">
-                        <div class="sourcedate">
-                            <div class="text-block-4">Source</div>
-                            
-                            <div class="text-block-5">
-                            <a href="https://www.abs.gov.au/AUSSTATS/abs&#64.nsf/DetailsPage/2049.02016?OpenDocument">
-                                Estimating homelessness, 2016</a>
+                </div>
+                <div class="columns-4 w-row">
+                    <div class="w-col w-col-8">
+                        <div class="div-block-9">
+                            <div class='tableauPlaceholder' id='viz1600010223034' style='position: relative'><noscript><a href=''><img alt=' ' src='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='2020-09-10/Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/20/2020-09-10/Sheet1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>
+                            <script type='text/javascript'>var divElement = document.getElementById('viz1600010223034'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+                        </div>
+                    </div>
+                    <div class="column-11 w-col w-col-4">
+                        <div class="div-block-11">
+                            <div class="analysis transparent">Relate Information<br>‍</div>
+                            <div><br>‍</div>
+                        </div>
+                        <div class="sourceinformation">
+                            <div class="sourcedate">
+                                <div class="text-block-4">Source</div>
+
+                                <div class="text-block-5">
+                                    <a href="https://www.abs.gov.au/AUSSTATS/abs&#64.nsf/DetailsPage/2049.02016?OpenDocument">
+                                        Estimating homelessness, 2016
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sourceregion">
+                                <div class="text-block-4">Region</div>
+                                <div class="text-block-5">Vic, Austranlia</div>
+                            </div>
+                            <div class="sourceperoid">
+                                <div class="text-block-4">Suvery Time period</div>
+                                <div class="text-block-5"> 2001 - 2016</div>
+                            </div>
+                            <div class="sourcedate">
+                                <div class="text-block-4">Release Date</div>
+                                <div class="text-block-5"> Auguest 2020</div>
                             </div>
                         </div>
-                        <div class="sourceregion">
-                            <div class="text-block-4">Region</div>
-                            <div class="text-block-5">Vic, Austranlia</div>
-                        </div>
-                        <div class="sourceperoid">
-                            <div class="text-block-4">Suvery Time period</div>
-                            <div class="text-block-5"> 2001 - 2016</div>
-                        </div>
-                        <div class="sourcedate">
-                            <div class="text-block-4">Release Date</div>
-                            <div class="text-block-5"> Auguest 2020</div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section accent">
-        <div class="w-container">
-            <div class="analysis transparent">
-                <h4 class="heading-3">Description:</h4>
-                <p class="text" style="font-size: 18px;">The figure above shows the population of homeless individuals across 9 different age groups and how these numbers have changed from 2006 until 2016. One of the most significant changes is the increase of homelessness in age 25-34 from 2011 – 2016, an increase of 31.6 percent.</p>
+        <div class="section accent">
+            <div class="w-container">
+                <div class="analysis transparent">
+                    <h4 class="heading-3">Description:</h4>
+                    <p class="text" style="font-size: 18px;">The figure above shows the population of homeless individuals across 9 different age groups and how these numbers have changed from 2006 until 2016. One of the most significant changes is the increase of homelessness in age 25-34 from 2011 – 2016, an increase of 31.6 percent.</p>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>*@

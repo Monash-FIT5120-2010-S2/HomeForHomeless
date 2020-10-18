@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "Donating";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 id="text1" style="display:none;"></h2>
+
+<script>
+    window.onload = function changeNavigationBarBkgrdColor() {
+        // Get all the matching elements into a JavaScript Array
+        var elements = Array.prototype.slice.call(document.querySelectorAll(".navigation-text"));
+
+        // Loop over each element....
+        elements.forEach(function (el) {
+            el.style.color = "#dcd6ca";  // Adjust the element's style
+        });
+        document.getElementById("navigation-bar").style.background_color = "hsl(0deg 0% 20%)";
+        document.getElementById("navigation-bar").style.opacity = "0.7";
+        document.getElementById("navi-logo-img").src = '/images/yellowLogo.png';
+    }
+</script>
+<div class="donatingheadersection">
+    <div class="slider-content">
+        <div class="slide-content-wrap">
+            <div class="container-2">
+                <h1 data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdfe" class="headersectiontitle">Donating<br>‍<span class="brand-span">Goods</span></h1>
+                <p data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="headersectionparagraph">Donations are not limited to financial support. Food, water, clothing, and medical supplies are all essential items for the homeless community. </p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-wrapper">
+        <div data-delay="8000" data-animation="cross" data-autoplay="1" data-easing="ease-out" data-disable-swipe="1" data-duration="800" class="slider w-slider">
+            <div class="w-slider-mask">
+                <div class="slide w-slide">
+                    <div class="donatingslideimage1"></div>
+                </div>
+                <div class="slide w-slide">
+                    <div class="donatingslideimage2"></div>
+                </div>
+            </div>
+            <div class="left-arrow-2 w-slider-arrow-left">
+                <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="right-arrow-2 w-slider-arrow-right">
+                <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav-2 w-slider-nav w-round"></div>
+        </div>
+    </div>
+</div>
+<div data-w-id="555c49c3-9244-fd1c-0cdf-26c99f613cb7" class="donatingpagesection">
+    <div data-w-id="555c49c3-9244-fd1c-0cdf-26c99f613cb8" class="homepagesectioncontainer">
+        <div class="donatingsectioncol w-row">
+            <div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835d" class="donatingsectioncontent w-col w-col-6">
+                <div class="donatingcontentblock">
+                    <h1 class="donatingsectiontitle">Donating <br>‍<span class="homepagesectiontitlemaincolor">Goods</span></h1>
+                    <p class="donatingsectionparagraph"> There are many material aids that can help a homeless individual in a very tangible way. Clothing, camping equipment and medical supplies all provide immediate relief to those in need. By donating goods, you are helping thousands of people, reduce landfill whilst creating more space in your own closet. </p>
+                </div>
+            </div>
+            <div data-w-id="00e39f18-964c-9533-8b86-2e9c98488369" class="donatingsectionimage w-col w-col-6">
+                <div class="thirdcolorimage"><img src="~/images/support.jpg" height="500" srcset="~/images/support-p-500.jpeg 500w, ~/images/support.jpg 722w" sizes="(max-width: 767px) 100vw, (max-width: 1439px) 47vw, 600px" alt="" class="~/images-7"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835a" class="donatingpagesection">
+    <div class="homepagesectioncontainer">
+        <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div class="tab-menu-round w-tab-menu">
+                <a data-w-tab="Full Menu" class="tab-link-round w-inline-block w-tab-link">
+                    <div class="text-block-84">All Goods</div>
+                </a>
+                <a data-w-tab="Full Menu 2" class="tab-link-round w-inline-block w-tab-link">
+                    <div class="text-block-84">Goods Donations</div>
+                </a>
+                <a data-w-tab="Full Menu 3" class="tab-link-round w-inline-block w-tab-link w--current">
+                    <div class="text-block-83">Food Donations</div>
+                </a>
+                <a data-w-tab="Full Menu 4" class="tab-link-round w-inline-block w-tab-link">
+                    <div class="text-block-85">Donate Funds</div>
+                </a>
+            </div>
+            <div class="w-tab-content">
+                <div data-w-tab="Full Menu" class="donateall w-tab-pane">
+                    <div class="w-layout-grid grid-5">
+                        <div id="w-node-3ce76ccf7bdf-94a1abab" class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/army-png.png" loading="lazy" srcset="~/images/army-png-p-500.png 500w, ~/images/army-png-p-800.png 800w, ~/images/army-png.png 860w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">The Salvation Army Australia</h6>
+                                </div>
+                                <p class="donatedescribe">The Salvation Army provides hope, opportunity and freedom to all Australians.</p><a href="https://www.salvationarmy.org.au/donate/clothing-and-goods/" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/FareShareSiteIcon.gif" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Fare Share</h6>
+                                </div>
+                                <p class="donatedescribe">SecondBite exists to provide access to fresh, nutritious food for people in need across Australia.</p><a href="https://www.fareshare.net.au/donate-bulk-food-melbourne/" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/givit.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">GIVIT</h6>
+                                </div>
+                                <p class="donatedescribe">GIVIT is an ograntion help generous people - like you - give the smart way.</p><a href="https://www.givit.org.au/donate-items" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/YouthProjects-01.png" loading="lazy" srcset="~/images/YouthProjects-01-p-500.png 500w, ~/images/YouthProjects-01-p-800.png 800w, ~/images/YouthProjects-01.png 1000w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">YouthProjects</h6>
+                                </div>
+                                <p class="donatedescribe">Support disadvantage people and homelessness.</p><a href="https://www.youthprojects.org.au/give-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/logo-foodbank.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Food Bank</h6>
+                                </div>
+                                <p class="donatedescribe">We fight hunger by sourcing food for people in need.</p><a href="https://www.foodbank.org.au/support-us/make-a-donation/donate-food/?state=vic" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/secondbite.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Second Bite</h6>
+                                </div>
+                                <p class="donatedescribe">Providing access to fresh, nutritious food for people in need across Australia.</p><a href="https://www.secondbite.org/donate-food" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/redcross.jpg" loading="lazy" srcset="~/images/redcross-p-500.jpeg 500w, ~/images/redcross.jpg 512w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Red Cross</h6>
+                                </div>
+                                <p class="donatedescribe">Accepting donations of great quality preloved items to help to suppor people around the country.</p><a href="https://www.redcross.org.au/support-us/red-cross-shops/donate-clothing-and-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/vinnies.png" loading="lazy" alt="" class="image-2"></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Vinnies</h6>
+                                </div>
+                                <p class="donatedescribe">Vinnies shops need your items to help fund Vinnies programs across the country that support Australians.</p><a href="https://www.vinnies.org.au/page/Donate/Donate_Goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-w-tab="Full Menu 2" class="donateclothes w-tab-pane">
+                    <div class="w-layout-grid grid-5">
+                        <div id="w-node-3ce76ccf7c39-94a1abab" class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/army-png.png" loading="lazy" srcset="~/images/army-png-p-500.png 500w, ~/images/army-png-p-800.png 800w, ~/images/army-png.png 860w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">The Salvation Army Australia</h6>
+                                </div>
+                                <p class="donatedescribe">The Salvation Army provides hope, opportunity and freedom to all Australians.</p><a href="http://www.salvationarmy.org.au" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/vinnies.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">vinnies</h6>
+                                </div>
+                                <p class="donatedescribe">Vinnies shops need your items to help fund Vinnies programs across the country that support Australians.</p><a href="https://www.vinnies.org.au/page/Donate/Donate_Goods/" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/redcross.jpg" loading="lazy" srcset="~/images/redcross-p-500.jpeg 500w, ~/images/redcross.jpg 512w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Red Cross</h6>
+                                </div>
+                                <p class="donatedescribe">Accepting donations of great quality preloved items to help to suppor people around the country.</p><a href="https://www.redcross.org.au/support-us/red-cross-shops/donate-clothing-and-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/YouthProjects-01.png" loading="lazy" srcset="~/images/YouthProjects-01-p-500.png 500w, ~/images/YouthProjects-01-p-800.png 800w, ~/images/YouthProjects-01.png 1000w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Youth Projects</h6>
+                                </div>
+                                <p class="donatedescribe">Your donations will be used to support people experiencing disadvantage and homelessness..</p><a href="https://www.youthprojects.org.au/give-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-w-tab="Full Menu 3" class="donatefood w-tab-pane w--tab-active">
+                    <div class="w-layout-grid grid-5">
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/secondbite.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Second Bite</h6>
+                                </div>
+                                <p class="donatedescribe">Providing access to fresh, nutritious food for people in need across Australia.</p><a href="https://www.secondbite.org/donate-food" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/logo-foodbank.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Food Bank</h6>
+                                </div>
+                                <p class="donatedescribe">We fight hunger by sourcing food for people in need.</p><a href="https://www.foodbank.org.au/support-us/make-a-donation/donate-food/?state=vic" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/FareShareSiteIcon.gif" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Fare Share</h6>
+                                </div>
+                                <p class="donatedescribe">FareShare’s origins began in Melbourne in 2000 when a pastry chef was inspired to take action on food waste and hunger.</p><a href="https://www.fareshare.net.au/donate-bulk-food-melbourne/" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/YouthProjects-01.png" loading="lazy" srcset="~/images/YouthProjects-01-p-500.png 500w, ~/images/YouthProjects-01-p-800.png 800w, ~/images/YouthProjects-01.png 1000w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">YouthProjects</h6>
+                                </div>
+                                <p class="donatedescribe">Your donations will be used to support people experiencing disadvantage and homelessness.</p><a href="https://www.youthprojects.org.au/give-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-w-tab="Full Menu 4" class="donatemoney w-tab-pane">
+                    <div class="w-layout-grid grid-5">
+                        <div id="w-node-3ce76ccf7c95-94a1abab" class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/army-png.png" loading="lazy" srcset="~/images/army-png-p-500.png 500w, ~/images/army-png-p-800.png 800w, ~/images/army-png.png 860w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">The Salvation Army Australia</h6>
+                                </div>
+                                <p class="donatedescribe">The Salvation Army provides hope, opportunity and freedom to all Australians.</p><a href="http://www.salvationarmy.org.au" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/givit.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">GIVIT</h6>
+                                </div>
+                                <p class="donatedescribe">GIVIT is an ograntion help generous people - like you - give the smart way.</p><a href="https://www.givit.org.au/donate-items" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/vinnies.png" loading="lazy" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Vinnies</h6>
+                                </div>
+                                <p class="donatedescribe">Vinnies shops need your items to help fund Vinnies programs across the country that support Australians.</p><a href="https://www.vinnies.org.au/page/Donate/Donate_Goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                        <div class="donatecard">
+                            <div class="donateimagesquare"><img src="~/images/redcross.jpg" loading="lazy" srcset="~/images/redcross-p-500.jpeg 500w, ~/images/redcross.jpg 512w" sizes="(max-width: 767px) 92vw, 120px" alt=""></div>
+                            <div class="donatecardcontent">
+                                <div class="donatetitlewrap">
+                                    <h6 class="heading-5">Red Cross</h6>
+                                </div>
+                                <p class="donatedescribe">Accepting donations of great quality preloved items to help to suppor people around the country.</p><a href="https://www.redcross.org.au/support-us/red-cross-shops/donate-clothing-and-goods" target="_blank" class="donategoodsbutton w-button">Donate Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

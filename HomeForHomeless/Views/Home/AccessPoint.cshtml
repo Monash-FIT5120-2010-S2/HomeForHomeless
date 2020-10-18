@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "AccessPoint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    window.onload = function changeNavigationBarBkgrdColor() {
+        // Get all the matching elements into a JavaScript Array
+        var elements = Array.prototype.slice.call(document.querySelectorAll(".navigation-text"));
+
+        // Loop over each element....
+        elements.forEach(function (el) {
+            el.style.color = "#dcd6ca";  // Adjust the element's style
+        });
+        document.getElementById("navigation-bar").style.background_color = "hsl(0deg 0% 20%)";
+        document.getElementById("navigation-bar").style.opacity = "0.7";
+        document.getElementById("navi-logo-img").src = '/images/yellowLogo.png';
+    }
+</script>
+
+
+<link href="~/Content/iteration3-v3.webflow.css" rel="stylesheet" />
+
+<div class="provdesupportheadersection">
+    <div class="slider-content">
+        <div class="slide-content-wrap">
+            <div class="container-2">
+                <h1 data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdfe" class="headersectiontitle">Access<br>‍<span class="brand-span">Point</span></h1>
+                <p data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="headersectionparagraph">If you, or someone you know, is homeless or at risk of being homeless, please contact your nearest Homelessness Access Point listed below.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-wrapper">
+        <div data-delay="8000" data-animation="cross" data-autoplay="1" data-easing="ease-out" data-disable-swipe="1" data-duration="800" class="slider w-slider">
+            <div class="w-slider-mask">
+                <div class="slide w-slide">
+                    <div class="slide-image"></div>
+                </div>
+                <div class="slide w-slide">
+                    <div class="slide-image slide-image-two"></div>
+                </div>
+            </div>
+            <div class="left-arrow-2 w-slider-arrow-left">
+                <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="right-arrow-2 w-slider-arrow-right">
+                <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav-2 w-slider-nav w-round"></div>
+        </div>
+    </div>
+</div>
+
+<div id="Header" data-w-id="9845ce14-8390-dc56-39b8-224492f37794" class="accesspointsection">
+    <div class="accesspointsectioncontainer">
+        <div class="acceesspointcol w-row">
+            <div class="accesspointcontent w-col w-col-6">
+                <div class="accesspointimagecontainer"><img src="~/images/Ap1.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 1439px) 45vw, 580px" srcset="~/images/Ap1-p-500.jpeg 500w, ~/images/Ap1-p-800.jpeg 800w, ~/images/Ap1-p-1080.jpeg 1080w, ~/images/Ap1.jpg 1280w" alt=""></div>
+            </div>
+            <div class="accesspointimage w-col w-col-6">
+                <div class="accesspointdes">
+                    <h1 class="accesspointtitle">Victoria <span class="homepagehomelessinvictitlemaincolortest">Housing Access Points.</span></h1>
+                    <p class="accesspointpar">In Victoria, there are several organizations including the Australian Government that provides emergency housing to those that are in need. These facilities are called Victorian Housing Access Points.</p>
+                    <div class="accesspointlink">
+                        <div class="trust-shield"><img src="https://uploads-ssl.webflow.com/5f86e83bbe670822c5da9009/5f86e83b7f5496d170f7138a_013-protection.svg" alt="" class="shield-logo"><a href="https://www.vincentcare.org.au/our-services/find-victorian-housing-access-point/" class="d-nav-link" target="_blank">Victorian Housing Access Points</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="whatIsHousingAP" data-w-id="9845ce14-8390-dc56-39b8-224492f37794" class="accesspointsection">
+    <div class="accesspointsectioncontainer">
+        <div id="start" class="accesspointsection">
+            <h1  data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="findaccesspointtitle">What are housing access points?</h1>
+            <div class="accesspointimagesection w-row">
+                <div data-w-id="48909f99-ee11-7d4d-a183-2967c10c2018" class="hapcontent w-col w-col-6">
+                    <div class="accesspointdes">
+                        <p class="accesspointpar">In Victoria, there are several organizations including the Australian Government that provides emergency housing to those that are in need. These facilities are called Victorian Housing Access Points. Access Points are strategically located across Victoria so that it can have the most coverage across the state. Individuals experiencing chronic homelessness and rough sleeping are encourages to drop-in at any of these facilities to find a safe place to rest. These access points are not just a temporary place for one to stay but also provide a full range of available assistance to help clients develop living skills and opportunities for social connection.</p>
+                    </div>
+                </div>
+                <div @*data-w-id="48909f99-ee11-7d4d-a183-2967c10c2021" style="opacity:0"*@ class="findaccesspointcontent w-col w-col-6"><img src="~/images/Ap2.jpg" loading="lazy" sizes="(max-width: 479px) 373.41143798828125px, (max-width: 767px) 82vw, (max-width: 991px) 39vw, (max-width: 1439px) 40vw, 514.0103759765625px" srcset="~/images/Ap2-p-500.jpeg 500w, ~/images/Ap2-p-800.jpeg 800w, ~/images/Ap2-p-1080.jpeg 1080w, ~/images/Ap2.jpg 1280w" alt="" class="image-50"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="FindAccessPoint" data-w-id="9845ce14-8390-dc56-39b8-224492f37794" @*data-w-id="08ca8fe7-b861-b322-1ca7-51356ca0fcf1"*@ class="accesspointsection">
+    <div class="accesspointsectioncontainer">
+        <h1 data-w-id="48909f99-ee11-7d4d-a183-2967c10c1fc7" @*style="opacity:0"*@ class="findaccesspointtitle">Find a Victorian Housing Access Point</h1>
+        <div class="accesspointimagesection w-row">
+            <div class="accesspointimgcol w-col w-col-5">
+                <div class="accesspointfindvhapimage"><img src="~/images/confused-illustration.svg" width="500" @*style="opacity:0"*@ data-w-id="48909f99-ee11-7d4d-a183-2967c10c1fc5" alt="" class="image-48 main-image"></div>
+            </div>
+            <div class="findaccesspointcontent w-col w-col-7">
+                <div data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04"  class="feature-item w-row">
+                    <div class="column-15 w-col w-col-2"><img src="~/images/013-protection.svg" alt=""></div>
+                    <div class="w-col w-col-10">
+                        <div class="text-block-5">Who can apply it</div>
+                        <div class="spacing-10"></div>
+                        <p class="accesspointpar">Anyone who is of 16 years of age or older and are experiencing homelessness or sleeping rough are eligible to apply for access point service. Users do not need to make a prior arrangements or require any form of referral to visit a service centre for a face to face discussion. Service centres also have over the phone interpreters available for live translation.</p>
+                    </div>
+                </div>
+                <div data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="feature-item w-row">
+                    <div class="column-16 w-col w-col-2"><img src="~/images/013-protection.svg" alt=""></div>
+                    <div class="w-col w-col-10">
+                        <div class="text-block-5">How to apply it?</div>
+                        <p class="accesspointpar">Users are encouraging to call or drop-by an access point and will be introduced to an initial assessment and planning staff. These staff members are trained to listen to any issues or circumstances that users are going through, or worry may eventually occur. According to the user’s situation, they will provide them with possible housing and support ideas and options that may resolve their immediate issues.</p>
+                    </div>
+                </div>
+                <div data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="feature-item w-row">
+                    <div class="column-17 w-col w-col-2"><img src="~/images/013-protection.svg" alt=""></div>
+                    <div class="w-col w-col-10">
+                        <div class="text-block-5">Contanct them</div>
+                        <p class="accesspointpar">To find your Access Point, call 1800 825 955 or<a style="color:#3f3736" href="https://www.hopest.org/homelessness-access-points"> apply Now.</a></p>
+                    </div>
+                </div>
+                <!--<a data-w-id="9a4842ec-a742-cafe-c0a7-72e2bf035804" href="https://www.hopest.org/homelessness-access-points" target="_blank" class="link-8 w-inline-block">
+                    <a class="text-l8">Apply Now</a>-->
+                    @*<div class="arrow-tail-l8"></div><img src="https://uploads-ssl.webflow.com/5e216d6f0f868d1c6188f732/5e3bd0ea4db709696715af5f_arrow_black_2.svg" width="9" alt="" class="arrow-head-l8">*@
+                <!--</a>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/iteration3.js"></script>

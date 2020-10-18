@@ -1,65 +1,279 @@
-﻿
-<div class="header-section">
-    <div class="header-image">
-        <div class="header-content">
-            <div class="header-text">
-                <div class="header-headline-wrap">
-                    <div class="label cc-cover-label w-inline-block">Best place get support</div>
-                    <div class="header-headline">Home For Homeless</div>
-                    <p class="big-paragraph cc-cover-paragraph">We are always here</p>
-                </div>
-                <a href="@Url.Action("Visualisation","Home")" class="white-button w-inline-block">
-                    <div>Explore more</div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<div class="content">
-    <div class="wrap">
-        <div class="content-wrap">
-            <h2 class="heading-5">Homeless in VIC.</h2>
-            <p class="paragraph">From the most updated datasets in 2020, we can visualise the current state of homelessness in each state of Victoria. Volunteers may use this information to consider where they want to begin their mission to end homelessness..</p>
-            @*<a href="@Url.Action("Visualisation","Home")" class="underlined-link cc-homepage-link">Learn More</a>*@
-        </div>
-        @*<div data-w-id="318555f1-bc08-58be-44dc-478b751daf62" style="opacity:0" class="subheadline-wrap cc-separate-subheadline">
-            <div class="subheadline-deco-line"></div>
-            <div class="label cc-subheadline w-inline-block">Your role</div>
-            <div class="subheadline-deco-line"></div>
-        </div>*@
-        <div class="row_columns w-row">
-            <div class="role_column w-col w-col-6">
-                <div class="role_img_container"><img src="~/images/pexels-dave-morgan-2540671.jpg" loading="lazy" alt="" class="role_image"></div><a href="@Url.Action("Index","freeServices")" class="role_column_btn w-button">Seek Assistance</a>
-            </div>
-            <div class="role_column w-col w-col-6">
-                <div class="role_img_container"><img src="~/images/volunteer-RedCross.jpg" loading="lazy" alt="" class="role_image"></div><a href="@Url.Action("VolunteerOrgan","Home")" class="role_column_btn w-button">Provide support</a>
-            </div>
-        </div>
-        <div data-w-id="930bee1e-b546-1ced-cb67-54d7abd532af" style="opacity:0" class="subheadline-wrap cc-separate-subheadline">
-            <div class="subheadline-deco-line"></div>
-            <div class="label cc-subheadline w-inline-block">a QUIZ ABOUT BEING A VOLUNTEER</div>
-            <div class="subheadline-deco-line"></div>
-        </div>
-        <div data-w-id="2d2e750c-a2a7-4379-71a8-dcf95aece3c2" class="w-layout-grid magazine-section">
-            <div id="w-node-dcf95aece3c3-40c7b209" class="magazine-content-wrap">
-                <div class="magazine-text-wrap">
-                    <div class="label cc-footer-section-headline w-inline-block">Quiz Offer</div>
-                    <h2 class="magazine-headline">Testing your knowledge</h2>
-                    <p id="w-node-dcf95aece3c7-40c7b209" class="paragraph">Are you ready?</p>
+<link href="~/Content/iteration3-v3.webflow.css" rel="stylesheet" />
+<div id="firstElement"></div>
+<div id="Header" data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdf9" class="homepageheader">
+    <div class="homepagesectioncontainer">
+        <div class="homepagecol w-row">
+            <div class="homepageheadercontent w-col w-col-6">
+                <div class="homepageheaderdes">
+                    <h1 data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdfe" class="homepageheadertitle">Home For Homeless,<br>‍<span class="homepagehomelessinvictitlemaincolortest">Best Place to get support.</span></h1>
+                    <p data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="sectiondescribep">Create a home for all the homelessness is the urgent needs in Victoria at present. From the most updated datasets in 2020, we can visualise the current state of homelessness in each state of Victoria. Volunteers may use this information to consider where they want to begin their mission to end homelessness.</p>
+                    <div data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe08" class="homepageheaderproduct">
+                        <img src="~/images/projectLogoUpdate.png" width="232" alt="" class="productlogo">
+                        @*<div class="homepageheaderlogotext"><span class="brand-span-copy">Link Volunteer to homeless people</span> <br></div>*@
+                    </div>
                 </div>
-                <a href="@Url.Action("Quiz","Home")" class="dark-button w-inline-block">
-                    <div>Start QUIZ</div>
-                </a>
             </div>
-            <div id="w-node-478714fd826f-40c7b209" class="magazine-images-wrap">
-                <div class="magazine-image"></div>
-                <div class="magazine-small-images">
-                    <div class="magazine-small-image-1"></div>
-                    <div class="magazine-small-image-2"></div>
-                </div>
+            <div class="homepageheaderpartimage w-col w-col-6">
+                <div class="homepageheaderimagecontainer">
+                <img src="~/images/HomepageHeader.jpg" alt="Food Delivery" srcset="~/images/HomepageHeader.jpg 500w, ~/images/HomepageHeader.jpg 722w" sizes="(max-width: 479px) 142.9427032470703px, (max-width: 767px) 44vw, (max-width: 1439px) 45vw, 580px" data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe11" class="homepageheaderimage"></div>
             </div>
         </div>
     </div>
 </div>
-<div class="parallax-section"></div>
+<div id="FindAccessPoint" data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047160" class="accesspointsection">
+    <div class="accesspointsectioncontainer">
+        <div class="section-fina">
+            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047160" class="desc-wrapp finan ex">
+                <div class="linea"></div>
+                <h1 class="homepagevideotitle">Homelessness<br>‍<strong class="homepagesectiontitlemaincolor">in Victoria</strong></h1>
+                @*<p class="paragraph-desc fina ex">The Victorian Government’s $45.5 million Homelessness and Rough Sleeping Action Plan (HRSAP) is a long-term strategy to reduce the incidence and impacts of homelessness in Victoria.</p>*@
+            </div>
+            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047160" class="video-wrapper">
+                <div style="padding-top:56.17021276595745%" id="w-node-467d3296205c-a237a3ea" class="w-embed-youtubevideo"><iframe src="https://www.youtube.com/embed/f2ZJ7Vj-iIY?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-w-id="5cb99e38-0c27-61c2-b04a-6916b1607e72" class="homepagesection">
+    <div class="homepagesectioncontainer">
+        @*<div class="homepagevideocol w-row">
+            <div data-w-id="5cb99e38-0c27-61c2-b04a-6916b1607e75" class="homepagevideoimage w-col w-col-6">
+                <div class="homepagevideocontent"><img src="~/images/HomelessInVicHomePage.jpg" width="450" srcset="~/images/support-p-500.jpeg 500w, ~/images/HomelessInVicHomePage.jpg 722w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 47vw, 450px" alt="" class="imagediv"></div>
+            </div>
+            <div class="homepageconetnt w-col w-col-6">
+                <div class="homepageconetnt" style="text-align:center;">
+                    <h1 data-w-id="5cb99e38-0c27-61c2-b04a-6916b1607e7b" class="homepagevideotitle">HOMELESSNESS IN<span class="homepagesectiontitlemaincolor"> VICTORIA</span></h1>
+
+                    <div data-w-id="71a219e1-9109-eae8-ba1e-0403ce520e9f" class="homepagevideosourceinformation">
+                        <div class="datasourcedetails first">
+                            <a href="#" class="videoinformation first-child w-inline-block">
+                                <img src="https://uploads-ssl.webflow.com/5f735407bd9538fe16dfb71e/5f73540712a2d6bc6d7a18a2_Group%2032.svg" alt="">
+                                <div class="informationtitle" style="width:auto;">Source: Youtube</div>
+                            </a>
+                        </div>
+                        <div class="datasourcedetails">
+                            <a href="#" class="videoinformation w-inline-block">
+                                <img src="~/images/Group-32.svg" alt="">
+                                <div class="informationtitle" style="width:auto;">Copyright: Yes</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <div data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" style="opacity:0" class="homepagesectioncontainer">
+            <div class="homepagehomelessinviccontent">
+                <div class="column">
+                    <div class="service-card">
+                        <img src="~/images/Group-30.svg" width="75" alt="" class="service-icon">
+                        <div class="card-content-wrap">
+                            <h3 class="heading-3">Homeless rights</h3>
+                            <p class="sectionpargraph">Living without a home does not mean you live without rights. Homeless individuals are still protected by law and are entitled to their rights. </p>
+                        </div><a href="@Url.Action("QAs","Home")" class="homepagevicsectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="service-card">
+                        <img src="~/images/Group-30.svg" width="75" alt="" class="service-icon">
+                        <div class="card-content-wrap">
+                            <h3 class="heading-3">Homeless In Vic</h3>
+                            <p class="sectionpargraph">Many misconceptions have been formulated regarding the homeless community. It is paramount for the public to understand these misconceptions and truly understand the reality and difficulty of the homeless community.</p>
+                        </div><a href="@Url.Action("QAs","Home")" class="homepagevicsectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="service-card">
+                        <img src="~/images/Group-30.svg" width="75" alt="" class="service-icon">
+                        <div class="card-content-wrap">
+                            <h3 class="heading-3">How to be a volunteer</h3>
+                            <p class="sectionpargraph">Volunteers should understand their rights and what is expected from them before committing to their role. Volunteers can provide unlimited benefits to the homeless community.</p>
+                        </div><a href="@Url.Action("QAs","Home")" class="homepagevicsectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="9845ce14-8390-dc56-39b8-224492f37794" class="homepagesection">
+        <div class="homepagesectioncontainer">
+            <div data-w-id="d25fccb8-3525-aa4f-247c-4304203d6ac1" class="covid19homepagecontent">
+                <div class="cta-content-wrap">
+                    <h1 class="covid19sectiontitle-2"> COVID-19 <span class="brand-span"><em>In VIC</em></span></h1>
+                    <p class="homepagesectionparagraph">COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.The homeless community is highly susceptible to COVID-19 due to the need of living in highly populated areas and the lack of proper hygiene equipment. Home for Homeless provides self-care advice and recommendations to prepare the homeless community in protecting themselves from the epidemic.</p>
+                    <div class="button-wrapper"><a href="@Url.Action("covid19","Home")" data-w-id="b057da89-fc9c-40ca-0473-bbc6c525a775" class="homepagequizbutton w-button">Learn More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Header" data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047160" class="homepagehomelessinvic">
+        <div class="homepagesectioncontainer">
+            <div class="homepagehomelessinvictitlecontent">
+                <h1 class="homepagehomelessinvictitle">HOMELESSNESS IN<span class="homepagehomelessinvictitlemaincolortest"> VICTORIA</span></h1>
+            </div>
+            <div class="homepagesectioncol w-row">
+                <div class="homepagehomelessinviccontent w-col w-col-6 w-col-medium-6">
+                    <div class="homepagehomelessinviccontentblock">
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c04716b" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Homeless individuals per age group</h1>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">Age distribution of homelessness in Victoria and how they have changed.<br></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047178" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Growth of homelessness population</h1>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">How the numbers of homelessness have changed over the years in Victoria.<br></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047185" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Homeless population by suburb</h1>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">The situation of homelessness spread across Victoria.<br></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c047192" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Homeless accommodation information</h1>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">The information about where do the homeless individual stay in Victoria.<br></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c04719f" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Homeless population by different states in Victoria</h1>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">The information about homelessness pulation in different states of Victoria.<br></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepagehomelessinvicdetails">
+                            <div data-w-id="fe3c78b2-1b40-5298-e007-9c3f5c0471ac" class="homepagehomelessinvicdetailstitleblock">
+                                <h1 class="homepagehomelessinvicdetailstitle">Homeless population gender in Victoria</h1>
+                                <div class="arrow-div-wrapper">
+                                    <div class="arrow-div">
+                                        <div class="arrow-left-2 white-back"></div>
+                                        <div class="arrow-right-2 white-back"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height:0PX" class="homepagehomelessinvicdetailstitledesblock">
+                                <div class="homepagehomelessinvicdetailstitledestext">
+                                    <div class="homepagehomelessinvicdetailstitledes">Statistics of gender in homeless individuals in Victoria<br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="homepagehomelessinvicpartimage w-col w-col-6 w-col-medium-6">
+                    <div class="secondcolorimage">
+                        <img src="~/images/HomelessInVicHomePage.jpg" height="500" srcset="~/images/HomelessInVicHomePage.jpg 500w, ~/images/HomelessInVicHomePage.jpg 722w" sizes="(max-width: 479px) 450.4166564941406px, (max-width: 767px) 94vw, (max-width: 1439px) 47vw, 600px" data-w-id="056646df-faec-42fd-f6e3-4c0be7610260" alt="" class="image-7">
+                        @*<img src="HomelessInVicHomePage.jpg" loading="lazy" width="800" alt="" class="image-6">*@
+                        <a href="@Url.Action("Visualisation","Home")" class="homepagevicsectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835a" class="homepagesection">
+        <div class="homepagesectioncontainer">
+            <div class="homepagesectioncol w-row">
+                <div class="homepagesectionimage w-col w-col-6">
+                    <div class="maincolorimage"><img src="~/images/support.jpg" height="500" srcset="~/images/support-p-500.jpeg 500w, ~/images/support.jpg 722w" sizes="(max-width: 479px) 450.4166564941406px, (max-width: 767px) 94vw, (max-width: 1439px) 47vw, 600px" data-w-id="056646df-faec-42fd-f6e3-4c0be7610260" alt="" class="image-7"></div>
+                </div>
+                <div class="homepagesectioncontent w-col w-col-6">
+                    <div class="homepagesectioncontentblock">
+                        <h1 class="homepagesectiontitle">Provide <br>‍<span class="homepagesectiontitlemaincolor">Support</span></h1>
+                        <p class="homepagesectionparagraph">If you want to give back to society and help make Victoria a better place. There are numerous ways to provide services or goods for the homeless community.<br></p><a href="@Url.Action("ProvideSuport","Home")" class="homesectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="555c49c3-9244-fd1c-0cdf-26c99f613cb7" class="homepagesection">
+        <div data-w-id="555c49c3-9244-fd1c-0cdf-26c99f613cb8" class="homepagesectioncontainer">
+            <div class="homepagesectioncol w-row">
+                <div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835d" class="homepagesectioncontent w-col w-col-6">
+                    <div class="homepagesectioncontentblock">
+                        <h1 class="homepagesectiontitle">Seek <br>‍<span class="homepagesectiontitlemaincolor">Assistance</span></h1>
+                        <p class="homepagesectionparagraph">Seek the assistance from government, charitable organization or to simply find someone to vent your concerns.</p><a href="@Url.Action("SeekAssistance","Home")" class="homesectionbutton w-button">Learn More</a>
+                    </div>
+                </div>
+                <div data-w-id="00e39f18-964c-9533-8b86-2e9c98488369" class="homepagesectionimage w-col w-col-6">
+                    <div class="thirdcolorimage"><img src="~/images/HomepageSeekAssistance.jpg" height="500" srcset="~/images/HomepageSeekAssistance.jpg 500w, ~/images/HomepageSeekAssistance.jpg 722w" sizes="(max-width: 479px) 450.4166564941406px, (max-width: 767px) 94vw, (max-width: 1439px) 47vw, 600px" data-w-id="00e39f18-964c-9533-8b86-2e9c9848836b" alt="" class="image-7"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    @*<div data-w-id="83f4bdb5-ed76-edbb-5756-fd83ff4a4535" class="homepagesection">
+            <div class="homepagesectioncontainer">
+                <div>
+                    <h1 class="heading-6">Quizze<span class="maincolortext">s</span></h1>
+                    <p class="homepageparagraph">This section contains quizzes designed to help increase public awareness and make aware what is expected from volunteers.</p>
+                </div>
+                <div data-duration-in="300" data-duration-out="100" data-w-id="83f4bdb5-ed76-edbb-5756-fd83ff4a453e" class="w-tabs">
+                    <div class="tab-menu-round w-tab-menu">
+                        <a data-w-tab="Burgers" class="tab-link-round w-inline-block w-tab-link w--current">
+                            <div class="text-block-89">VicHomeless</div>
+                        </a>
+                        <a data-w-tab="Sides" class="tab-link-round w-inline-block w-tab-link">
+                            <div class="text-block-87">VolunteerQAS</div>
+                        </a>
+                        <a data-w-tab="Drinks" class="tab-link-round w-inline-block w-tab-link">
+                            <div class="text-block-87">HomelessQAS</div>
+                        </a>
+                    </div>
+                    <div class="w-tab-content">
+                        <div data-w-tab="Burgers" class="tab-pane-wrap w-tab-pane w--tab-active">
+                            <div class="os_widget" data-of="jackeylove" data-path="/jackeylove/how-much-do-you-know-about-the-homeless-situation-in-victoria" id="os-widget-740524"></div>
+                        </div>
+                        <div data-w-tab="Sides" class="w-tab-pane">
+                            <div class="os_widget" data-of="jimmy-ho" data-path="/jimmy-ho/what-is-the-minimum-age-for-volunteering" id="os-widget-740529"></div>
+                        </div>
+                        <div data-w-tab="Drinks" class="w-tab-pane">
+                            <div class="os_widget" data-of="zonghao-dennis" data-path="/zonghao-dennis/homeless-individual-quiz" id="os-widget-740523"></div>
+                         </div>
+                        <div class="button-wrapper"><a href="@Url.Action("QAs","Home")" data-w-id="83f4bdb5-ed76-edbb-5756-fd83ff4a4551" class="homepagequizbutton w-button">Some Hints Here</a></div>
+                    </div>
+                </div>
+                 </div>
+        </div>*@
+</div>
+    @*<script type="text/javascript">
+        (function (d, s, id, u) {
+            if (d.getElementById(id)) return;
+            var js, sjs = d.getElementsByTagName(s)[0],
+                t = Math.floor(new Date().getTime() / 1000000);
+            js = d.createElement(s); js.id = id; js.async = 1; js.src = u + '?' + t;
+            sjs.parentNode.insertBefore(js, sjs);
+        }(document, 'script', 'os-widget-jssdk', 'https://www.opinionstage.com/assets/loader.js'));
+    </script>*@
+    <script>
+        var navi = document.getElementById("navigation-bar");
+        window.onload = function myFunction() {
+            document.getElementById("firstElement").style.marginTop = navi.offsetHeight + "px";
+            console.log = navi.offsetHeight;
+        }
+    </script>

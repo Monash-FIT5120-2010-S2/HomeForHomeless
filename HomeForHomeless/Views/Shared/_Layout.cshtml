@@ -1,76 +1,162 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html data-wf-page="5f761f4ce23bbc8b94306657" data-wf-site="5f761f4b58e33fd457e5cccd">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - HomeForHomeless</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="~/Content/normalize.css" rel="stylesheet" />
-    <link href="~/Content/global.css" rel="stylesheet" />
-    <link href="~/Content/h4h.css" rel="stylesheet" />
+    <link href="~/Content/webflow.css" rel="stylesheet" />
+    <link href="~/Content/jia-qi-s-wondrous-project.webflow.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">WebFont.load({ google: { families: ["Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Karla:regular,italic,700,700italic:latin,latin-ext"] } });</script>
+    <script type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic"] } });</script>
     <script type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
     <link href="~/images/browserTabs.png" />
     <link href="~/images/browserTabs.png" rel="apple-touch-icon">
 </head>
 <body>
-    <div id="w-node-c269a2f6ad2b-a2f6ad2b" class="menu">
-        <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease-out" role="banner" class="wrap cc-menu w-nav">
-            <a href="@Url.Action("Index","Home")" aria-current="page" class="brand w-nav-brand w--current">
-                <div class="text-block-2">HomeForHomeless</div>
-            </a>
-            <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="@Url.Action("Index","Home")" aria-current="page" class="menu-item-wrap w-inline-block w--current">
-                    <div class="menu-item">Home</div>
-                    <div class="menu-item-deco-line"></div>
+    <div class="navigation" id="navigation-bar">
+        <div class="container-navigation">
+            <div class="navigation-block-left"><a href="@Url.Action("Index","Home")" class="logo-link w-inline-block"><img src="~/images/greenLogo.png" id="navi-logo-img" alt="" class="logo-image"></a></div>
+            <div class="navigation-link-wrap">
+                <a href="@Url.Action("Index","Home")" aria-current="page" class="navigation-link w-inline-block w--current">
+                    <div class="navigation-text">Home</div>
                 </a>
-                <a href="@Url.Action("VolunteerOrgan","Home")" class="menu-item-wrap w-inline-block">
-                    <div class="menu-item">Volunteer</div>
-                    <div class="menu-item-deco-line"></div>
+                <div data-hover="1" data-delay="0" class="navigation-dropdown w-dropdown">
+                    <div class="navigation-link w-dropdown-toggle">
+                        <div class="navigation-text">ProvideSupport</div><img src="~/images/chevron_arrow.svg" alt="" class="arrow-down">
+                    </div>
+                    <nav class="dropdown-list w-dropdown-list">
+                        <div class="dropdown-list-wrap">
+                            <div class="dropdown-column"><a href="@Url.Action("Index","VolunteerCenters")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Volunteer<br>Centers</div></div></a></div>
+                            <div class="dropdown-column"><a href="@Url.Action("Donating","Home")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Donate<br>Goods</div></div></a></div>
+                            <div class="dropdown-column"><a href="@Url.Action("Index","VictoriaCharities")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Charitable<br>Organizations</div></div></a></div>
+                        </div>
+                    </nav>
+                </div>
+                <div data-hover="1" data-delay="0" class="navigation-dropdown w-dropdown">
+                    <div class="navigation-link w-dropdown-toggle">
+                        <div class="navigation-text">SeekAssistance</div><img src="~/images/chevron_arrow.svg" alt="" class="arrow-down">
+                    </div>
+                    <nav class="dropdown-list w-dropdown-list">
+                        <div class="dropdown-list-wrap">
+                            <div class="dropdown-column"><a href="@Url.Action("AccessPoint","Home")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Access<br>Points</div></div></a></div>
+                            <div class="dropdown-column"><a href="@Url.Action("Index","freeServices")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Free<br>Services</div></div></a></div>
+                            <div class="dropdown-column"><a href="@Url.Action("CenterLink","Home")" class="feature-wrap w-inline-block"><img src="~/images/Group-30.svg" alt="" class="feature-icon"><div class="feature-content-wrap"><div class="short-title">Financial<br>Supports</div></div></a></div>
+                        </div>
+                    </nav>
+                </div>
+                <a href="@Url.Action("QAs","Home")" class="navigation-link w-inline-block">
+                    <div class="navigation-text">Q&A</div>
                 </a>
-                <a href="@Url.Action("Index","freeServices")" class="menu-item-wrap w-inline-block">
-                    <div class="menu-item">Free Services</div>
-                    <div class="menu-item-deco-line"></div>
+                <a href="@Url.Action("covid19","Home")" class="navigation-link w-inline-block">
+                    <div class="navigation-text">Coronavirus</div>
                 </a>
-                <a href="@Url.Action("Visualisation","Home")" class="menu-item-wrap w-inline-block">
-                    <div class="menu-item">Learn More</div>
-                    <div class="menu-item-deco-line"></div>
+                <a href="@Url.Action("Visualisation","Home")" class="navigation-link w-inline-block">
+                    <div class="navigation-text">HomelessInVic</div>
+
                 </a>
-                <a href="@Url.Action("Quiz","Home")" class="menu-item-wrap w-inline-block">
-                    <div class="menu-item">quiz</div>
-                    <div class="menu-item-deco-line"></div>
-                </a>
-            </nav>
-            <div class="menu-button w-nav-button"><img src="~/images/Menu-Icon_1Menu-Icon.png" width="20" alt="" class="menu-icon"></div>
+            </div>
+            <div data-delay="0" class="dropdown-mobile w-dropdown">
+                <div class="dropdown-toggle w-dropdown-toggle">
+                    <a href="#" class="mobile-button-link w-inline-block">
+                        <div data-w-id="f78afd3b-5a8e-facd-35a2-30bab6f51719" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5d4bf31a8620ae8b6132d697/5d5be4b6eaf3b73429e80497_7943-circle-menu-closing.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="0" data-duration="0" data-ix2-initial-state="0" class="mobile-icon-animation"></div>
+                    </a>
+                </div>
+                <nav class="mobiel-dropdown w-dropdown-list"><a href="@Url.Action("Index","Home")" aria-current="page" class="dropdown-link w-dropdown-link w--current">Home</a><a href="@Url.Action("ProvideSuport","Home")" class="dropdown-link w-dropdown-link">ProvideSupport</a><a href="@Url.Action("SeekAssistance","Home")" class="dropdown-link w-dropdown-link">SeekAssistance</a><a href="@Url.Action("QAs","Home")" class="dropdown-link w-dropdown-link">QAs</a><a href="@Url.Action("covid19","Home")" class="dropdown-link w-dropdown-link">Covid19</a><a href="@Url.Action("Visualisation","Home")" class="dropdown-link w-dropdown-link">HomelessInVic</a></nav>
+            </div>
         </div>
     </div>
+
+    @*<div id="w-node-c269a2f6ad2b-a2f6ad2b" class="menu">
+            <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease-out" role="banner" class="wrap cc-menu w-nav">
+                <a href="@Url.Action("Index","Home")" aria-current="page" class="brand w-nav-brand w--current">
+                    <div class="text-block-2">HomeForHomeless</div>
+                </a>
+                <nav role="navigation" class="nav-menu w-nav-menu">
+                    <a href="@Url.Action("Index","Home")" aria-current="page" class="menu-item-wrap w-inline-block w--current">
+                        <div class="menu-item">Home</div>
+                        <div class="menu-item-deco-line"></div>
+                    </a>
+                    <a href="@Url.Action("VolunteerOrgan","Home")" class="menu-item-wrap w-inline-block">
+                        <div class="menu-item">Volunteer</div>
+                        <div class="menu-item-deco-line"></div>
+                    </a>
+                    <a href="@Url.Action("Index","freeServices")" class="menu-item-wrap w-inline-block">
+                        <div class="menu-item">Free Services</div>
+                        <div class="menu-item-deco-line"></div>
+                    </a>
+                    <a href="@Url.Action("Visualisation","Home")" class="menu-item-wrap w-inline-block">
+                        <div class="menu-item">Learn More</div>
+                        <div class="menu-item-deco-line"></div>
+                    </a>
+                    <a href="@Url.Action("Quiz","Home")" class="menu-item-wrap w-inline-block">
+                        <div class="menu-item">quiz</div>
+                        <div class="menu-item-deco-line"></div>
+                    </a>
+                </nav>
+                <div class="menu-button w-nav-button"><img src="~/images/Menu-Icon_1Menu-Icon.png" width="20" alt="" class="menu-icon"></div>
+            </div>
+        </div>*@
 
     <div>
         @RenderBody()
         <footer>
-            <div data-w-id="2137cadc-f27c-f8b8-d4bf-ae8d48effbd1" class="content cc-subscribe-form">
-                <div class="subscribe-wrap">
-                    <div class="wrap cc-subscribe-form">
-                        <div class="footer-subheadline">
-                            <div class="subscribe-form-deco-line"></div>
-                            <div class="label cc-subheadline w-inline-block">©Design By new Horizon</div>
-                            <div class="subscribe-form-deco-line"></div>
-                        </div>
-                        <div class="subscribe-headline">HomeForHomeless</div>
-                        <a href="https://homeforhomeless.azurewebsites.net/" target="_blank" style="color:white;">https://homeforhomeless.azurewebsites.net/ </a>
+            <div class="footer">
+                <div class="container-flex">
+                    <div class="footer-column-large" href="https://homeforhomeless.azurewebsites.net/"  target="_blank">
+                        <img src="~/images/greenLogo.png"  alt="logo" class="footer-logo">
+                        <p class="footer-text">Home For Homeless, best place to get support.</p><a href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dgo-to-account-button&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="footer-link-wrap w-inline-block"  target="_blank"><img src="https://uploads-ssl.webflow.com/5d01778cda7c6cc8a63e0b64/5d1324fd4b05c818c6fbecc1_mail.svg" width="19" alt="" class="footer-icon"  target="_blank"><p class="footer-text-02">Newhorizon@Monash.com</p></a>
                     </div>
+                    <div class="footer-column">
+                        <div class="footer-title"></div>
+                        <a href= @Url.Action("ProvideSuport","Home") class="footer-link"  target="_blank">Provide Support</a>
+                        <a href="@Url.Action("SeekAssistance","Home")" class="footer-link"  target="_blank">Seek Assistances</a>
+                        <a href="@Url.Action("covid19","Home")" class="footer-link"  target="_blank">COVID-19 </a>
+                        <a href="@Url.Action("QAs","Home")"  class="footer-link" target="_blank">FAQ</a>
+                        <a href="@Url.Action("Visualisation","Home")"  class="footer-link" target="_blank">Homeless In VIC</a>
+                    </div>
+                </div>
+                <div class="legal-wrap">
+                    <div class="legal-text">© Copyright 2020, Built by New Horizon .</div>
+                    <div class="social-link-wrap"><a href="https://twitter.com/madebyflowcraft" target="_blank" class="social-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5d6f91252fd62f03bd2330e7/5d6f91252fd62f3d9d233139_twitter%20(4).svg" alt=""></a><a href="https://www.instagram.com/madebyflowcraft/" target="_blank" class="social-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5d6f91252fd62f03bd2330e7/5d6f91252fd62f9df7233138_instagram%20(6).svg" alt=""></a><a href="https://gumroad.com/flowcraft" target="_blank" class="social-link w-inline-block"><img src="https://uploads-ssl.webflow.com/5d6f91252fd62f03bd2330e7/5d81e9e6e7908e56bf587612_Gumroad.svg" alt=""></a></div>
                 </div>
             </div>
         </footer>
     </div>
-    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f4ccf2343c7b7d690e7d66d" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    @*<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5f4ccf2343c7b7d690e7d66d" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>*@
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/global_script.js"></script>
     @RenderSection("scripts", required: false)
-
+    <script src="~/Scripts/webflow.js"></script>
+    <script>
+        var Webflow = Webflow || [];
+        Webflow.push(function () {
+            var l = $('#flowbaseSlider .w-slider-arrow-left');
+            var r = $('#flowbaseSlider .w-slider-arrow-right');
+            $('#flowbaseSlider')
+                .on('click', '.slider-left', function () {
+                    l.trigger('tap');
+                })
+                .on('click', '.slider-right', function () {
+                    r.trigger('tap');
+                });
+        });
+    </script>
+    <!--  Count Up Interaction  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.counterup').counterUp({
+                delay: 100, // the delay time in ms
+                time: 2000 // the speed time in ms
+            });
+        });
+    </script>
 </body>
 </html>

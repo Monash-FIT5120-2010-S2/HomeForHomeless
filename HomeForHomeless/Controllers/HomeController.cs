@@ -94,12 +94,52 @@ namespace HomeForHomeless.Controllers
         }
 
         public ActionResult HomelessTraining()
-
         {
             return View();
         }
         public ActionResult covid19()
+        {
+            return View();
+        }
+        public ActionResult QAs ()
+        {
+            return View();
+        }
+        public ActionResult covid19HealthyAdvice()
+        {
+            return View();
+        }
+        public ActionResult SeekAssistance()
+        {
+            return View();
+        }
+        public ActionResult ProvideSuport()
+        {
+            return View();
+        }
+        public ActionResult covid19policy()
+        {
+            return View();
+        }
+        public ActionResult covid19statistics()
+        {
+            return View();
+        }
+        public ActionResult covid19healthyadvices()
+        {
+            return View();
+        }
 
+        public ActionResult Donating()
+        {
+            return View();
+        }
+        public ActionResult AccessPoint()          
+        {
+            return View();
+        }
+
+        public ActionResult CenterLink()
         {
             return View();
         }

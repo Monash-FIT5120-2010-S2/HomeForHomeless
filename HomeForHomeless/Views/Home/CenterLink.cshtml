@@ -1,0 +1,363 @@
+﻿@{
+    ViewBag.Title = "CenterLink";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    var navi = document.getElementById("navigation-bar");
+    window.onload = function myFunction() {
+        document.getElementById("Q1").style.marginTop = navi.offsetHeight + "px";
+    }
+</script>
+<script>
+    function showContent(id0, id1, id2) {
+        document.getElementById(id0).style.backgroundColor = "lightblue";
+        document.getElementById(id1).style.opacity = "1";
+        document.getElementById(id2).style.display = "none";
+    }
+
+    function hideContent(id0,id1, id2) {
+        document.getElementById(id1).style.opacity = "0";
+        document.getElementById(id2).style.display = "block";
+        document.getElementById(id0).style.backgroundColor = "transparent";
+
+    }
+</script>
+<link href="~/Content/iteration3-v3.webflow.css" rel="stylesheet" />
+
+<div id="Q1" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q1">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q1.Are you an Australian Resident?</h1>
+                <a href="#Q2" data-w-id="dcf97288-677f-1f30-3734-538432c9a77a" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="dcf97288-677f-1f30-3734-538432c9a780" style="cursor:pointer;" onclick="window.location.href='#Q2'" id="Q1_Answer1" class="card_base w-inline-block" onmouseover="showContent('Q1_Answer1','Q1_Answer1_Content','Q1_Answer1_Title')" onmouseout="hideContent('Q1_Answer1','Q1_Answer1_Content','Q1_Answer1_Title')">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q1_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">I am an Australian Resident</div>
+                        </div>
+                        <div class="hide" id="Q1_Answer1_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available<br></h1>                           
+                            <h4 class="answerdescribe">
+                                To find the most suitable one, please
+                                <a href="#Q2" class="answerlink" target="_blank">
+                                    answer next question.(Q2)
+                                </a>
+                            </h4>
+                        </div>
+                        <img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="dcf97288-677f-1f30-3734-538432c9a791" href="#" class="card_base w-inline-block" id="Q1_Answer2" onmouseover="showContent('Q1_Answer2','Q1_Answer2_Content','Q1_Answer2_Title')" onmouseout="hideContent('Q1_Answer2','Q1_Answer2_Content','Q1_Answer2_Title')">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q1_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">I am not a Australian Resident.</div>
+                        </div>
+                        <div class="hide" id="Q1_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">No official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe">However, you can still apply the <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/special-benefit" class="answerlink" target="_blank">Special Benefit</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">                    
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <div data-w-id="9e5b4b0f-91d4-75ac-383e-267dfebf5bd6" class="highlight-sidebar _1"></div>
+</div>
+<div id="Q2" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q2">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q2.Is your age between 25-65?</h1>
+                <a href="#Q3" data-w-id="a3834a2a-8895-a672-4eb3-d8d9480370ce" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="a3834a2a-8895-a672-4eb3-d8d9480370d4" style="cursor:pointer;" onclick="window.location.href='#Q3'" id="Q2_Answer1" onmouseover="showContent('Q2_Answer1','Q2_Answer1_Content','Q2_Answer1_Title')" onmouseout="hideContent('Q2_Answer1','Q2_Answer1_Content','Q2_Answer1_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q2_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">My age is between 25-65.</div>
+                        </div>
+                        <div class="hide" id="Q2_Answer1_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h4 class="answerdescribe">
+                                To find the most suitable support, please
+                                <a href="#Q3" class="answerlink">
+                                    answer next question.(Q3)
+                                </a>
+                            </h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="a3834a2a-8895-a672-4eb3-d8d9480370e7" style="cursor:pointer;" onclick="window.location.href='#Q4'" id="Q2_Answer2" onmouseover="showContent('Q2_Answer2','Q2_Answer2_Content','Q2_Answer2_Title')" onmouseout="hideContent('Q2_Answer2','Q2_Answer2_Content','Q2_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q2_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">My age is not between 25-65.</div>
+                        </div>
+                        <div class="hide" id="Q2_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe"> To find the most suitable support, please<a href="#Q4" class="answerlink"> answer next question.(Q4)</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="a3834a2a-8895-a672-4eb3-d8d9480370fa" class="highlight-sidebar _1"></div>
+    </div>
+</div>
+<div id="Q3" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q3">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q3.Are you actively looking for a job?</h1>
+                <a href="#Q4" data-w-id="9683c183-91c4-7ea2-7591-5892cdb3b401" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="9683c183-91c4-7ea2-7591-5892cdb3b407" style="cursor:pointer;" onclick="window.location.href='#Q6'" id="Q3_Answer1" onmouseover="showContent('Q3_Answer1','Q3_Answer1_Content','Q3_Answer1_Title')" onmouseout="hideContent('Q3_Answer1','Q3_Answer1_Content','Q3_Answer1_Title')"  class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q3_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">I am looking for a job.</div>
+                        </div>
+
+                        <div class="hide" id="Q3_Answer1_Content" style="opacity:0;">
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/jobseeker-payment" class="h1_features" target="_blank">
+                                <h1 class="h1_features"> JOB SEEKER Available. </h1>
+                            </a>
+                            <h4 class="answerdescribe">There are some other supports you can apply together, please <a href="#Q6" class="answerlink">answer next question(Q6).</a></h4>
+
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="9683c183-91c4-7ea2-7591-5892cdb3b41a" style="cursor:pointer;" onclick="window.location.href='#Q5'" id="Q3_Answer2" onmouseover="showContent('Q3_Answer2','Q3_Answer2_Content','Q3_Answer2_Title')" onmouseout="hideContent('Q3_Answer2','Q3_Answer2_Content','Q3_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q3_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">I am not looking for a job.</div>
+                        </div>
+                        <div class="hide" id="Q3_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe">To find the most suitable support, please<a href="#Q5" class="answerlink">answer next question(Q5).</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="9683c183-91c4-7ea2-7591-5892cdb3b42d" class="highlight-sidebar _1"></div>
+    </div>
+</div>
+<div id="Q4" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q4">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q4.Is your age 66 and above?</h1>
+                <a href="#Q5" data-w-id="6b3bb601-3dd2-e678-7373-9edda2e9a744" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="6b3bb601-3dd2-e678-7373-9edda2e9a74a" style="cursor:pointer;" onclick="window.location.href='#Q5'" id="Q4_Answer1" onmouseover="showContent('Q4_Answer1','Q4_Answer1_Content','Q4_Answer1_Title')" onmouseout="hideContent('Q4_Answer1','Q4_Answer1_Content','Q4_Answer1_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q4_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">My age is age 66 and above.</div>
+                        </div>
+                        <div class="hide" id="Q4_Answer1_Content" style="opacity:0;">
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/age-pension" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Age Pension Available. </h1>
+                            </a>
+
+                            <h4 class="answerdescribe">There are some other supports you can apply together, please <a href="#Q5" class="answerlink">answer next question(Q5).</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="6b3bb601-3dd2-e678-7373-9edda2e9a75d" style="cursor:pointer;" onclick="window.location.href='#Q5'" id="Q4_Answer2" onmouseover="showContent('Q4_Answer2','Q4_Answer2_Content','Q4_Answer2_Title')" onmouseout="hideContent('Q4_Answer2','Q4_Answer2_Content','Q4_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q4_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">My age is not age 66 and above.</div>
+                        </div>
+                        <div class="hide" id="Q4_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe"> To find the most suitable support, please<a href="#Q5" class="answerlink">answer next question(Q5).</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="6b3bb601-3dd2-e678-7373-9edda2e9a770" class="highlight-sidebar _1"></div>
+    </div>
+</div>
+<div id="Q5" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q5">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q5. Do you or someone in your direct care suffer  from severe disability, illness or is at a frail age?</h1>
+                <a href="#Q6" data-w-id="24d011c2-229c-9e3c-9716-24559061cccc" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="24d011c2-229c-9e3c-9716-24559061ccd2" style="cursor:pointer;" onclick="window.location.href='#Q6'" id="Q5_Answer1" onmouseover="showContent('Q5_Answer1','Q5_Answer1_Content','Q5_Answer1_Title')" onmouseout="hideContent('Q5_Answer1','Q5_Answer1_Content','Q5_Answer1_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q5_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">It is.</div>
+                        </div>
+                        <div class="hide" id="Q5_Answer1_Content" style="opacity:0;">
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/carer-payment" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Carer Payment Available</h1>
+                            </a>
+
+                            <h4 class="answerdescribe">There are some other supports you can apply together by <a href="#Q6" class="answerlink"> answering next questionQ6.</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="24d011c2-229c-9e3c-9716-24559061cce5" style="cursor:pointer;" onclick="window.location.href='#Q3'" id="Q5_Answer2" onmouseover="showContent('Q5_Answer2','Q5_Answer2_Content','Q5_Answer2_Title')" onmouseout="hideContent('Q5_Answer2','Q5_Answer2_Content','Q5_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q5_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">it is not.</div>
+                        </div>
+                        <div class="hide" id="Q5_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe">To find the most suitable support, please<a href="#Q6" class="answerlink"> answer next question.<br>(Q6).</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="24d011c2-229c-9e3c-9716-24559061ccf8" class="highlight-sidebar _1"></div>
+    </div>
+</div>
+<div id="Q6" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q6">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q6. Are you currently receiving financial support from the government?</h1>
+                <a href="#Q7" data-w-id="d9311690-cf9a-91c0-19f8-95cb01174ce5" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Skip This</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id="d9311690-cf9a-91c0-19f8-95cb01174ceb" style="cursor:pointer;" onclick="window.location.href='#Q6'" id="Q6_Answer1" onmouseover="showContent('Q6_Answer1','Q6_Answer1_Content','Q6_Answer1_Title')" onmouseout="hideContent('Q6_Answer1','Q6_Answer1_Content','Q6_Answer1_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q6_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">I am currently receiving financial support from the government.</div>
+                        </div>
+                        <div class="hide" id="Q6_Answer1_Content" style="opacity:0;">
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/pharmaceutical-allowance" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Pharmaceutical Allowance Available</h1>
+                            </a>
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/energy-supplement" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Energy Supplement Available</h1>
+                            </a>
+                            <a href="https://www.servicesaustralia.gov.au/individuals/services/centrelink/rent-assistance" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Rent Assistance</h1>
+                            </a>
+
+                            <h4 class="answerdescribe"> To find the most suitable support, please<a href="#" class="answerlink"> answer next question.</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+                <div class="card_col_2">
+                    <div data-w-id="d9311690-cf9a-91c0-19f8-95cb01174cfe" style="cursor:pointer;" onclick="window.location.href='#Q7'" id="Q6_Answer2" onmouseover="showContent('Q6_Answer2','Q6_Answer2_Content','Q6_Answer2_Title')" onmouseout="hideContent('Q6_Answer2','Q6_Answer2_Content','Q6_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" id="Q6_Answer2_Title" class="card_title_wrap">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">No I am not currently receiving financial support from the government.</div>
+                        </div>
+                        <div class="hide" id="Q6_Answer2_Content" style="opacity:0;">
+                            <h1 class="h1_features">Official packages available.<br></h1>
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe">To find the most suitable support, please<a href="#Q7" class="answerlink"> answer next question (Q7).</a></h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-w-id="d9311690-cf9a-91c0-19f8-95cb01174d11" class="highlight-sidebar _1"></div>
+    </div>
+</div>
+<div id="Q7" data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="q7">
+    <div class="accesspointsectioncontainer">
+        <div class="container_p">
+            <div class="col_40">
+                <h1 class="questionheader">Q7. Are you currently at risk of being homeless?</h1>
+                <a data-w-id="ddb69551-c0a2-6246-568b-666db8ccbb5c" href="#Q1" class="link-2 w-inline-block">
+                    <div class="line-l2"></div>
+                    <div class="text-l2">Redo survey</div>
+                </a>
+            </div>
+            <div class="col_60">
+                <div class="card_row">
+                    <div data-w-id ="ddb69551-c0a2-6246-568b-666db8ccbb62" style="cursor:pointer;" onclick="window.location.href='#Q7'" id="Q7_Answer1" onmouseover="showContent('Q7_Answer1','Q7_Answer1_Content','Q7_Answer1_Title')" onmouseout="hideContent('Q7_Answer1','Q7_Answer1_Content','Q7_Answer1_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q7_Answer1_Title">
+                            <h1 class="h1_features">Yes<br></h1>
+                            <div class="text_features">I am currently at risk of being homeless.</div>
+                        </div>
+                        <div class="hide" id="Q7_Answer1_Content" style="opacity:0;">
+                            <a href="https://www.dss.gov.au/our-responsibilities/housing-support/benefits-payments/weekly-payment-of-income-support-to-centrelinks-vulnerable-customers" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Weekly Payment Available</h1>
+                            </a>
+
+
+                            <h4 class="answerdescribe">Regardless if you are currently or at risk of being homeless, you are eligible for get government support in weekly payments instead of the standard fortnightly payments. </h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                </div>
+            </div>
+                <div class="card_col_2">
+                    <div data-w-id="ddb69551-c0a2-6246-568b-666db8ccbb75" style="cursor:pointer;" onclick="window.location.href='#Q7'" id="Q7_Answer2" onmouseover="showContent('Q7_Answer2','Q7_Answer2_Content','Q7_Answer2_Title')" onmouseout="hideContent('Q7_Answer2','Q7_Answer2_Content','Q7_Answer2_Title')" class="card_base w-inline-block">
+                        <div class="icon_wrap"><img src="~/images/gift.svg" width="38" alt="" class="icon"></div>
+                        <div style="display:block" class="card_title_wrap" id="Q7_Answer2_Title">
+                            <h1 class="h1_features">No<br></h1>
+                            <div class="text_features">No I am not currently at risk of being homeless.</div>
+                        </div>
+                        <div class="hide" id="Q7_Answer2_Content" style="opacity:0;">
+                            <a href="https://www.dss.gov.au/our-responsibilities/housing-support/benefits-payments/weekly-payment-of-income-support-to-centrelinks-vulnerable-customers" class="h1_features" target="_blank">
+                                <h1 class="h1_features">Weekly Payment Available</h1>
+                            </a>
+
+                            <h1 class="answerdescribe"></h1>
+                            <h4 class="answerdescribe">Regardless if you are currently or at risk of being homeless, you are eligible for get government support in weekly payments instead of the standard fortnightly payments.</h4>
+                        </div><img src="https://uploads-ssl.webflow.com/5f8934053ee052bf18390d20/5f893405c46462af0380916b_Icon.svg" style="opacity:0;-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "covid19healthyadvices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    window.onload = function changeNavigationBarBkgrdColor() {
+        // Get all the matching elements into a JavaScript Array
+        var elements = Array.prototype.slice.call(document.querySelectorAll(".navigation-text"));
+
+        // Loop over each element....
+        elements.forEach(function (el) {
+            el.style.color = "#dcd6ca";  // Adjust the element's style
+        });
+	document.getElementById("navigation-bar").style.background_color = "hsl(0deg 0% 20%)";
+        document.getElementById("navigation-bar").style.opacity = "0.7";
+        document.getElementById("navi-logo-img").src = '/images/yellowLogo.png';
+    }
+</script>
+
+<div class="covid19headersection">
+    <div class="slider-content">
+        <div class="slide-content-wrap">
+            <div class="container-2">
+                <h1 data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fdfe" class="headersectiontitle">Covid - 19<br>‍<span class="brand-span">Healthy Advices</span></h1>
+                <p data-w-id="65d0c8bb-f3cb-221f-3afc-7dc29700fe04" class="headersectionparagraph">To fight COVID-19, we must all understand what it is, how it spreads and how it can effect our lives. Fortunately, due to the current advances in medicine, we have all the information we need. </p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-wrapper">
+        <div data-delay="8000" data-animation="cross" data-autoplay="1" data-easing="ease-out" data-disable-swipe="1" data-duration="800" class="slider w-slider">
+            <div class="w-slider-mask">
+                <div class="slide w-slide">
+                    <div class="covid19slideimage1"></div>
+                </div>
+                <div class="slide w-slide">
+                    <div class="covid19slideimage2"></div>
+                </div>
+            </div>
+            <div class="left-arrow-2 w-slider-arrow-left">
+                <div class="w-icon-slider-left"></div>
+            </div>
+            <div class="right-arrow-2 w-slider-arrow-right">
+                <div class="w-icon-slider-right"></div>
+            </div>
+            <div class="slide-nav-2 w-slider-nav w-round"></div>
+        </div>
+    </div>
+</div>
+<div data-w-id="00e39f18-964c-9533-8b86-2e9c9848835a" class="homepagesection">
+    <div class="homepagesectioncontainer">
+        <div class="title_wrap">
+            <div class="title_text">PROCESS</div>
+            <h1 data-w-id="f9690cb5-5fef-db8f-50e3-4fa528076776" class="covid19advices">How to Prevent the Spreading of COVID-19</h1>
+        </div>
+        <div class="process">
+            <div data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="process_card">
+                <div class="process_details">
+                    <h2 class="h2"><strong class="bold-text">Monitor your symptoms</strong></h2>
+                    <p class="paragraph-12">You may have coronavirus (COVID-19) if you have any of the following: fever, chills or sweats, cough, sore throat, shortness of breath, runny nose and loss or change in sense of smell or taste.</p>
+                </div>
+                <div class="centre_block">
+                    <div class="centre_icon_wrap">
+                        <div class="centre_step">01</div>
+                    </div>
+                </div>
+                <div class="process_image_wrap"><img src="~/images/symptom.jpg" alt="" class="process_image"></div>
+            </div>
+            <div data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="process_card_02">
+                <div class="process_image_wrap"><img src="~/images/covidtest.jpg" alt="" class="process_image"></div>
+                <div class="centre_block">
+                    <div class="centre_icon_wrap">
+                        <div class="centre_step">02</div>
+                    </div>
+                </div>
+                <div class="process_details">
+                    <h2 class="h2">Get tested</h2>
+                    <p class="paragraph-12">The Victorian Government has placed COVID-19 testing sites across Victoria in strategic in locations to ensure the highest level of convenience for individuals to get tested. To cease the spreading of this virus we must first identify all the current cases.</p>
+                </div>
+            </div>
+            <div class="process_line"></div>
+            <div data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="process_card">
+                <div class="process_details">
+                    <h2 class="h2">Self Quarrantine</h2>
+                    <p class="paragraph-12">If you suspect you may have contracted COVID-19, you are urged to get tested and then immediately stay home after. It usually takes 2 days for your results to be returned to you. If you are worried your results are taking too long you can call a service provider for more information.</p>
+                </div>
+                <div class="centre_block">
+                    <div class="centre_icon_wrap">
+                        <div class="centre_step">03</div>
+                    </div>
+                </div>
+                <div class="process_image_wrap"><img src="~/images/SelfQuarrantine.jpg" alt="" class="process_image"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>

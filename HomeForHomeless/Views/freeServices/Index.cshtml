@@ -7,145 +7,131 @@
     Layout = "~/Views/Shared/_Layout.cshtml";}
 
 @*<h2>FreeServices</h2>*@
-<link href="~/Content/detail_pop_up.css" rel="stylesheet" />
+@*<link href="~/Content/detail_pop_up.css" rel="stylesheet" />*@
 <style>
     .free-service-dropdown {
-        border: 1px solid black;
+        border: 1px solid rgba(113, 148, 144, 0.5);
         margin-right: 1%;
+    }
+    .property-image-wrap {
+        height:50%;
+    }
+    .free-service-dropdown {
+        min-height: 52px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 50px;
+        background-color: #f6f6f6;
+    }
+    .filter-wrap {
+        margin-bottom: 48px;
+        padding: 42px;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 8px 80px 55px -50px rgba(0, 0, 0, 0.13);
+    }
+
+    .itemcontent {
+        width:auto;
     }
 </style>
 <body>
-    <div class="content">
-        <div class="wrap">
-            <div class="page-headline-wrap cc-category-headline">
-                <h1 class="heading-7">Free Services</h1>
-                <p class="big-paragraph">A WAY TO HELP YOU</p>
-                <hr>
-            </div>
-            <div data-animation="slide" data-nav-spacing="5" data-duration="500" data-infinite="1" class="slider w-slider">
-                <div class="w-slider-mask">
-                    <div class="w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="slide-wrap">
-                                        <div class="slider-image-wrap">
+    <div  data-w-id="eb106516-8133-4cfd-47d6-1eb8172e08df" class="col-12 text-center" id="firstelement" style="display:none;">
+        <h1 data-w-id="d25fccb8-3525-aa4f-247c-4304203d6ac1" class="covid19sectiontitle-2" style="text-align:center">Free ‍<span class="brand-span">Services</span></h1>
 
-                                            <div class="slide1-product-slider" style="        background-image: url(../images/Amy.jpg);"></div>
-                                        </div>
-                                        <div class="slider-text-wrap">
-                                            <div class="slide-content">
-                                                <h2>Kindness can transform someone’s dark moment with a blaze of light. You’ll never know how much your caring matters. Make a difference for another today.</h2>
-                                                <p id="w-node-1851e34e161e-0dc7b219" class="paragraph">-Amy Leigh Mercree</p>
-                                            </div>
-                                            @*<a href="https://amyleighmercree.com/" target="_blank" class="dark-button w-inline-block">
-                                                    <div>Link to <strong><em>Personal Website</em></strong></div>
-                                                </a>*@
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide">
-                        <div class="slide-wrap">
-                            <div class="slider-image-wrap">
-                                <div class="slide-image cc-slider-image-2"></div>
-                            </div>
-                            <div class="slider-text-wrap">
-                                <div class="slide-content">
-                                    <h2><em>Every man must decide whether he will walk in the light of creative altruism or in the darkness of destructive selfishness.</em></h2>
-                                    <p id="w-node-1851e34e162a-0dc7b219" class="paragraph">-<strong>Martin Luther King, Jr.</strong></p>
-                                </div>
-                                @*<a href="https://en.wikipedia.org/wiki/Martin_Luther_King_Jr." target="_blank" class="dark-button w-inline-block">
-                                        <div>Link to <strong><em>Wikipedia</em></strong></div>
-                                    </a>*@
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-arrow w-slider-arrow-left"><img src="~/images/Arrow_1Arrow.png" width="12" alt=""></div>
-                <div class="right-arrow w-slider-arrow-right"><img src="~/images/Arrow-R_1Arrow-R.png" width="12" alt=""></div>
-                <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 text-center mt-5">
-        <h1 class="text-dark pt4">Available Services</h1>
+        @*<h1 class="text-dark pt4">Available Services</h1>*@
         <div class="border-top border-primary w-25 mx-auto my03"></div>
-        <p class="lead">Free services near you</p>
+        <p class="lead">Find all the free services available to the homeless community from our list below. </p>
     </div>
-    <div class="col-12 text-center mt-5">
+    <div class="col-12 text-center mt-3 filter-wrap">
         <form asp-action="Index" method="get" class="form-inline row justify-content-center">
-            <input type="search" class="btn aqua-gradient btn-rounded btn-sm my-0" style="border:1px solid black; margin-right: 1%; text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Suburb/Name" id="search" aria-label="Search">
-            @Html.DropDownList("Category", null, htmlAttributes: new { @class = "free-service-dropdown btn aqua-gradient btn-rounded btn-sm my-0", style = "font-size:inherit;" })
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit" style="border:1px solid">FIND NOW</button>
+                <input type="search" class="mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" style="text-align:left;" maxlength="256" name="SearchString" value="@ViewData["currentFilter"]" placeholder="Suburb/Name" id="search" aria-label="Search">
+                @Html.DropDownList("Category", null, htmlAttributes: new { @class = "mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" })
+                <button class="mt-2 free-service-dropdown btn aqua-gradient btn-rounded btn-sm" type="submit">FIND NOW</button>
         </form>
     </div>
 
 
     @* iterative code to display all the appliance in database in grids of cards.  *@
-
-    <div class="container">
+    <div class="container-2 mt-5">
         @if (Model != null)
         {
-            <div class="row">
+            <div class="w-layout-grid grid-9" style="text-align: center;">
                 @foreach (var item in Model.freeServices)
                 {
-                <div class="col-md-4 my-4" style="text-align:center;">
+                <div class="item-card">
                     @{ if (item.Category.Equals("Accommodation") || item.Category.Equals("Clothes and Blankets") || item.Category.Equals("Food")
-                          || item.Category.Equals("Showers / Laundry") || item.Category.Equals("Tenancy Assistance"))
+                                      || item.Category.Equals("Showers / Laundry") || item.Category.Equals("Tenancy Assistance"))
                         {
                             switch (item.service_Id % 4)
                             {
                                 case 1:
-                                    <img src="~/Images/fs-food1.png" alt="BasicNecessities" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-food1.png" loading="lazy" alt="BasicNecessities" class="itemimage">
+                                    </div>
                                     break;
                                 case 2:
-                                    <img src="~/Images/fs-food2.png" alt="BasicNecessities" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-food2.png" loading="lazy" alt="BasicNecessities" class="itemimage">
+                                    </div>
                                     break;
                                 case 3:
-                                    <img src="~/Images/fs-food3.png" alt="BasicNecessities" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-food3.png" loading="lazy" alt="BasicNecessities" class="itemimage">
+                                    </div>
                                     break;
                                 case 0:
-                                    <img src="~/Images/fs-food4.png" alt="BasicNecessities" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-food4.png" loading="lazy" alt="BasicNecessities" class="itemimage">
+                                    </div>
                                     break;
                             }
                         }
                         else
-                                 if (item.Category.Equals("Counselling and Psychiatric Services") || item.Category.Equals("Drug and Alcohol") || item.Category.Equals("Health Services / Pharmacy")
-                         || item.Category.Equals("Hospitals / Emergency") || item.Category.Equals("Needle Exchange"))
+                                         if (item.Category.Equals("Counselling and Psychiatric Services") || item.Category.Equals("Drug and Alcohol") || item.Category.Equals("Health Services / Pharmacy")
+                                         || item.Category.Equals("Hospitals / Emergency") || item.Category.Equals("Needle Exchange"))
                         {
                             switch (item.service_Id % 9)
                             {
                                 case 1:
-                                    <img src="~/Images/fs-health1.png" alt="HealthServices" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health1.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div>
                                     break;
                                 case 2:
-                                    <img src="~/Images/fs-health2.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health2.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 3:
-                                    <img src="~/Images/fs-health3.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health3.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 4:
-                                    <img src="~/Images/fs-health4.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health4.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 5:
-                                    <img src="~/Images/fs-health5.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health5.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 6:
-                                    <img src="~/Images/fs-health6.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health6.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 7:
-                                    <img src="~/Images/fs-health7.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health7.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 8:
-                                    <img src="~/Images/fs-health8.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health8.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                                 case 0:
-                                    <img src="~/Images/fs-health9.png" alt="HealthServices" class="w-100">
-                                    break;
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-health9.png" loading="lazy" alt="HealthServices" class="itemimage">
+                                    </div> break;
                             }
                         }
                         else
@@ -153,24 +139,28 @@
                             switch (item.service_Id % 3)
                             {
                                 case 1:
-                                    <img src="~/Images/fs-employ1.png" alt="EmployAssistance" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-employ1.png" loading="lazy" alt="EmployAssistance" class="itemimage">
+                                    </div>
                                     break;
                                 case 0:
-                                    <img src="~/Images/fs-employ2.png" alt="EmployAssistance" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/fs-employ2.png" loading="lazy" alt="EmployAssistance" class="itemimage">
+                                    </div>
                                     break;
                                 case 2:
-                                    <img src="~/Images/charity1.jpg" alt="OtherServices" class="w-100">
+                                    <div class="property-image-wrap">
+                                        <img src="~/Images/charity1.jpg" loading="lazy" alt="OtherServices" class="itemimage">
+                                    </div>
                                     break;
                             }
                         }
                     }
-                    <div class="h4 my-4">
-                        @item.Name
+                    <div class="property-content" style="height:120px;">
+                        <h5>@item.Name</h5>
+                        <div>@item.Address</div>
                     </div>
-                    <p>
-                        @item.Address
-                    </p>
-                    <input type="button" onclick="freeServicePopUp(@serializer.Serialize(item))" value="see more" style="border:1px solid black;" class="btn btn-outline-dark btn-md" />
+                    <input type="button" onclick="freeServicePopUp(@serializer.Serialize(item))" value="Learn More" class="itembutton w-button" style="margin-left:auto;"/>
                     @*<a href="@Url.Action("Details", "freeServices",new { id = @item.service_Id})" class="btn btn-outline-dark btn-md">See More</a>*@
                     @*<a href='javascript:;' onclick="freeServicePopUp()" class="btn btn-outline-dark btn-md">See More</a>*@
                 </div>
@@ -182,18 +172,24 @@
     <div style="opacity:0" class="popup" id="fspopup">
         <div data-w-id="04556d3a-b909-e374-d452-f5e9fc9bf975" style="display:block;opacity:1" class="div-block-3">
             <div class="div-block-4">
-            <img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="75537ccf-64c6-c9e6-6693-1d44302236d9" style="cursor:pointer;" alt="" class="image-4" onclick="closepopup()">
+                <div class="closebutton"><img src="~/images/Cart-Close-Icon_1Cart-Close-Icon.png" loading="lazy" data-w-id="001e3862-a1b8-0709-b79d-2d95544be38f" alt="" class="image-4" style="cursor:pointer;" onclick="closepopup()"></div>
             </div>
-            <h1 class="heading-9" id="name">Free services Center</h1>
-            <div class="office-info">
-                @*<p class="paragraph" id="name">Name:</p>*@
-                <p class="paragraph" id="address">Address:</p>
-                <p class="paragraph" id="suburb">Suburb:</p>
-                <p class="paragraph" id="phoneno">Phone Number</p>
-                <p class="paragraph" id="website"><strong>Website: </strong><a></a></p>
-                <p class="paragraph" id="tram">Tram Routes</p>
-                <p class="paragraph" id="services">Main Services:</p>
-            </div><a data-w-id="86e0d03c-58b5-bb88-42de-35fd8c7efaf0" target="_blank" id="map" href="#" class="button w-button">Find the location</a>
+            <h3 class="heading-9">Free services Center</h3>
+            <div class="iteminformation mt-5">
+                <div class="office-info" style="margin: -20px auto auto">
+                    <div class="itemdetails">
+                        <p class="paragraph itemcontent" id="name">Name:</p>
+                        <p class="paragraph itemcontent" id="address">Address:</p>
+                        <p class="paragraph itemcontent" id="suburb">Suburb:</p>
+                        <p class="paragraph itemcontent" id="phoneno">Phone Number</p>
+                        <p class="paragraph itemcontent" id="website"><strong>Website:&nbsp;</strong><a></a></p>
+                        <p class="paragraph itemcontent" id="tram">Tram Routes</p>
+                        <p class="paragraph itemcontent" id="services">Main Services:</p>
+                    </div>
+                </div>
+            </div>
+            <input type="button" onclick="closepopup()" value="OK" class="button-8 w-button" style="padding-top: 10px; padding-right: 10%; padding-bottom: 10px; padding-left: 10%;" />
+            @*<a data-w-id="86e0d03c-58b5-bb88-42de-35fd8c7efaf0" target="_blank" id="map" href="#" class="button-8 w-button">Find the location</a>*@
         </div>
     </div>
 
@@ -204,7 +200,7 @@
 
     <div class="pagecount" style="margin:auto; text-align:center">
         Page @(Model.freeServices.PageCount < Model.freeServices.PageNumber ? 0 : Model.freeServices.PageNumber)
-        of @Model.freeServices.PageCount   @Html.PagedListPager(Model.freeServices, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentCategory = ViewBag.currentCategory}))
+        of @Model.freeServices.PageCount   @Html.PagedListPager(Model.freeServices, page => Url.Action("Index", new { page, currentfilter = ViewBag.currentfilter, currentCategory = ViewBag.currentCategory }))
     </div>
 </body>
 
@@ -215,10 +211,10 @@
         document.getElementById("fspopup").style.display = "block";
         document.getElementById("fspopup").style.top = 0;
         document.getElementById("fspopup").style.left = 0;
-        document.getElementById("name").innerHTML = jsonData.Name;
-        document.getElementById("address").innerHTML = "<strong>Address: </strong>" + jsonData.Address;
-        document.getElementById("suburb").innerHTML = "<strong>Suburb: </strong>" + jsonData.Suburb;
-        document.getElementById("phoneno").innerHTML = "<strong>Phone: </strong>" + jsonData.Phone;
+        document.getElementById("name").innerHTML = "<strong>Name:&nbsp;</strong>" + jsonData.Name;
+        document.getElementById("address").innerHTML = "<strong>Address:&nbsp;  </strong>" + jsonData.Address;
+        document.getElementById("suburb").innerHTML = "<strong>Suburb:&nbsp;  </strong>" + jsonData.Suburb;
+        document.getElementById("phoneno").innerHTML = "<strong>Phone:&nbsp;  </strong>" + jsonData.Phone;
         if (document.getElementById("website").hasChildNodes)
         { document.getElementById("website").removeChild(document.getElementById("website").lastChild) }
         var a = document.createElement('a');
@@ -227,13 +223,21 @@
         a.title = jsonData.Website;
         a.href = "http://" + jsonData.Website;
         document.getElementById("website").appendChild(a);
-        document.getElementById("tram").innerHTML = "<strong>Tram Routes: </strong>" + jsonData.Tram_routes;
-        document.getElementById("services").innerHTML = "<strong>Main Services: </strong>" + jsonData.Category;
+        document.getElementById("tram").innerHTML = "<strong>Tram Routes:&nbsp;  </strong>" + jsonData.Tram_routes;
+        document.getElementById("services").innerHTML = "<strong>Main Services:&nbsp;  </strong>" + jsonData.Category;
         document.getElementById("map").href = "/freeServices/Details/" + jsonData.service_Id;
     }
 
     function closepopup() {
         document.getElementById("fspopup").style.opacity = 0;
         document.getElementById("fspopup").style.display = "none";
+    }
+</script>
+<script>
+    var navi = document.getElementById("navigation-bar");
+    window.onload = function myFunction() {
+        document.getElementById("firstelement").style.marginTop = navi.offsetHeight + 10 + "px";
+        document.getElementById("firstelement").style.display = "block";
+
     }
 </script>
